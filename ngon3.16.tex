@@ -1,0 +1,431 @@
+\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage [autostyle, english = american]{csquotes}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{conjecture}{Conjecture}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{conj}{Conjecture}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{assumptions}{Assumptions}[section]
+
+%\newcommand{\defv}[1]{\textbf{\textit{#1}}}
+
+
+%\title{Brief Article}
+%\author{The Author}
+%\date{}							% Activate to display a given date or no date
+
+\begin{document}
+\bibliographystyle{plain}
+%\maketitle
+%\section{}
+%\subsection{}
+
+
+\section{Introduction}
+
+%How to view/present this.  Experimental, algorithmic or fully rigorous? Seems that full rigor is hard as it depends on certificates that are non-trivial to verify for various reasons.  
+
+references for packing
+\cite{brass2005research} %find better references for intro to packing
+\cite{conway1999recent}
+references for anisotropic packing problems
+The packing problem for centrally symmetric bodies in the plane is mostly understood.
+\cite{fejes1950some}
+\cite{kuperberg1990double}
+\cite{gravel2011upper}
+\cite{mario2013computing}
+references for mathematica
+\cite{mathematica10}
+\cite{keiper1995interval} %outdated
+references for linear programming
+
+
+This is a paper about packing polygons in the plane and the local optimality of the Kuperberg and Kuperberg configurations.
+
+
+\section{Local Stability}
+
+\subsection{Background/Motivation/Main theorems}
+
+\begin{definition}
+    Let $\Xi=(\xi_i)_{i\in\mathbb{N}}$ be a sequence of isometries. Its \textit{mean volume} is the limit
+    \begin{equation}
+	d(\Xi)=\lim_{r\to\infty} \frac{\mathrm{vol} B(0,r)}{|\{i : \xi_i(0)\in B(0,r)\}|}\text.
+    \end{equation}
+    The upper and lower mean volumes are the corresponding limits superior and inferior.
+\end{definition}
+
+\begin{definition}
+    Let $K$ be a compact set with interior. We say that $\Xi$ is \textit{admissible} for $K$ if
+    the interiors of $\xi_i(K)$ and $\xi_j(K)$ are disjoint whenever $i\neq j$.
+\end{definition}
+
+\begin{definition}
+    Given two sequences $\Xi$ and $\Xi'$ of isometries, we define the premetric 
+    \begin{equation}
+	\begin{aligned}
+	    \delta_{R}(\Xi,\Xi') = \sup \{&||\xi_i^{-1}\xi_j-\xi_i'^{-1}\xi_j'||:\\ & i,j \text{ such that } ||\xi_i(0)-\xi_j(0)||<R \text{ or } ||\xi_i'(0)-\xi_j'(0)||<R\}\text.
+	\end{aligned}
+    \end{equation}
+    If $R$ is large enough so that the edges $\{i,j\}$ satisfying the condition in the definition of $\delta_R$ connect all the indices, then $\delta_{R}(\Xi,\Xi')=0$
+    if and only if $\xi_i = \phi \xi_i'$ for some $\phi\in E(n)$.
+\end{definition}
+
+Consider the space $\Omega$ of sequences of isometries whose first term is the identity. We consider the topology on $\Omega$ generate by the base of
+balls $\mathcal B_{R}(\Xi,\rho)=\{\Xi':\delta_R(\Xi,\Xi')<\rho\}$.
+
+\begin{definition}
+    We say $\Xi$ is \textit{strongly extreme} for $K$ if it minimizes the mean volume among admissible elements in a neighborhood of $\Xi$.
+\end{definition}
+
+%relation to other notions of extreme
+\begin{remark}
+    If a lattice $\Lambda$ is strongly extreme for $K$, then $\Lambda$ is extreme for $K$ \cite{Martinet2003}.
+\end{remark}
+\begin{remark}
+    If a periodic set $\Xi = \{ T_\mathbf{l}\xi_i : \mathbf{l}\in\Lambda, i=1,\dots,N\}$ is strongly extreme,
+    then it is periodic extreme for $K$ \cite{Schurmann2013}.
+\end{remark}
+
+\begin{definition}
+Let $\Xi$ be a sequence of isometries and let $\mathcal P$ be a polyhedral complex whose underlying space is $\mathbb{R}^n$.
+For every face $F$ of $\mathcal P$, let $I_F = \{i : \xi_i(0)\in F\}$. We say $\mathcal P$ is a \textit{honeycomb} of $\Xi$ if
+each $n$-face (cell) $P$ is the convex hull of $\{\xi_i(0):i\in I_P\}$.
+\end{definition}
+
+\begin{theorem}
+    Let $\Xi$ be admissible for $K$ and let $\mathcal P$ be a honeycomb of $\Xi$. For every cell $P$,
+    consider the optimization problem of minimizing $f_P(\Xi_P)=\mathrm{vol}\,\mathrm{conv}_{i\in I_P}\xi'_i(0)$ over admissible finite sequences of
+    isometries $\Xi_P=(\xi'_i)_{i\in I_P}$. If $(\xi_i)_{i\in I_P}$ is a local minimum for each cell $P$, then $\Xi$ is strongly extreme.
+\end{theorem}
+
+\begin{theorem}
+    Let $g_F(\Xi_F)$ be a real-valued function over $\Xi_F=(\xi'_i)_{i\in I_F}$ for each oriented $(n-1)$-faces (ridge) of $\mathcal P$, such
+    that $g_F(\Xi_F)=-g_{-F}(\Xi_F)$, where $-F$ is the orientation-reversed version of $F$. If we replace $f_P(\Xi_P)$ in the previous
+    theorem with $f_P'(\Xi_P) = f_P(\Xi_P) + \sum_{F\in\partial P} g_F(\Xi_F)$, then again, if $(\xi_i)_{i\in I_P}$ is a local minimum for each
+    cell $P$, then $\Xi$ is strongly extreme.
+\end{theorem}
+
+
+
+
+
+
+
+
+
+
+
+Full summary of below
+
+
+\subsubsection{Summary of \cite[\S 2]{kuperberg1990double} on double lattices.  }
+\begin{definition}%maybe better definitions in the literature
+affine diameter of $K$ in a particular direction is the length of the longest chord in $K$ parallel to that direction.
+\end{definition}
+
+\begin{definition}
+Given a convex body $K$, extensive parallelogram in $K$ is an inscribed parallelogram satisfying the conditions that the edges lengths of the parallelogram are at least 1/2 the affine diameter of $K$ in the direction of the edges.
+\end{definition}
+
+%pictures
+
+
+\begin{definition}
+a double lattice packing is generated by an extensive parallelogram if it a packing ... %need a good short intuitive definition here, i.e. is a checkerboard...  Picture helps
+\end{definition}
+
+\begin{theorem}[Kuperberg and Kuperberg]\label{thmkk}
+If $K$ is strictly convex and $P$ is a maximum density double lattice packing of the plane with copies of $K$, then $P$ is generated by a minimum area extensive parallelogram in $K$.
+\end{theorem}
+
+By a sequence of approximations, this gives that for convex bodies $K$ that are not strictly convex, there exists a double lattice packing of maximal density that generated a minimum area extensive parallelogram in $K$.
+
+This also gives an algorithm for finding the (uniqueness, does it matter?) densest double lattice packing for a convex body $K$, in particular, for a regular (2n+1)-gons in the plane. The goal is to show that this configuration is in fact a local maximum for density in a broader sense, namely among configurations with nearby Delaunay triangulations.  %what does this mean... full definition.
+
+
+\subsubsection{ constraints }
+Signed area gives the non-intersection constraints for the conjectured optimal configuration, note that this is true only when contact is in the interior of the edges.  Lemma, there are no corner to corner contacts in K+K construction?
+
+
+\subsubsection{other theorems}
+
+\begin{theorem}
+Programs satisfying conditions (*) have a local maximum at 0.
+\end{theorem}
+
+\subsection{Pentagons}
+
+rewrite in terms of section 1
+
+In the case of packings by regular pentagons, one can consider the configuration space of four pentagons with respect to the density function taken with respect to the Delaunay triangulation and parametrized by ....  This can be shown to satisfy the conditions of Section \ref{}....
+
+
+\subsubsection{ exhibit the construction given by \ref{thmkk}}
+
+\subsubsection{parametrize neighborhood of four pentagons in correct configuration }
+
+the parametrization is important, should be consistent with the later sections.  Can this be hidden in the code, and to just state that there exists a parametrization that satisfies the linear program theorem?  Still need a sketch here. 
+
+\subsubsection{constrained optimization problem}
+
+\subsubsection{density function}
+
+
+\subsubsection{verification}
+
+
+\subsection{Heptagons}
+
+Outline of the method for Heptagons.
+
+
+\subsubsection{ find the construction given by Theorem \ref{thmkk}.}
+
+\subsubsection{parametrize neighborhood of four heptagons in correct configuration}
+include figures
+
+\subsubsection{constrained optimization problem}
+
+
+\subsubsection{the cost functions }
+
+
+YOU GET THE COST FUNCTION FROM THE PROGRAM, AND IT SATISFIES THE PROPERTIES OF SECTION 1....
+
+This area could be confusing as the objective functions become fairly complicated.  Need to justify replacing objective functions with modifications.  i.e., 
+
+Sketch: Minimize the area of the Delaunay triangles.  If there is no nearby configuration that decreases area done. (can we increase area and still increase density? possibly locally, so need to trade between nearby double triangles.  But by symmetry, introduce a cost function between the "outer" heptagons, i.e. penalize rotation in opposite directions.)
+In general, average area of double triangles is minimized implies average density is maximized.
+
+The function optimized in this case is the (modified) area of the Delaunay triangles. 
+
+%$U$ is the area of the double Delaunay triangle
+%
+%$$Ux = U + (1/2 + u1^2) V[[3]] - (1/2 + u1^2) V[[4]] + (1/2 + u1^2) V[[
+%    8]] - (1/2 + u1^2) V[[9]]$$
+    
+          
+%1) modification given was constructed to satisfy XYZ to give the local optimality and satisfy certain properties
+%2) Justify modification via it's properties, not via what the actually modification is.
+
+
+ \begin{lemma}
+ an objective function satisfying properties XYZ has an isolated max at 0 and satisfying properties ABC also maximizes the density function.
+ \end{lemma} 
+ 
+ \begin{proof}
+ XYZ follows from theorem.
+
+ ABC follows from ...  geometric sketch argument should be replaced by an analysis argument.
+\qed \end{proof}
+
+
+\begin{lemma}
+the construction of 
+\end{lemma}
+
+
+
+\subsubsection{Solving the problem}
+
+Via computational methods, it is possible to demonstrate that these problems satisfy the conditions Theorem.
+
+documentation of code, to repository
+
+
+\subsection{general (2n+1)-gons}
+failure in the case of the enneagon, the construction of K+K is problematic.  This requires additional analysis as 
+
+four polygons with corrected area function and an SL(2,R) motion hessian?  The SL2 motion is required for the solution part, i.e. finding the initial configuration for regular polygons.  Check this makes sense.
+
+\section{Formal methods}%Need good documentation for mathematica packages and for the code to be supplied.
+%Computations are performed in Mathematica 10.0.1.0
+%
+%\subsection{interval arithmetic}
+%The final certificates for these optimization problems are computations that show some final values is strictly positive.  This can be performed numerically given proper precision and accuracy control with regards to rounding error.  For example, the Wolfram System supports explicit tracking of numerical intervals and error via the use of the$Interval[]$ head.  Then the strict positivity of of the resultant interval guarantees the strict positivity of the final value which is contained in that interval.
+
+
+\subsection{symbolic computation in an extension field}
+The Wolfram System supports symbolic computation over extension fields via it's pattern matching system.
+
+
+%$Simplify[,Assumptions->]$ head and pattern matching
+
+
+
+\section{Slicing nonlinear programs}\label{slice}
+
+%depreciated material, can be rephrased together to match the above sections, need to include corollary to generalize theorem to match the multivariable versions.
+
+A non-linear programing problem satisfying certain assumptions can be certified as locally optimal by a linear programming problem.  For the geometric problems considered, there are $a$ $priori$ configurations given by the maximal density configurations on a subspace of configuration space, namely subsets of the double lattice packings.  To produce a certificate of local optimality for this type of problem, parametrize a neighborhood of the conjectured optimal configuration and analyze the associated non-linear programming problem
+$$\max_{x\in \mathbb{R}^n} f(x)\textrm{ subject to }g_r(x)\ge 0, r\in I$$
+in a neighborhood of $0.$ 
+
+An appropriate choice of parametrization allows the full non-linear program to be sliced into a one-parameter family of non-linear programs that are subordinate to the linearization of the main program at $0$. The following assumptions are required.
+
+\begin{assumptions}\label{assumpt}\begin{footnote}{These are the assumptions that are required for the pentagon packing problem. There are a number of ways they might be weakened, e.g. the condition that $E$ be 1-dimensional is not essential.}\end{footnote}\textrm{ }
+\begin{enumerate}
+\item Let $I$ be a finite index set.
+\item Let $e_1$ be the standard unit vector $\{1, 0,\dots,0\}$ in $\mathbb{R}^n.$
+\item For $r$ in $I$, let $f$ and $g_r$ be analytic functions on a neighborhood of $0$.
+\item Assume $f(0) = g_r(0) = 0$ for all $r$ in $I$.
+\item Let $F(t) = \nabla f (te_1)$.
+\item Let $G_r(t) = \nabla g_r(te_1)$.
+\item Assume the linear program
+$$\max_{x\in \mathbb{R}^n}F(0)\cdot x \textrm{ subject to }G_r(0)\cdot x \ge 0, r\in I$$
+has a bounded solution and that the maximum is attained at 0.
+\item Assume that the set of solutions in $\mathbb{R}^n$ to 
+$$F(0)\cdot x = 0\textrm{ subject to }G_r(0)\cdot x \ge 0, r\in I$$
+is $$E := \{te_1 : t\in \mathbb{R}\}.$$
+\item Let $H$ be the orthogonal complement of $E$ so that $\mathbb{R}^n = E \oplus H.$ 
+\item Assume there is an $\epsilon > 0$ so the functions $g_r(te_1) = 0$ for all $t\in (-\epsilon, \epsilon)$, for all $r$ in $I.$
+\item Assume $\frac{\partial }{\partial t}f(0) = 0$, $\frac{\partial^2 }{\partial t^2}f(0) < 0.$
+\end{enumerate}
+\end{assumptions}
+
+
+%Not sure if this should be changed to multivariable here or if the higher dimensional E cases should be reduced%
+
+%\begin{assumptions}\label{assumpt}
+%\begin{enumerate}
+%\item Let $I$ be a finite index set.
+%\item Let $e_i$ be the $i$-th standard unit vector.
+%\item For $r$ in $I$, let $f$ and $g_r$ be analytic functions on a neighborhood of $0$.
+%\item Assume $f(0) = g_r(0) = 0$ for all $r$ in $I$.
+%\item Let $F_i(t) = \nabla f (t_ie_i)$.
+%\item Let $G_{r,i}(t) = \nabla g_r(t_ie_i)$.
+%
+%\item Let $\mathbf{t} = \{t_1, \dots , t_k\}$
+%\item Let $F(\mathbf{t}) = \Sigma F_i(t).$
+%\item Let $G_r(\mathbf{t}) = \Sigma G_{i,r}(t).$
+%
+%\item Assume the linear program
+%$$\max_{x\in \mathbb{R}^n}F(0)\cdot x \textrm{ subject to }G_r(0)\cdot x \ge 0, r\in I$$
+%has a bounded solution and that the maximum is attained at 0.
+%\item Assume that the set of solutions in $\mathbb{R}^n$ to 
+%$$F(0)\cdot x = 0\textrm{ subject to }G_r(0)\cdot x \ge 0, r\in I$$
+%is $$E:= span\{e_1,\dots,e_k\}$$  %$$E := \{te_1 : t\in \mathbb{R}\}.$$ 
+%\item Let $H$ be the orthogonal complement of $E$ so that $\mathbb{R}^n = E \oplus H.$ 
+%\item Assume there is an $\epsilon > 0$ so the functions $g_r(te_i) = 0$ for all $t\in (-\epsilon, \epsilon)$, for all $r$ in $I$ and $i$ in ${1,\dots k}.$
+%\item Assume that in $E$, $Df = 0$ and $Hf$ is negative definite.   %$\frac{\partial }{\partial t}f(0) = 0$, $\frac{\partial^2 }{\partial t^2}f(0) < 0.$
+%\end{enumerate}
+%\end{assumptions}
+
+\begin{lemma}\label{lem1} Given \ref{assumpt}, the linear program 
+$$\max_{x\in H }F(0)\cdot x\textrm{ subject to }G_r(0)\cdot x \ge 0, r\in I$$
+has a unique maximum at $x = 0$
+\end{lemma}
+\begin{proof}
+By assumptions 7 and 8, the linear program
+$$\max_{x\in \mathbb{R}^n}F(0)\cdot x\textrm{ subject to }G_r(0)\cdot x \ge 0, r\in I$$
+is maximized exactly on $E$. The feasible set $\{x : G_r(0)\cdot x \ge 0, r\in I \textrm{ and } x \in H\}$ is a subset of the feasible set $\{x:G_r(0)\cdot x \ge 0, r\in I\}$. Thus, the program 
+$$\max_{x\in H}F(0)\cdot x\textrm{ subject to }G_r(0)\cdot x \ge 0, r\in I$$
+ is maximized exactly on the non-empty intersection $$E\cap \{x :G_r(0)\cdot x\ge 0, r\in I\} \cap H = 0.$$
+\end{proof}
+
+\begin{definition}
+A \emph{finitely generated cone} is a subset of $\mathbb{R}^n$ which is the non-negative span of a finite set of non-zero vectors $\{v_1,\dots, v_m\}$ in $\mathbb{R}^n$, which are called the \emph{generators} of the cone. 
+\end{definition}
+\begin{definition}
+A \emph{conical linear program} is a linear program with a constraint set that is a finitely generated cone.
+\end{definition}
+
+The linear programs described throughout this section are always constrained to be on the intersection of half-spaces with $0$ on the boundary. These are conical programs.
+
+\begin{definition}
+For a cone $C$, the set $C^p := \{x \in \mathbb{R}^n: v\cdot x \le 0 \textrm{ for all } v \in C\}$ is the \emph{polar cone} of $C.$
+\end{definition}
+
+\begin{lemma}\label{lem2}
+A conical linear program with $F\ne 0$ given by
+$$\max_{x\in \mathbb{R}^n} F\cdot x\textrm{ subject to }G_r\cdot x \ge 0, r\in I $$ 
+(a) has a unique\begin{footnote}{The maximum satisfies a stronger uniqueness condition. It is stable under perturbations of $F$ and $G_k$.}\end{footnote} maximum at $x= 0$ iff $F$ is in the interior of the polar cone $C^p$ of $C= \{x : G_r\cdot x \ge 0, r\in I\}$ (b) has a bounded solution iff $F$ is in the polar cone $C^p$ of  $C =\{x : G_r\cdot x \ge 0, r\in I\}$ and attains its maximum exactly on the span of the generators $v_i$ such that $F\cdot v_i =0.$
+\end{lemma}
+\begin{proof}
+If $F$ is in the interior of the polar cone $C^p$, then $F\cdot v_i < 0$ for all generators $v_i$.  Therefore $F\cdot x$ is uniquely maximized in $C$ at the vertex. If $F$ is on the boundary of the polar cone, then $F\cdot x$ is maximized in $C$ exactly on the span of the generators $v_i$ for which $F\cdot v_i = 0$ as $F\cdot v_j < 0$ otherwise. If $F$ is outside the polar cone, then $F\cdot v_i >0$ for some generator $v_i$. Then $F\cdot x$ is unbounded in $C$.\end{proof}
+
+\begin{lemma}\label{lem3} Given \ref{assumpt}, there exists $\epsilon > 0$ such that for all $t$ in  $(-\epsilon,\epsilon)$, the linear program 
+$$\max_{y_t \in H}F(t)\cdot y_t$$
+subject to 
+$$G_r(t)\cdot y_t \ge 0, r \in I$$
+has a unique maximum at $y_t = 0$.\begin{footnote}{Here $y_t$ is a dummy variable and does not depend on $t$. It is labeled $y_t$ to ease later exposition.}\end{footnote}
+\end{lemma}
+\begin{proof} The program for $t\in (-\epsilon,\epsilon)$, for $y_t$ in $H$, for each fixed $t$ in $(-\epsilon,\epsilon)$, for some $\epsilon> 0$, can be written as a conical program on all of $\mathbb{R}^n$ with a cone $C_t$ in $\mathbb{R}^n$ of co-dimension $\ge 1$ by introducing further constraints $e_1\cdot y_t \ge 0$ and $-e_1\cdot y_t \ge 0.$  By \ref{lem1} and \ref{lem2}, $F(0)$ is in the polar cone of $C_0 = \{y_0: G_r(0)\cdot y_0 \ge 0, e_1\cdot y_0 \ge 0, -e_1\cdot y_0 \ge 0\}.$   As $f,g_r \in C^\omega$, the condition of  $F(t)$ being in the interior of the polar cone $C_t^p$ is open and the condition of the feasible set $C_t = \{y_t: G_r(t)\cdot y_t \ge 0, e_1\cdot y_t \ge 0, -e_1\cdot y_t \ge 0\}$ being conical is open.\begin{footnote}{The relationships between the constraint cone, the generators $v_i$ and the constraint gradients $G_k$ is subtle, but the condition being open essentially follows from the continuity of the distance function.}\end{footnote}  Therefore, by \ref{lem2} the program has a unique maximum at $y_t = 0$ for each fixed $t$ in $(-\epsilon,\epsilon)$ for some $\epsilon> 0$.\end{proof}
+
+\begin{lemma}\label{lem4}
+Given \ref{assumpt} and $\epsilon$ as in \ref{lem3}, for all $t \in (-\epsilon, \epsilon)$
+there exists $\delta(t)>0$ and a cube $Q(t) \subset \mathbb{R}^n$ of side length $2\delta(t)$ such that 
+$$\{(F(t) + Q(t)) \cap (\partial (C_t^p) + Q(t))\} = \emptyset.$$
+\end{lemma}
+\begin{proof}
+This follows from \ref{lem3}, which shows $F(t)$ is in the interior of the polar cone $C_t^p$.  Then $F(t)$ and the boundary of $C_t^p$ can be separated and the existence of $Q$ is trivial.
+\end{proof}
+
+\begin{corollary}\label{cor1}
+Given \ref{assumpt} and $\epsilon$ as in \ref{lem3}, for all $t \in (-\epsilon, \epsilon),$ 
+
+$$(F(t)+\Delta) \cdot y_t \le 0$$
+whenever $y_t$ satisfies
+$$(G_r(t)+\Delta_r)\cdot y_t \ge 0, r\in I
+\textrm{ and } 
+e_1\cdot y_t \ge 0, -e_1\cdot y_t \ge 0$$
+ where $\Delta$ and $\Delta_r$ are any points in the $2\delta(t)$-cube $Q(t)$ and $y_t$ is in $H$.
+\end{corollary}
+\begin{proof}
+By \ref{lem4}, $F(t)+\Delta$ is in the interior of the polar cone $C_{t,\Delta}^p$, where $C_{t,\Delta} = \{y_t: (G_r(t)+\Delta_r)\cdot y_t \ge 0, e_1\cdot y_t \ge 0, -e_1\cdot y_t \ge 0, r\in I\}$.  
+\end{proof}
+
+\begin{lemma}\label{lem5}
+Given \ref{assumpt} and $\epsilon$ as in \ref{lem3}, for all $t \in (-\epsilon, \epsilon)$, let
+$y_t = x-te_1 \in H$. Choose $\Delta = \Delta(y_t)$ and $\Delta_r=\Delta_r(y_t)$ in the $2\delta(t)$-cube $Q(t)$ to be the corner given by the sign of $x-te_1 = y_t.$ Then there is an $\epsilon_t$ for which 
+
+$$(F(t)+\Delta(y_t))\cdot y_t \le 0 \implies f(x)-f(te_1) \le 0$$
+and
+$$(G_r(t)+\Delta_r(y_t))\cdot y_t \le 0 \implies g_r(x)-g_r(te_1) = g_r(x)\le 0$$
+
+for all $\|y_t\| \le \epsilon_t$.
+\end{lemma}
+\begin{proof}
+This follows from the local expansions of the nonlinear program.  By this choice of $\Delta(y_t)$ and $\Delta_r(y_t),$
+
+$$f(x)-f(te_1)  = F(t)\cdot (x-te_1) + O(t^2) = F(t)\cdot y_t + O(t^2) $$
+$$ \le  F(t)\cdot y_t + \delta(t) \|y_t\|_1 = (F(t)+\Delta(y_t))\cdot y_t $$
+and using assumption 10,
+$$g_r(x) = g_r(x)-g_r(te_1) =  G_r(t)\cdot (x-te_1) + O(t^2) = G_r(t)\cdot y_t +O(t^2) $$
+$$ \le  G_r(t)\cdot y_t + \delta(t) \|y_t\|_1 = (G_r(t)+\Delta_r(y_t))\cdot y_t.$$
+\end{proof}
+
+By \ref{lem4} and \ref{cor1}, for $t$ in $(-\epsilon,\epsilon)$, the program  $$\max_{y_t \in H} (F(t) + \Delta)\cdot y_t\textrm{ subject to } (G_r + \Delta_r)\cdot y_t$$ is uniquely maximized at $y_t=0$ for any choice of $\Delta$, $\Delta_r$ in the $2\delta(t)$ cube $Q(t)$. Combined with \ref{lem5}, there is an $\epsilon_t$ neighborhood of $0$ where $f(y_t+te_1)$ is less than $f(te_1)$ on $\cup_{\Delta_r \in Q(t)}\{y_t: (G_r+\Delta_r) \cdot y_t \ge 0, r \in I, y_t \in H\}$, which contains the feasible set  $\{y_t: g_r(y_t+te_1) \ge 0, r\in I, y_t \in H\}$. Therefore the nonlinear programs $f(y_t+te_1)$ subject to $g_r(y_t+te_1)\ge 0$, $y_t \in H$, which are parameterized by $t$ in $(-\epsilon, \epsilon)$, have local maxima at $y_t=0$.  This gives the following:
+
+\begin{theorem}\label{th1}
+Given \ref{assumpt}, a fixed $t$ in $(-\epsilon, \epsilon)$ and choosing $\Delta$ and $\Delta_r$ as in \ref{lem5}, for $x$ satisfying $g_r(x)\ge 0$ for all $r$ in $I$ and $y_t = x-te_1$ in $H$, 
+there exist linear programs\begin{footnote}{These programs may depend on a choice of $y_t \in H$, but $f(x)$ is always less then $f(te_1)$ by \ref{lem5}.}\end{footnote} $$\max_{y_t \in H}(F(t)+\Delta(y_t))\cdot y_t \textrm{ subject to }  (G_r(t)+\Delta_r(y_t))\cdot y_t \ge 0$$
+that give solutions to the nonlinear programs $$\max_{x \in H+te_1} f(x)  \textrm{ subject to }   g_r(x)\ge 0$$
+in an $\epsilon_t$ neighborhood of $te_1$ in $H+te_1.$ \qed
+\end{theorem}
+
+By choice of a sufficiently small $\epsilon$ and a minimal\begin{footnote}{This exists by a compactness argument.}\end{footnote} non-zero $\epsilon_t$, \ref{th1} gives an open neighborhood of $0$ in which the maximum value of the original nonlinear program occurs on $E$. The assumptions for the first and second $t$-derivatives at $0$ shows $0$ to be a local maximum for the nonlinear program
+ $$\max_{x\in\mathbb{R}^n}f(x) \textrm{ subject to }  g_r(x) \ge 0.$$
+
+\begin{theorem}
+A nonlinear program satisfying \ref{assumpt} has an isolated local maximum at 0 with f(0) = 0. \qed
+\end{theorem}
+
+
+
+\bibliography{ngon}
+\end{document}  
