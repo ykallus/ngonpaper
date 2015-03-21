@@ -23,15 +23,15 @@
 %\newcommand{\defv}[1]{\textbf{\textit{#1}}}
 
 
-%\title{Brief Article}
-%\author{The Author}
+\title{The local optimality of the double lattice packing}
+\author{Yoav Kallus and W\"oden Kusner}
 %\date{}							% Activate to display a given date or no date
 
 \begin{document}
 \bibliographystyle{plain}
 %\maketitle
-%\section{}
-%\subsection{}
+%\abstract
+%This paper shows that the dense double lattice construction of Kuperberg and Kuperberg is locally optimal for polygons in the full space of packings.
 
 
 \section{Introduction}
@@ -53,10 +53,30 @@ references for mathematica
 references for linear programming
 
 
-This is a paper about packing polygons in the plane and the local optimality of the Kuperberg and Kuperberg configurations.
+We prove the Kuperberg and Kuperberg double lattice construction for polygons is an isolated local maximal for density in the full space of packings.  That is, the density of nearby packings are of strictly lower density.
 
+
+
+%There is an algorithm of constructing the densest double lattice packing of an arbitrary convex body in the plane.  In this paper, we extend the optimality result to a neighborhood in the space of packings.
+
+The structure of the paper is as follows.  
+
+We review the required results from [] lattices, packing...
+
+We review Kuperberg and Kuperberg
+
+ We give a local parametrization of the neighborhood of the double lattice in the space of packings and give a characterization of the a correction function and show that the optimality of the local configuration problem implies the global density result.
+
+We prove a stability result for non-linear programming problems of the type described.
+
+the density function can be replaced with a function of the correct type and which implies the density result.
 
 \section{Local Stability}
+
+
+%\begin{definition}
+%double Delauney density
+%\end{definition}
 
 \subsection{Background/Motivation/Main theorems}
 
@@ -94,6 +114,7 @@ balls $\mathcal B_{R}(\Xi,\rho)=\{\Xi':\delta_R(\Xi,\Xi')<\rho\}$.
 %relation to other notions of extreme
 \begin{remark}
     If a lattice $\Lambda$ is strongly extreme for $K$, then $\Lambda$ is extreme for $K$ \cite{Martinet2003}.
+    That is, $\Lambda$ is a local maximum for density in the topological space $\Omega.$ 
 \end{remark}
 \begin{remark}
     If a periodic set $\Xi = \{ T_\mathbf{l}\xi_i : \mathbf{l}\in\Lambda, i=1,\dots,N\}$ is strongly extreme,
@@ -119,12 +140,14 @@ each $n$-face (cell) $P$ is the convex hull of $\{\xi_i(0):i\in I_P\}$.
     cell $P$, then $\Xi$ is strongly extreme.
 \end{theorem}
 
+AND has symmetry....
 
 
 
 
 
 
+comment: restrict to saturated packings, fix $R$ large, 
 
 
 
@@ -157,8 +180,26 @@ By a sequence of approximations, this gives that for convex bodies $K$ that are 
 This also gives an algorithm for finding the (uniqueness, does it matter?) densest double lattice packing for a convex body $K$, in particular, for a regular (2n+1)-gons in the plane. The goal is to show that this configuration is in fact a local maximum for density in a broader sense, namely among configurations with nearby Delaunay triangulations.  %what does this mean... full definition.
 
 
+\subsubsection{ parametrization }
+
+We are considering the configuration space of four polygons in the plane, in a neighborhood of a Kuperberg and Kuperberg configuration.   Note that there are multiple choices of fundamental domains for the initial configuration, we choose the ...............
+
 \subsubsection{ constraints }
+
+Since we are working in the space of packings, the configuration space has a non-overlap constraint.  Locally, this can be described by a non-negativity condition on the signed volume of triangles defined by oriented triples of vertices.  
+
+This requires a lemma to show that we are still exploring a full neighborhood....  (point point contacts in the polygons)  
+
+\begin{lemma}
+In a neighborhood of the Kuperberg Kuperberg rhomb, the non-negativity of the signed area condition is equivalent to the non-overlap condition 
+\end{lemma}
+
+picture of a possible violation of the lemma...
+
+
 Signed area gives the non-intersection constraints for the conjectured optimal configuration, note that this is true only when contact is in the interior of the edges.  Lemma, there are no corner to corner contacts in K+K construction?
+
+The lemma should be a consequence of the existence of the extensive parallelogram.  or is it true?
 
 
 \subsubsection{other theorems}
@@ -184,13 +225,17 @@ the parametrization is important, should be consistent with the later sections. 
 
 \subsubsection{density function}
 
-
 \subsubsection{verification}
 
 
 \subsection{Heptagons}
 
-Outline of the method for Heptagons.
+Outline of the method for heptagons.
+
+For heptagons, the cost function is non-trivial.  This is because there is a motion in the configuration space of four heptagons that increases the double Delauney density.  
+
+(include figure)
+
 
 
 \subsubsection{ find the construction given by Theorem \ref{thmkk}.}
@@ -201,7 +246,11 @@ include figures
 \subsubsection{constrained optimization problem}
 
 
+
+
 \subsubsection{the cost functions }
+
+Construct a cost function that satisfies the condition of correction theorems and makes the program satisfy the conditions of the LP theorems.
 
 
 YOU GET THE COST FUNCTION FROM THE PROGRAM, AND IT SATISFIES THE PROPERTIES OF SECTION 1....
@@ -223,28 +272,22 @@ The function optimized in this case is the (modified) area of the Delaunay trian
 %2) Justify modification via it's properties, not via what the actually modification is.
 
 
- \begin{lemma}
- an objective function satisfying properties XYZ has an isolated max at 0 and satisfying properties ABC also maximizes the density function.
- \end{lemma} 
- 
- \begin{proof}
- XYZ follows from theorem.
+% \begin{lemma}
+% an objective function satisfying properties XYZ has an isolated max at 0 and satisfying properties ABC also maximizes the density function.
+% \end{lemma} 
+% 
+% \begin{proof}
+% XYZ follows from theorem.
+%
+% ABC follows from ...  geometric sketch argument should be replaced by an analysis argument.
+%\qed \end{proof}
+%
+%
+%\begin{lemma}
+%the construction of 
+%\end{lemma}
 
- ABC follows from ...  geometric sketch argument should be replaced by an analysis argument.
-\qed \end{proof}
 
-
-\begin{lemma}
-the construction of 
-\end{lemma}
-
-
-
-\subsubsection{Solving the problem}
-
-Via computational methods, it is possible to demonstrate that these problems satisfy the conditions Theorem.
-
-documentation of code, to repository
 
 
 \subsection{general (2n+1)-gons}

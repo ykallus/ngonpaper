@@ -1,0 +1,46 @@
+\begin{thebibliography}{1}
+
+\bibitem{brass2005research}
+P~Brass, W~Moser, and J~Pach.
+\newblock {\em Research Problems in Discrete Geometry}, volume~1.
+\newblock Springer, 2005.
+
+\bibitem{conway1999recent}
+J~H Conway, C~Goodman-Strauss, and N~Sloane.
+\newblock Recent progress in sphere packing.
+\newblock {\em Current Developments in Mathematics}, pages 37--76, 1999.
+
+\bibitem{fejes1950some}
+L~Fejes~T{\'o}th.
+\newblock Some packing and covering theorems.
+\newblock {\em Acta Sci. Math. Szeged}, 12(Leopoldo Fejer et Frederico Riesz
+  LXX annos natis dedicatus, Pars A):62--67, 1950.
+
+\bibitem{gravel2011upper}
+S~Gravel, V~Elser, and Y~Kallus.
+\newblock Upper bound on the packing density of regular tetrahedra and
+  octahedra.
+\newblock {\em Discrete \& Computational Geometry}, 46(4):799--818, 2011.
+
+\bibitem{keiper1995interval}
+J~B Keiper.
+\newblock Interval arithmetic in mathematica.
+\newblock {\em Mathematica Journal}, 5(2):66--71, 1995.
+
+\bibitem{kuperberg1990double}
+G~Kuperberg and W~Kuperberg.
+\newblock Double-lattice packings of convex bodies in the plane.
+\newblock {\em Discrete \& Computational Geometry}, 5(1):389--397, 1990.
+
+\bibitem{mario2013computing}
+F~M{\'a}rio~de Oliveira~Filho and F~Vallentin.
+\newblock Computing upper bounds for the packing density of congruent copies of
+  a convex body {I}.
+\newblock {\em arXiv preprint arXiv:1308.4893}, 2013.
+
+\bibitem{mathematica10}
+{Wolfram Research}.
+\newblock {\em Mathematica 10.0}.
+\newblock Wolfram Research, Inc., Champaign, Illinois, 2014.
+
+\end{thebibliography}

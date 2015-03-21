@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  17 MAR 2015 10:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  18 MAR 2015 15:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -212,7 +212,7 @@ Package csquotes Info: ... none found.
 Package csquotes Warning: No multilingual support.
 (csquotes)                Cannot enable multilingual quotes on input line 30.
 
-No file ngon.aux.
+(./ngon.aux)
 \openout1 = `ngon.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
@@ -227,6 +227,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -318,183 +319,71 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
+LaTeX Font Info:    Try loading font information for U+msa on input line 84.
 
-LaTeX Warning: Citation `brass2005research' on page 1 undefined on input line 4
-2.
-
-
-LaTeX Warning: Citation `conway1999recent' on page 1 undefined on input line 43
-.
-
-
-LaTeX Warning: Citation `fejes1950some' on page 1 undefined on input line 46.
-
-
-LaTeX Warning: Citation `kuperberg1990double' on page 1 undefined on input line
- 47.
-
-
-LaTeX Warning: Citation `gravel2011upper' on page 1 undefined on input line 48.
-
-
-
-LaTeX Warning: Citation `mario2013computing' on page 1 undefined on input line 
-49.
-
-
-LaTeX Warning: Citation `mathematica10' on page 1 undefined on input line 51.
-
-
-LaTeX Warning: Citation `keiper1995interval' on page 1 undefined on input line 
-52.
-
-LaTeX Font Info:    Try loading font information for U+msa on input line 64.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 64.
+LaTeX Font Info:    Try loading font information for U+msb on input line 84.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
-LaTeX Warning: Citation `Martinet2003' on page 1 undefined on input line 96.
-
-
-LaTeX Warning: Citation `Schurmann2013' on page 1 undefined on input line 100.
+LaTeX Warning: Citation `Martinet2003' on page 1 undefined on input line 116.
 
 [1
 
 {/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
-LaTeX Warning: Citation `kuperberg1990double' on page 2 undefined on input line
- 135.
+LaTeX Warning: Citation `Schurmann2013' on page 2 undefined on input line 121.
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 135.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 156.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 135.
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 156.
  [2]
 
-LaTeX Warning: Reference `' on page 3 undefined on input line 174.
+LaTeX Warning: Reference `' on page 3 undefined on input line 213.
 
-
-LaTeX Warning: Reference `thmkk' on page 3 undefined on input line 177.
-
-
-LaTeX Warning: Reference `thmkk' on page 3 undefined on input line 196.
-
-[3] [4]
-
-LaTeX Warning: Reference `assumpt' on page 5 undefined on input line 328.
-
-[5]
-
-LaTeX Warning: Reference `assumpt' on page 6 undefined on input line 361.
-
-[6]
-
-LaTeX Warning: Reference `lem1' on page 7 undefined on input line 367.
-
-
-LaTeX Warning: Reference `lem2' on page 7 undefined on input line 367.
-
-
-LaTeX Warning: Reference `lem2' on page 7 undefined on input line 367.
-
-
-LaTeX Warning: Reference `assumpt' on page 7 undefined on input line 370.
-
-
-LaTeX Warning: Reference `lem3' on page 7 undefined on input line 370.
-
-
-LaTeX Warning: Reference `lem3' on page 7 undefined on input line 375.
-
-
-LaTeX Warning: Reference `assumpt' on page 7 undefined on input line 379.
-
-
-LaTeX Warning: Reference `lem3' on page 7 undefined on input line 379.
-
-
-LaTeX Warning: Reference `lem4' on page 7 undefined on input line 389.
-
-
-LaTeX Warning: Reference `assumpt' on page 7 undefined on input line 393.
-
-
-LaTeX Warning: Reference `lem3' on page 7 undefined on input line 393.
-
-[7]
-
-LaTeX Warning: Reference `lem4' on page 8 undefined on input line 412.
-
-
-LaTeX Warning: Reference `cor1' on page 8 undefined on input line 412.
-
-
-LaTeX Warning: Reference `lem5' on page 8 undefined on input line 412.
-
-
-LaTeX Warning: Reference `assumpt' on page 8 undefined on input line 415.
-
-
-LaTeX Warning: Reference `lem5' on page 8 undefined on input line 415.
-
-
-LaTeX Warning: Reference `lem5' on page 8 undefined on input line 416.
-
-[8]
-
-LaTeX Warning: Reference `th1' on page 9 undefined on input line 421.
-
-
-LaTeX Warning: Reference `assumpt' on page 9 undefined on input line 425.
-
-No file ngon.bbl.
-[9] (./ngon.aux)
+[3] [4] [5] [6] [7] [8] (./ngon.bbl [9]) [10] (./ngon.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 3920 strings out of 493117
- 53313 string characters out of 6135433
- 135386 words of memory out of 5000000
- 7316 multiletter control sequences out of 15000+600000
+ 3926 strings out of 493117
+ 53365 string characters out of 6135433
+ 135560 words of memory out of 5000000
+ 7318 multiletter control sequences out of 15000+600000
  14536 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,9n,26p,1172b,243s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,9n,26p,1172b,247s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pf
 b></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></
-usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></us
-r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr
-/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/
-local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/lo
-cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/loca
-l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/
-texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/te
-xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texli
-ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/
-2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/201
-4/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2014
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2014/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2014/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2014/texm
-f-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on ngon.pdf (9 pages, 238324 bytes).
+usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
+sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
+r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/
+local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/lo
+cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/loca
+l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/
+texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/tex
+live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texliv
+e/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2
+014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
+14/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2014
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2014/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2014/te
+xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on ngon.pdf (10 pages, 235829 bytes).
 PDF statistics:
- 110 PDF objects out of 1000 (max. 8388607)
- 79 compressed objects within 1 object stream
+ 109 PDF objects out of 1000 (max. 8388607)
+ 78 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
