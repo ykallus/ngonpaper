@@ -71,50 +71,54 @@ We prove a stability result for non-linear programming problems of the type desc
 
 the density function can be replaced with a function of the correct type and which implies the density result.
 
-\section{Local Stability}
-
-
-%\begin{definition}
-%double Delauney density
-%\end{definition}
-
-\subsection{Background/Motivation/Main theorems}
+\section{Theoretical Considerations}
+\subsection{Local Stability}
 
 \begin{definition}
-    Let $\Xi=(\xi_i)_{i\in\mathbb{N}}$ be a sequence of isometries. Its \textit{mean volume} is the limit
+    Let $\Xi$ be a set of isometries. Its \textit{mean volume} is the limit
     \begin{equation}
-	d(\Xi)=\lim_{r\to\infty} \frac{\mathrm{vol} B(0,r)}{|\{i : \xi_i(0)\in B(0,r)\}|}\text.
+	d(\Xi)=\lim_{r\to\infty} \frac{\mathrm{vol} B(0,r)}{|\{\xi\in\Xi : \xi(0)\in B(0,r)\}|}\text.
     \end{equation}
     The upper and lower mean volumes are the corresponding limits superior and inferior.
+    We say $\Xi$ is a $(r,R)$-set if the point set $\{\xi(0):\xi\in\Xi\}$ has a packing
+    radius $r$ at least $r$ and a covering radius at most $R$.
 \end{definition}
 
 \begin{definition}
     Let $K$ be a compact set with interior. We say that $\Xi$ is \textit{admissible} for $K$ if
-    the interiors of $\xi_i(K)$ and $\xi_j(K)$ are disjoint whenever $i\neq j$.
+    the interiors of $\xi(K)$ and $\xi'(K)$ are disjoint for any two distinct isometries $\xi,\xi'\in\Xi$.
+    We say furthermore that $\Xi$ is \textit{saturated} if there is no $\xi$ such that $\Xi\cup\{\xi\}$
+    is again admissible.
 \end{definition}
 
+There are $r(K)$ and $R(K)$ such that when $\Xi$ is admissible and saturated, then $\Xi$ is
+a $(r(K),R(K))$-set.
+
 \begin{definition}
-    Given two sequences $\Xi$ and $\Xi'$ of isometries, we define the premetric 
+    Given two $(r',R')$-sets $\Xi$ and $\Xi'$ of isometries, we define the premetric 
     \begin{equation}
 	\begin{aligned}
-	    \delta_{R}(\Xi,\Xi') = \sup \{&||\xi_i^{-1}\xi_j-\xi_i'^{-1}\xi_j'||:\\ & i,j \text{ such that } ||\xi_i(0)-\xi_j(0)||<R \text{ or } ||\xi_i'(0)-\xi_j'(0)||<R\}\text.
+	    \delta_R(\Xi,\Xi') = \inf_\text{enum.} \sup \{&||\xi_i^{-1}\xi_j-\xi_i'^{-1}\xi_j'||:\\ & i,j \text{ such that } ||\xi_i(0)-\xi_j(0)||<2R \text{ or } ||\xi_i'(0)-\xi_j'(0)||<2R\}\text.
 	\end{aligned}
     \end{equation}
-    If $R$ is large enough so that the edges $\{i,j\}$ satisfying the condition in the definition of $\delta_R$ connect all the indices, then $\delta_{R}(\Xi,\Xi')=0$
-    if and only if $\xi_i = \phi \xi_i'$ for some $\phi\in E(n)$.
+    The infimum is over all enumerations $\mathbb{N}\to\Xi$ and $\mathbb{N}\to\Xi$.
 \end{definition}
 
-Consider the space $\Omega$ of sequences of isometries whose first term is the identity. We consider the topology on $\Omega$ generate by the base of
-balls $\mathcal B_{R}(\Xi,\rho)=\{\Xi':\delta_R(\Xi,\Xi')<\rho\}$.
+When $R>R'$, $\delta_R(\Xi,\Xi')=0$ if and only if $\xi_i = \phi \xi_i'$ for some $\phi\in E(n)$ and some
+enumerations. Consider a body $K$. When $R>R(K)$, $\delta_R(\Xi,\Xi')$ is a metric on the space of admissible
+$(r,R)$-sets up to overall isometry, which includes the saturated sets as a subset.
 
 \begin{definition}
-    We say $\Xi$ is \textit{strongly extreme} for $K$ if it minimizes the mean volume among admissible elements in a neighborhood of $\Xi$.
+    We say an admissible and saturated set $\Xi$ is \textit{strongly extreme} for $K$ if it minimizes the mean volume among admissible elements in a neighborhood of $\Xi$.
 \end{definition}
 
-%relation to other notions of extreme
+Note that the above definition is independent of $R$.
+
+Our notion of strong extremality is meant to generalize weaker notions of local optimality
+for packing. Specifically, these notions apply to lattices and periodic packings.
+
 \begin{remark}
     If a lattice $\Lambda$ is strongly extreme for $K$, then $\Lambda$ is extreme for $K$ \cite{Martinet2003}.
-    That is, $\Lambda$ is a local maximum for density in the topological space $\Omega.$ 
 \end{remark}
 \begin{remark}
     If a periodic set $\Xi = \{ T_\mathbf{l}\xi_i : \mathbf{l}\in\Lambda, i=1,\dots,N\}$ is strongly extreme,
@@ -122,91 +126,122 @@ balls $\mathcal B_{R}(\Xi,\rho)=\{\Xi':\delta_R(\Xi,\Xi')<\rho\}$.
 \end{remark}
 
 \begin{definition}
-Let $\Xi$ be a sequence of isometries and let $\mathcal P$ be a polyhedral complex whose underlying space is $\mathbb{R}^n$.
-For every face $F$ of $\mathcal P$, let $I_F = \{i : \xi_i(0)\in F\}$. We say $\mathcal P$ is a \textit{honeycomb} of $\Xi$ if
-each $n$-face (cell) $P$ is the convex hull of $\{\xi_i(0):i\in I_P\}$.
+    Let $\Xi$ be a countable set of isometries and fix an enumeration $\Xi = \{\xi_i: i\in\mathbb{N}\}$. 
+    Let $\mathcal P$ be a polyhedral complex whose underlying space is $\mathbb{R}^n$.
+    For every face $F$ of $\mathcal P$, let $I_F = \{i : \xi_i(0)\in F\}$. We say $\mathcal P$ is a \textit{honeycomb} of $\Xi$ if
+    each $n$-face (cell) $P$ is the convex hull of $\{\xi_i(0):i\in I_P\}$.
 \end{definition}
 
 \begin{theorem}
     Let $\Xi$ be admissible for $K$ and let $\mathcal P$ be a honeycomb of $\Xi$. For every cell $P$,
-    consider the optimization problem of minimizing $f_P(\Xi_P)=\mathrm{vol}\,\mathrm{conv}_{i\in I_P}\xi'_i(0)$ over admissible finite sequences of
-    isometries $\Xi_P=(\xi'_i)_{i\in I_P}$. If $(\xi_i)_{i\in I_P}$ is a local minimum for each cell $P$, then $\Xi$ is strongly extreme.
+    consider the optimization problem of minimizing $f_P(\Xi_P)=\mathrm{vol}\,\mathrm{conv}_{i\in I_P}\xi'_i(0)$ over 
+    the assignment of isometries $\xi'_i$, $i\in I_P$, such that this finite set is admissible.
+    If $\xi'_i=\xi_i$, $i\in I_P$, is a local minimum for each cell $P$, then $\Xi$ is strongly extreme.
 \end{theorem}
 
 \begin{theorem}
     Let $g_F(\Xi_F)$ be a real-valued function over $\Xi_F=(\xi'_i)_{i\in I_F}$ for each oriented $(n-1)$-faces (ridge) of $\mathcal P$, such
     that $g_F(\Xi_F)=-g_{-F}(\Xi_F)$, where $-F$ is the orientation-reversed version of $F$. If we replace $f_P(\Xi_P)$ in the previous
-    theorem with $f_P'(\Xi_P) = f_P(\Xi_P) + \sum_{F\in\partial P} g_F(\Xi_F)$, then again, if $(\xi_i)_{i\in I_P}$ is a local minimum for each
+    theorem with $f_P'(\Xi_P) = f_P(\Xi_P) + \sum_{F\in\partial P} g_F(\Xi_F)$, then again, if $\xi'_i=\xi_i$, $i\in I_P$, is a local minimum for each
     cell $P$, then $\Xi$ is strongly extreme.
 \end{theorem}
 
-AND has symmetry....
-
-
-
-
-
-
-comment: restrict to saturated packings, fix $R$ large, 
-
-
-
-
-Full summary of below
-
 
 \subsubsection{Summary of \cite[\S 2]{kuperberg1990double} on double lattices.  }
-\begin{definition}%maybe better definitions in the literature
-affine diameter of $K$ in a particular direction is the length of the longest chord in $K$ parallel to that direction.
+
+\begin{definition}
+    A chord of a convex body $K$ is a line segment whose endpoints lie on the boundary of $K$.
+    A chord is an affine diameter if there is no longer chord parallel to it.
 \end{definition}
 
 \begin{definition}
-Given a convex body $K$, extensive parallelogram in $K$ is an inscribed parallelogram satisfying the conditions that the edges lengths of the parallelogram are at least 1/2 the affine diameter of $K$ in the direction of the edges.
+    An inscribed parallelogram is a half-length parallelogram in the direction $\theta$ if
+    one pair of edges is parallel with the line through the origin at an angle $\theta$ above
+    the $x$-axis and their length is half the length of an affine diameter parallel to them.
 \end{definition}
 
-%pictures
-
+Note that any two half-length parallelograms in the direction $\theta$ have equal
+area, and we can define that area as a function $A(\theta)$ of the direction.
 
 \begin{definition}
-a double lattice packing is generated by an extensive parallelogram if it a packing ... %need a good short intuitive definition here, i.e. is a checkerboard...  Picture helps
+    A cocompact discrete subgroup of the Euclidean group consisting of translations
+    and point reflections is a \text{double lattice} if it includes at least one
+    point reflection.
 \end{definition}
 
-\begin{theorem}[Kuperberg and Kuperberg]\label{thmkk}
-If $K$ is strictly convex and $P$ is a maximum density double lattice packing of the plane with copies of $K$, then $P$ is generated by a minimum area extensive parallelogram in $K$.
+A double lattice is generated by a lattice and a point reflection, or alternatively
+by three point reflections.
+
+\begin{theorem}[Kuperberg and Kuperberg]\label{thmkk}%strict convexity is not necessary (see Mount)
+    For a convex $K$, an admissible double lattice of smallest mean area has
+    mean area $4\min_\theta A(\theta)$ and is generated by reflection about
+    the vertices of a half-length parallelogram.
 \end{theorem}
 
-By a sequence of approximations, this gives that for convex bodies $K$ that are not strictly convex, there exists a double lattice packing of maximal density that generated a minimum area extensive parallelogram in $K$.
+%By a sequence of approximations, this gives that for convex bodies $K$ that are not strictly convex, there
+%exists a double lattice packing of maximal density that generated a minimum area extensive parallelogram in $K$.
 
-This also gives an algorithm for finding the (uniqueness, does it matter?) densest double lattice packing for a convex body $K$, in particular, for a regular (2n+1)-gons in the plane. The goal is to show that this configuration is in fact a local maximum for density in a broader sense, namely among configurations with nearby Delaunay triangulations.  %what does this mean... full definition.
+The densest double lattice packing of a convex polygon $K$ can be constructed in time proportional to the number of vertices
+by an algorithm of Mount \cite{Mount1991}. The goal of this paper is to show that this configuration is not only a local maximum
+of density among double lattices, but is in fact a local maximum in a broader sense, strong extremality.
 
+To achieve this goal, we start by describing a honeycomb associated with the double lattice. Let $K$ be a
+convex polygon and let $\mathbf p_2\mathbf p_3\mathbf p _5\mathbf p_6$ be a half-length parallelogram,
+such that $\mathbf p_3\mathbf p_2$ and $\mathbf p_5\mathbf p_6$ are half the length of and parallel to
+the affine diameter $\mathbf p_4\mathbf p_1$. The double lattice generated by reflections about the
+vertices of the parallelogram is $\Xi$ and the subgroup of translations is the lattice $\Lambda$.
+Let $P=0 I_{\mathbf p_2}(0) I_{\mathbf p_6} (\mathbf p_1-\mathbf p_4)$, then $\{\xi(P):\xi\in\Xi\}$
+are the cells of polyhedral complex which is a honeycomb for $\Xi$. Note that the optimization problem
+of minimizing $f_{\xi(P)}$ over $\xi'_i$, $i\in I_{\xi(P)}$, is mathematically equivalent for every $\xi\in\Xi$.
+Therefore, to show that Theorem X applies, it suffices to show that $\xi'_i=\xi_i$, $i\in I_P$, is a
+local optimum over admissible assignments of $\xi'_i$, $i\in I_P$.
 
-\subsubsection{ parametrization }
-
-We are considering the configuration space of four polygons in the plane, in a neighborhood of a Kuperberg and Kuperberg configuration.   Note that there are multiple choices of fundamental domains for the initial configuration, we choose the ...............
-
-\subsubsection{ constraints }
-
-Since we are working in the space of packings, the configuration space has a non-overlap constraint.  Locally, this can be described by a non-negativity condition on the signed volume of triangles defined by oriented triples of vertices.  
-
-This requires a lemma to show that we are still exploring a full neighborhood....  (point point contacts in the polygons)  
+For every convex body $K$ and double lattice $\Xi$ we now have a concrete optimization problem
+to solve: we wish to minimize the area of the quadrilateral $\xi'_0(0)\xi'_6(0)\xi'_1(0)\xi'_2(0)$
+subject to the constraints that $\xi'_i(K)$ and $\xi'_j(K)$ do not overlap. Since we are only
+interested in certifying that the initial configuration is a local minimum, we can replace
+the constraints with ones that are equivalent in the neighborhood.
 
 \begin{lemma}
-In a neighborhood of the Kuperberg Kuperberg rhomb, the non-negativity of the signed area condition is equivalent to the non-overlap condition 
+    Let $K$ and $K'$ be two polygons that intersect at a segment. The endpoints of the segments
+    are $\mathbf{x}$ a vertex of $K$ and $\mathbf{y}$ a vertex of $K'$. Let $\mathbf{y}\mathbf{y}'$
+    and $\mathbf{x}\mathbf{x}'$ be the edges of $K$ and $K'$ containing the intersection.
+    Let $\mathbf{x}'\mathbf{y}\mathbf{x}\mathbf{y}'$ be oriented counterclockwise
+    from the point of view of the interior of $K$ (otherwise switch $K$ and $K'$).
+    There is some $\epsilon>0$ such that whenever $||\xi||,||\xi'||<\epsilon$,
+    then $\xi(K)$ and $\xi'(K')$ have disjoint interiors if and only if
+    $\alpha(\xi(\mathbf{x})\xi(\mathbf{x}')\xi'(\mathbf{y}))\ge0$
+    and $\alpha(\xi'(\mathbf{y}')\xi'(\mathbf{y})\xi(\mathbf{x}))\ge0$,
+    where $\alpha$ is the signed area of the oriented triangle.
 \end{lemma}
 
-picture of a possible violation of the lemma...
+\begin{lemma}
+    Let $K$ and $K'$ be two polygons that intersect at a point and not at a segment.
+    The intersection point $\mathbf y$ is a vertex of one polygon, which we let be $K'$,
+    and sits in the relative interior of an edge $\mathbf{x}'\mathbf{x}$ of $K$,
+    oriented counter clockwise from the point of view of the interior of $K$.
+    There is some $\epsilon>0$ such that whenever $||\xi||,||\xi'||<\epsilon$,
+    then $\xi(K)$ and $\xi'(K')$ have disjoint interiors if and only if
+    $\alpha(\xi(\mathbf{x})\xi(\mathbf{x}')\xi'(\mathbf{y}))\ge0$.
+\end{lemma}
 
+Note that the case of an intersection at a point that is a vertex of both polygons
+is not treated. We exclude this case in the following lemma.
 
-Signed area gives the non-intersection constraints for the conjectured optimal configuration, note that this is true only when contact is in the interior of the edges.  Lemma, there are no corner to corner contacts in K+K construction?
-
-The lemma should be a consequence of the existence of the extensive parallelogram.  or is it true?
-
+\begin{lemma}
+    Let $K$ be a convex polygon and let $\theta$ be such that $A(\theta)$
+    is minimal, then there is a half-length parallelogram in the
+    direction $\theta$ that shares no vertex with $K$ and an affine
+    diameter with no more than one vertex shared with $K$.
+\end{lemma}
 
 \subsubsection{other theorems}
 
 \begin{theorem}
 Programs satisfying conditions (*) have a local maximum at 0.
 \end{theorem}
+
+\section{Calculation}
 
 \subsection{Pentagons}
 
