@@ -52,6 +52,7 @@ references for mathematica
 \cite{keiper1995interval} %outdated
 references for linear programming
 
+
 We prove the Kuperberg and Kuperberg double lattice construction for polygons is an isolated local maximum for density in the full space of packings.  That is, the density of nearby packings are of strictly lower density.
 
 
@@ -82,6 +83,11 @@ the density function can be replaced with a function of the correct type and whi
     We say $\Xi$ is a $(r,R)$-set if the point set $\{\xi(0):\xi\in\Xi\}$ has a packing
     radius $r$ at least $r$ and a covering radius at most $R$.
 \end{definition}
+
+We will look at packings of congruent copies of a convex body $K$. That is, every
+element of the packing is given by $\xi(K)$, where $\xi$ is an isometry of Euclidean
+space. It will be convenient to assume that the reference body $K$ is situated so that
+its interior contains the origin.
 
 \begin{definition}
     Let $K$ be a compact set with interior. We say that $\Xi$ is \textit{admissible} for $K$ if
@@ -146,7 +152,7 @@ for packing. Specifically, these notions apply to lattices and periodic packings
 \end{theorem}
 
 
-\subsubsection{Summary of \cite[\S 2]{kuperberg1990double} on double lattices.  }
+\subsection{Double lattices}
 
 \begin{definition}
     A chord of a convex body $K$ is a line segment whose endpoints lie on the boundary of $K$.
@@ -184,6 +190,8 @@ The densest double lattice packing of a convex polygon $K$ can be constructed in
 by an algorithm of Mount \cite{Mount1991}. The goal of this paper is to show that this configuration is not only a local maximum
 of density among double lattices, but is in fact a local maximum in a broader sense, strong extremality.
 
+\subsection{General setup}
+
 To achieve this goal, we start by describing a honeycomb associated with the double lattice. Let $K$ be a
 convex polygon and let $\mathbf p_2\mathbf p_3\mathbf p _5\mathbf p_6$ be a half-length parallelogram,
 such that $\mathbf p_3\mathbf p_2$ and $\mathbf p_5\mathbf p_6$ are half the length of and parallel to
@@ -197,11 +205,16 @@ local optimum over admissible assignments of $\xi'_i$, $i\in I_P$.
 
 For every convex body $K$ and double lattice $\Xi$ we now have a concrete optimization problem
 to solve: we wish to minimize the area of the quadrilateral $\xi'_0(0)\xi'_6(0)\xi'_1(0)\xi'_2(0)$
-subject to the constraints that $\xi'_i(K)$ and $\xi'_j(K)$ do not overlap. Since we are only
+subject to the constraints that $\xi'_i(K)$ and $\xi'_j(K)$ do not overlap. Since the objective
+and the constraints are invariant under common isometry, we may fix $\xi'_i=\xi_i$ for
+one $i$. We parametrize
+$\xi_i' = T_{\mathbf{r}_i}\xi_i R_{\theta_i}$, where $R_\theta$ is a rotation
+by $\theta$ about the origin, and $T_{(x,y)}$ is a translation
+by $\mathbf{r}_i$. Since we are only
 interested in certifying that the initial configuration is a local minimum, we can replace
 the constraints with ones that are equivalent in the neighborhood.
 
-\begin{lemma}
+\begin{lemma}\label{lemma:edgedg}
     Let $K$ and $K'$ be two polygons that intersect at a segment. The endpoints of the segments
     are $\mathbf{x}$ a vertex of $K$ and $\mathbf{y}$ a vertex of $K'$. Let $\mathbf{y}\mathbf{y}'$
     and $\mathbf{x}\mathbf{x}'$ be the edges of $K$ and $K'$ containing the intersection.
@@ -214,7 +227,7 @@ the constraints with ones that are equivalent in the neighborhood.
     where $\alpha$ is the signed area of the oriented triangle.
 \end{lemma}
 
-\begin{lemma}
+\begin{lemma}\label{lemma:edgver}
     Let $K$ and $K'$ be two polygons that intersect at a point and not at a segment.
     The intersection point $\mathbf y$ is a vertex of one polygon, which we let be $K'$,
     and sits in the relative interior of an edge $\mathbf{x}'\mathbf{x}$ of $K$,
@@ -225,16 +238,24 @@ the constraints with ones that are equivalent in the neighborhood.
 \end{lemma}
 
 Note that the case of an intersection at a point that is a vertex of both polygons
-is not treated. We exclude this case in the following lemma.
+is not treated. In the first two cases we treat, the regular pentagon
+and the regular heptagon, there are no such intersections. When we generalize
+the calculation to all convex polygons, we will show that such an intersection
+only occurs in special cases that can be treated separately.
 
-\begin{lemma}
-    Let $K$ be a convex polygon and let $\theta$ be such that $A(\theta)$
-    is minimal, then there is a half-length parallelogram in the
-    direction $\theta$ that shares no vertex with $K$ and an affine
-    diameter with no more than one vertex shared with $K$.
-\end{lemma}
+%\begin{lemma}
+%    Let $K$ be a convex polygon and let $\theta$ be such that $A(\theta)$
+%    is minimal, then there is a half-length parallelogram in the
+%    direction $\theta$ that shares no vertex with $K$ and an affine
+%    diameter with no more than one vertex shared with $K$.
+%\end{lemma}
 
-\subsubsection{other theorems}
+\subection{other theorems}
+
+We will show that optimization problems we obtain fall into a convenient
+form, where linear stability holds along all but one direction. Along
+the direction of vanishing linear stability, the construction of
+Kuperberg and Kuperberg will be shown to guaranty stability.
 
 \begin{theorem}
 Programs satisfying conditions (*) have a local maximum at 0.
@@ -244,23 +265,51 @@ Programs satisfying conditions (*) have a local maximum at 0.
 
 \subsection{Pentagons}
 
-rewrite in terms of section 1
+Let us fix a regular pentagon $K=\mathrm{conv} \{\mathbf{k}_i:i=0,\ldots 4\}$, where $\mathbf{k}_i = R_{2\pi i/5} (1,0)$.
+In this subsection, we do all the calculations in the extension field $\mathbb{Q}(u,v)$, where $u=\cos \pi/5$ and $v=\sin \pi/5$.
 
-In the case of packings by regular pentagons, one can consider the configuration space of four pentagons with respect to the density function taken with respect to the Delaunay triangulation and parametrized by ....  This can be shown to satisfy the conditions of Section \ref{}....
+One minimum-area half-length parallelogram corresponds to the affine diameter $\mathbf{p}_1\mathbf{p}_4$, where
+$\mathbf{p}_1 = \mathbf{k}_0$ and $\mathbf{p}_4 = \tfrac12 (\mathbf{k}_2+\mathbf{k}_3)$.
+The vertices of the parallelogram are given by
+$\mathbf{p}_2=\tfrac14\mathbf k_0+\tfrac34\mathbf k_1$,
+$\mathbf{p}_3=\tfrac{3-2u}4\mathbf k_1+\tfrac{1+2u}4\mathbf k_2$,
+$\mathbf{p}_5=\tfrac{1+2u}4\mathbf k_3+\tfrac{3-2u}4\mathbf k_4$, and
+$\mathbf{p}_6=\tfrac34\mathbf k_4+\tfrac14\mathbf k_0$.
 
+The four pentagons that surround our primitive honeycomb cell are
+$\xi_i(K)$, $i=0,1,2,6$, where $\xi_0=\mathrm{Id}$,
+$\xi_1=T_{\mathbf{p}_1-\mathbf{p}_4}$,
+$\xi_2=I_{\mathbf{p}_2}$,
+and $\xi_6=I_{\mathbf{p}_6}$.
+We are interested in showing that the assignment $\xi_i'=\xi_i$, $i=0,1,2,6$ locally
+minimizes the area of the quadrilateral $\xi_0(0)\xi_6(0)\xi_1(0)\xi_2(0)$, subject
+to the nonoverlap constraints. As explained in the previous section, we may
+fix $\xi_1'=\xi_1$ and replace the nonoverlap constraints by signed area constriants. We
+obtain the following optimization problem:
 
-\subsubsection{ exhibit the construction given by \ref{thmkk}}
+\begin{equation}\label{eq:opt-pent}
+    \begin{aligned}
+	\text{maximize} & \alpha(\xi'_0(0),\xi'_1(0),\xi'_2(0))-\alpha(\xi'_0(0),\xi'_1(0)+\xi'_6(0) )\\
+	\text{subj. to} & \alpha(\xi'_0(\mathbf{k}_1),\xi'_0(\mathbf{k}_0),\xi'_2(\mathbf{k}_1))\ge0\\
+	                & \alpha(\xi'_2(\mathbf{k}_1),\xi'_2(\mathbf{k}_0),\xi'_0(\mathbf{k}_1))\ge0\\
+	                & \alpha(\xi'_0(\mathbf{k}_0),\xi'_0(\mathbf{k}_4),\xi'_6(\mathbf{k}_4))\ge0\\
+	                & \alpha(\xi'_6(\mathbf{k}_0),\xi'_6(\mathbf{k}_4),\xi'_0(\mathbf{k}_4))\ge0\\
+	                & \alpha(\xi'_1(\mathbf{k}_2),\xi'_1(\mathbf{k}_1),\xi'_2(\mathbf{k}_2))\ge0\\
+	                & \alpha(\xi'_2(\mathbf{k}_2),\xi'_2(\mathbf{k}_1),\xi'_1(\mathbf{k}_2))\ge0\\
+	                & \alpha(\xi'_1(\mathbf{k}_4),\xi'_1(\mathbf{k}_3),\xi'_6(\mathbf{k}_3))\ge0\\
+	                & \alpha(\xi'_6(\mathbf{k}_4),\xi'_6(\mathbf{k}_3),\xi'_1(\mathbf{k}_3))\ge0\\
+	                & \alpha(\xi'_1(\mathbf{k}_3),\xi'_1(\mathbf{k}_2),\xi'_0(\mathbf{k}_0))\ge0,
+    \end{aligned}
+\end{equation}
+where $\xi'_i=T_{(x_i,y_i)}\xi_iR_\theta$ for $i=0,2,6$, and $\xi'_1=\xi_1$. We adopt
+a condensed notation for the free variables $X=(x_0,y_0,\theta_0,x_2,y_2,\theta_2,x_6,y_6,\theta_6)$.
 
-\subsubsection{parametrize neighborhood of four pentagons in correct configuration }
+The linearized version of \ref{eq:opt-pent} is locally optimized \ldots.
+Since \ref{eq:opt-pent} satisfies conditions (*), we have:
 
-the parametrization is important, should be consistent with the later sections.  Can this be hidden in the code, and to just state that there exists a parametrization that satisfies the linear program theorem?  Still need a sketch here. 
-
-\subsubsection{constrained optimization problem}
-
-\subsubsection{density function}
-
-\subsubsection{verification}
-
+\begin{thm}
+    The optimal double-lattice packing of regular pentagons, illustrated in Figure X, is strongly extreme.
+\end{thm}
 
 \subsection{Heptagons}
 
@@ -341,6 +390,7 @@ The Wolfram System supports symbolic computation over extension fields via it's 
 
 
 %$Simplify[,Assumptions->]$ head and pattern matching
+
 
 
 
@@ -496,11 +546,6 @@ By choice of a sufficiently small $\epsilon$ and a minimal\begin{footnote}{This 
 \begin{theorem}
 A nonlinear program satisfying Conditions \ref{assumpt} has an isolated local maximum at 0 with f(0) = 0. \qed
 \end{theorem}
-
-
-
-
-
 
 \bibliography{ngon}
 \end{document}  
