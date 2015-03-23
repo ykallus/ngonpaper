@@ -38,6 +38,12 @@ F~M{\'a}rio~de Oliveira~Filho and F~Vallentin.
   a convex body {I}.
 \newblock {\em arXiv preprint arXiv:1308.4893}, 2013.
 
+\bibitem{Mount1991}
+David~M Mount.
+\newblock The densest double-lattice packing of a convex polygon.
+\newblock {\em Discrete and Computational Geometry: Papers from the DIMACS
+  Special Year}, 6:245--262, 1991.
+
 \bibitem{mathematica10}
 {Wolfram Research}.
 \newblock {\em Mathematica 10.0}.

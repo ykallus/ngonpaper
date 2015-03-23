@@ -18,7 +18,7 @@
 \newtheorem{corollary}{Corollary}[section]
 \newtheorem{remark}{Remark}[section]
 \newtheorem{proposition}{Proposition}[section]
-\newtheorem{assumptions}{Assumptions}[section]
+\newtheorem{conditions}{Conditions}[section]
 
 %\newcommand{\defv}[1]{\textbf{\textit{#1}}}
 
@@ -52,8 +52,7 @@ references for mathematica
 \cite{keiper1995interval} %outdated
 references for linear programming
 
-
-We prove the Kuperberg and Kuperberg double lattice construction for polygons is an isolated local maximal for density in the full space of packings.  That is, the density of nearby packings are of strictly lower density.
+We prove the Kuperberg and Kuperberg double lattice construction for polygons is an isolated local maximum for density in the full space of packings.  That is, the density of nearby packings are of strictly lower density.
 
 
 
@@ -347,33 +346,29 @@ The Wolfram System supports symbolic computation over extension fields via it's 
 
 \section{Slicing nonlinear programs}\label{slice}
 
-%depreciated material, can be rephrased together to match the above sections, need to include corollary to generalize theorem to match the multivariable versions.
-
-A non-linear programing problem satisfying certain assumptions can be certified as locally optimal by a linear programming problem.  For the geometric problems considered, there are $a$ $priori$ configurations given by the maximal density configurations on a subspace of configuration space, namely subsets of the double lattice packings.  To produce a certificate of local optimality for this type of problem, parametrize a neighborhood of the conjectured optimal configuration and analyze the associated non-linear programming problem
+A non-linear programing problem satisfying certain conditions can be certified as locally optimal by a linear programming problem.  For the geometric problems considered, there are $a$ $priori$ configurations given by the maximal density configurations on a subspace of configuration space, namely subsets of the double lattice packings.  To produce a certificate of local optimality for this type of problem it is possible to parametrize a neighborhood of the conjectured optimal configuration and analyze the associated non-linear programming problem
 $$\max_{x\in \mathbb{R}^n} f(x)\textrm{ subject to }g_r(x)\ge 0, r\in I$$
-in a neighborhood of $0.$ 
+in a neighborhood of $0.$ An appropriate choice of parametrization allows the full non-linear program to be sliced into a one-parameter family of non-linear programs that are subordinate to the linearization of the main program at $0$. The following conditions are required.
 
-An appropriate choice of parametrization allows the full non-linear program to be sliced into a one-parameter family of non-linear programs that are subordinate to the linearization of the main program at $0$. The following assumptions are required.
-
-\begin{assumptions}\label{assumpt}\begin{footnote}{These are the assumptions that are required for the pentagon packing problem. There are a number of ways they might be weakened, e.g. the condition that $E$ be 1-dimensional is not essential.}\end{footnote}\textrm{ }
+\begin{conditions}\label{assumpt}\begin{footnote}{These are the conditions that are required for the packing problems addressed. There are a number of ways they might be weakened, e.g. the condition that $E$ be 1-dimensional is not essential.}\end{footnote}\textrm{ }
 \begin{enumerate}
-\item Let $I$ be a finite index set.
-\item Let $e_1$ be the standard unit vector $\{1, 0,\dots,0\}$ in $\mathbb{R}^n.$
-\item For $r$ in $I$, let $f$ and $g_r$ be analytic functions on a neighborhood of $0$.
-\item Assume $f(0) = g_r(0) = 0$ for all $r$ in $I$.
-\item Let $F(t) = \nabla f (te_1)$.
-\item Let $G_r(t) = \nabla g_r(te_1)$.
-\item Assume the linear program
+\item \label{a finite} Let $I$ be a finite index set.
+\item \label{standard} Let $e_1$ be the standard unit vector $\{1, 0,\dots,0\}$ in $\mathbb{R}^n.$
+\item \label{analytic} For $r$ in $I$, let $f$ and $g_r$ be analytic functions on a neighborhood of $0$.
+\item \label{azero} Assume $f(0) = g_r(0) = 0$ for all $r$ in $I$.
+\item \label{afderiv} Let  $F(t) = \nabla f (te_1)$.
+\item \label{agderiv} Let $G_r(t) = \nabla g_r(te_1)$.
+\item \label{abounded} Assume the linear program
 $$\max_{x\in \mathbb{R}^n}F(0)\cdot x \textrm{ subject to }G_r(0)\cdot x \ge 0, r\in I$$
 has a bounded solution and that the maximum is attained at 0.
-\item Assume that the set of solutions in $\mathbb{R}^n$ to 
+\item \label{asolutionset} Assume that the set of solutions in $\mathbb{R}^n$ to 
 $$F(0)\cdot x = 0\textrm{ subject to }G_r(0)\cdot x \ge 0, r\in I$$
 is $$E := \{te_1 : t\in \mathbb{R}\}.$$
-\item Let $H$ be the orthogonal complement of $E$ so that $\mathbb{R}^n = E \oplus H.$ 
-\item Assume there is an $\epsilon > 0$ so the functions $g_r(te_1) = 0$ for all $t\in (-\epsilon, \epsilon)$, for all $r$ in $I.$
-\item Assume $\frac{\partial }{\partial t}f(0) = 0$, $\frac{\partial^2 }{\partial t^2}f(0) < 0.$
+\item \label{aortho} Let $H$ be the orthogonal complement of $E$ so that $\mathbb{R}^n = E \oplus H.$ 
+\item \label{anbhd} Assume there is an $\epsilon > 0$ so the functions $g_r(te_1) = 0$ for all $t\in (-\epsilon, \epsilon)$, for all $r$ in $I.$
+\item \label{ahess} Assume $\frac{\partial }{\partial t}f(0) = 0$, $\frac{\partial^2 }{\partial t^2}f(0) < 0.$
 \end{enumerate}
-\end{assumptions}
+\end{conditions}
 
 
 %Not sure if this should be changed to multivariable here or if the higher dimensional E cases should be reduced%
@@ -403,12 +398,12 @@ is $$E := \{te_1 : t\in \mathbb{R}\}.$$
 %\end{enumerate}
 %\end{assumptions}
 
-\begin{lemma}\label{lem1} Given \ref{assumpt}, the linear program 
+\begin{lemma}\label{lem1} Given Conditions \ref{assumpt}, the linear program 
 $$\max_{x\in H }F(0)\cdot x\textrm{ subject to }G_r(0)\cdot x \ge 0, r\in I$$
 has a unique maximum at $x = 0$
 \end{lemma}
 \begin{proof}
-By assumptions 7 and 8, the linear program
+By conditions \ref{abounded} and \ref{asolutionset}, the linear program
 $$\max_{x\in \mathbb{R}^n}F(0)\cdot x\textrm{ subject to }G_r(0)\cdot x \ge 0, r\in I$$
 is maximized exactly on $E$. The feasible set $\{x : G_r(0)\cdot x \ge 0, r\in I \textrm{ and } x \in H\}$ is a subset of the feasible set $\{x:G_r(0)\cdot x \ge 0, r\in I\}$. Thus, the program 
 $$\max_{x\in H}F(0)\cdot x\textrm{ subject to }G_r(0)\cdot x \ge 0, r\in I$$
@@ -436,16 +431,16 @@ $$\max_{x\in \mathbb{R}^n} F\cdot x\textrm{ subject to }G_r\cdot x \ge 0, r\in I
 \begin{proof}
 If $F$ is in the interior of the polar cone $C^p$, then $F\cdot v_i < 0$ for all generators $v_i$.  Therefore $F\cdot x$ is uniquely maximized in $C$ at the vertex. If $F$ is on the boundary of the polar cone, then $F\cdot x$ is maximized in $C$ exactly on the span of the generators $v_i$ for which $F\cdot v_i = 0$ as $F\cdot v_j < 0$ otherwise. If $F$ is outside the polar cone, then $F\cdot v_i >0$ for some generator $v_i$. Then $F\cdot x$ is unbounded in $C$.\end{proof}
 
-\begin{lemma}\label{lem3} Given \ref{assumpt}, there exists $\epsilon > 0$ such that for all $t$ in  $(-\epsilon,\epsilon)$, the linear program 
+\begin{lemma}\label{lem3} Given Conditions \ref{assumpt}, there exists $\epsilon > 0$ such that for all $t$ in  $(-\epsilon,\epsilon)$, the linear program 
 $$\max_{y_t \in H}F(t)\cdot y_t$$
 subject to 
 $$G_r(t)\cdot y_t \ge 0, r \in I$$
 has a unique maximum at $y_t = 0$.\begin{footnote}{Here $y_t$ is a dummy variable and does not depend on $t$. It is labeled $y_t$ to ease later exposition.}\end{footnote}
 \end{lemma}
-\begin{proof} The program for $t\in (-\epsilon,\epsilon)$, for $y_t$ in $H$, for each fixed $t$ in $(-\epsilon,\epsilon)$, for some $\epsilon> 0$, can be written as a conical program on all of $\mathbb{R}^n$ with a cone $C_t$ in $\mathbb{R}^n$ of co-dimension $\ge 1$ by introducing further constraints $e_1\cdot y_t \ge 0$ and $-e_1\cdot y_t \ge 0.$  By \ref{lem1} and \ref{lem2}, $F(0)$ is in the polar cone of $C_0 = \{y_0: G_r(0)\cdot y_0 \ge 0, e_1\cdot y_0 \ge 0, -e_1\cdot y_0 \ge 0\}.$   As $f,g_r \in C^\omega$, the condition of  $F(t)$ being in the interior of the polar cone $C_t^p$ is open and the condition of the feasible set $C_t = \{y_t: G_r(t)\cdot y_t \ge 0, e_1\cdot y_t \ge 0, -e_1\cdot y_t \ge 0\}$ being conical is open.\begin{footnote}{The relationships between the constraint cone, the generators $v_i$ and the constraint gradients $G_k$ is subtle, but the condition being open essentially follows from the continuity of the distance function.}\end{footnote}  Therefore, by \ref{lem2} the program has a unique maximum at $y_t = 0$ for each fixed $t$ in $(-\epsilon,\epsilon)$ for some $\epsilon> 0$.\end{proof}
+\begin{proof} The program for $t\in (-\epsilon,\epsilon)$, for $y_t$ in $H$, for each fixed $t$ in $(-\epsilon,\epsilon)$, for some $\epsilon> 0$, can be written as a conical program on all of $\mathbb{R}^n$ with a cone $C_t$ in $\mathbb{R}^n$ of co-dimension $\ge 1$ by introducing further constraints $e_1\cdot y_t \ge 0$ and $-e_1\cdot y_t \ge 0.$  By \ref{lem1} and \ref{lem2}, $F(0)$ is in the polar cone of $C_0 = \{y_0: G_r(0)\cdot y_0 \ge 0, e_1\cdot y_0 \ge 0, -e_1\cdot y_0 \ge 0\}.$   As $f,g_r \in C^\omega$, the condition of  $F(t)$ being in the interior of the polar cone $C_t^p$ is open and the condition of the feasible set $C_t = \{y_t: G_r(t)\cdot y_t \ge 0, e_1\cdot y_t \ge 0, -e_1\cdot y_t \ge 0\}$ being conical is open.\begin{footnote}{The relationships between the constraint cone, the generators $v_i$ and the constraint gradients $G_k$ is subtle, but the openness of the condition follows from the continuity of the distance function.}\end{footnote}  Therefore, by \ref{lem2} the program has a unique maximum at $y_t = 0$ for each fixed $t$ in $(-\epsilon,\epsilon)$ for some $\epsilon> 0$.\end{proof}
 
 \begin{lemma}\label{lem4}
-Given \ref{assumpt} and $\epsilon$ as in \ref{lem3}, for all $t \in (-\epsilon, \epsilon)$
+Given Conditions \ref{assumpt} and $\epsilon$ as in Lemma \ref{lem3}, for all $t \in (-\epsilon, \epsilon)$
 there exists $\delta(t)>0$ and a cube $Q(t) \subset \mathbb{R}^n$ of side length $2\delta(t)$ such that 
 $$\{(F(t) + Q(t)) \cap (\partial (C_t^p) + Q(t))\} = \emptyset.$$
 \end{lemma}
@@ -454,7 +449,7 @@ This follows from \ref{lem3}, which shows $F(t)$ is in the interior of the polar
 \end{proof}
 
 \begin{corollary}\label{cor1}
-Given \ref{assumpt} and $\epsilon$ as in \ref{lem3}, for all $t \in (-\epsilon, \epsilon),$ 
+Given \ref{assumpt} and $\epsilon$ as in Lemma \ref{lem3}, for all $t \in (-\epsilon, \epsilon),$ 
 
 $$(F(t)+\Delta) \cdot y_t \le 0$$
 whenever $y_t$ satisfies
@@ -468,8 +463,7 @@ By \ref{lem4}, $F(t)+\Delta$ is in the interior of the polar cone $C_{t,\Delta}^
 \end{proof}
 
 \begin{lemma}\label{lem5}
-Given \ref{assumpt} and $\epsilon$ as in \ref{lem3}, for all $t \in (-\epsilon, \epsilon)$, let
-$y_t = x-te_1 \in H$. Choose $\Delta = \Delta(y_t)$ and $\Delta_r=\Delta_r(y_t)$ in the $2\delta(t)$-cube $Q(t)$ to be the corner given by the sign of $x-te_1 = y_t.$ Then there is an $\epsilon_t$ for which 
+Given Conditions \ref{assumpt} and $\epsilon$ as in Lemma \ref{lem3}, for all $t \in (-\epsilon, \epsilon)$, let $y_t = x-te_1 \in H$. Choose $\Delta = \Delta(y_t)$ and $\Delta_r=\Delta_r(y_t)$ in the $2\delta(t)$-cube $Q(t)$ to be the corner given by the sign of $x-te_1 = y_t.$ Then there is an $\epsilon_t$ for which 
 
 $$(F(t)+\Delta(y_t))\cdot y_t \le 0 \implies f(x)-f(te_1) \le 0$$
 and
@@ -482,26 +476,29 @@ This follows from the local expansions of the nonlinear program.  By this choice
 
 $$f(x)-f(te_1)  = F(t)\cdot (x-te_1) + O(t^2) = F(t)\cdot y_t + O(t^2) $$
 $$ \le  F(t)\cdot y_t + \delta(t) \|y_t\|_1 = (F(t)+\Delta(y_t))\cdot y_t $$
-and using assumption 10,
+and using assumption \ref{anbhd},
 $$g_r(x) = g_r(x)-g_r(te_1) =  G_r(t)\cdot (x-te_1) + O(t^2) = G_r(t)\cdot y_t +O(t^2) $$
 $$ \le  G_r(t)\cdot y_t + \delta(t) \|y_t\|_1 = (G_r(t)+\Delta_r(y_t))\cdot y_t.$$
 \end{proof}
 
-By \ref{lem4} and \ref{cor1}, for $t$ in $(-\epsilon,\epsilon)$, the program  $$\max_{y_t \in H} (F(t) + \Delta)\cdot y_t\textrm{ subject to } (G_r + \Delta_r)\cdot y_t$$ is uniquely maximized at $y_t=0$ for any choice of $\Delta$, $\Delta_r$ in the $2\delta(t)$ cube $Q(t)$. Combined with \ref{lem5}, there is an $\epsilon_t$ neighborhood of $0$ where $f(y_t+te_1)$ is less than $f(te_1)$ on $\cup_{\Delta_r \in Q(t)}\{y_t: (G_r+\Delta_r) \cdot y_t \ge 0, r \in I, y_t \in H\}$, which contains the feasible set  $\{y_t: g_r(y_t+te_1) \ge 0, r\in I, y_t \in H\}$. Therefore the nonlinear programs $f(y_t+te_1)$ subject to $g_r(y_t+te_1)\ge 0$, $y_t \in H$, which are parameterized by $t$ in $(-\epsilon, \epsilon)$, have local maxima at $y_t=0$.  This gives the following:
+By Lemma \ref{lem4} and Corollary \ref{cor1}, for $t$ in $(-\epsilon,\epsilon)$, the program  $$\max_{y_t \in H} (F(t) + \Delta)\cdot y_t\textrm{ subject to } (G_r + \Delta_r)\cdot y_t$$ is uniquely maximized at $y_t=0$ for any choice of $\Delta$, $\Delta_r$ in the $2\delta(t)$ cube $Q(t)$. Combined with \ref{lem5}, there is an $\epsilon_t$ neighborhood of $0$ where $f(y_t+te_1)$ is less than $f(te_1)$ on $\cup_{\Delta_r \in Q(t)}\{y_t: (G_r+\Delta_r) \cdot y_t \ge 0, r \in I, y_t \in H\}$, which contains the feasible set  $\{y_t: g_r(y_t+te_1) \ge 0, r\in I, y_t \in H\}$. Therefore the nonlinear programs $f(y_t+te_1)$ subject to $g_r(y_t+te_1)\ge 0$, $y_t \in H$, which are parameterized by $t$ in $(-\epsilon, \epsilon)$, have local maxima at $y_t=0$.  This gives the following:
 
 \begin{theorem}\label{th1}
-Given \ref{assumpt}, a fixed $t$ in $(-\epsilon, \epsilon)$ and choosing $\Delta$ and $\Delta_r$ as in \ref{lem5}, for $x$ satisfying $g_r(x)\ge 0$ for all $r$ in $I$ and $y_t = x-te_1$ in $H$, 
-there exist linear programs\begin{footnote}{These programs may depend on a choice of $y_t \in H$, but $f(x)$ is always less then $f(te_1)$ by \ref{lem5}.}\end{footnote} $$\max_{y_t \in H}(F(t)+\Delta(y_t))\cdot y_t \textrm{ subject to }  (G_r(t)+\Delta_r(y_t))\cdot y_t \ge 0$$
+Given Conditions \ref{assumpt}, a fixed $t$ in $(-\epsilon, \epsilon)$ and choosing $\Delta$ and $\Delta_r$ as in Lemma \ref{lem5}, for $x$ satisfying $g_r(x)\ge 0$ for all $r$ in $I$ and $y_t = x-te_1$ in $H$, 
+there exist linear programs\begin{footnote}{These programs may depend on a choice of $y_t \in H$, but $f(x)$ is always less then $f(te_1)$ by Lemma \ref{lem5}.}\end{footnote} $$\max_{y_t \in H}(F(t)+\Delta(y_t))\cdot y_t \textrm{ subject to }  (G_r(t)+\Delta_r(y_t))\cdot y_t \ge 0$$
 that give solutions to the nonlinear programs $$\max_{x \in H+te_1} f(x)  \textrm{ subject to }   g_r(x)\ge 0$$
 in an $\epsilon_t$ neighborhood of $te_1$ in $H+te_1.$ \qed
 \end{theorem}
 
-By choice of a sufficiently small $\epsilon$ and a minimal\begin{footnote}{This exists by a compactness argument.}\end{footnote} non-zero $\epsilon_t$, \ref{th1} gives an open neighborhood of $0$ in which the maximum value of the original nonlinear program occurs on $E$. The assumptions for the first and second $t$-derivatives at $0$ shows $0$ to be a local maximum for the nonlinear program
+By choice of a sufficiently small $\epsilon$ and a minimal\begin{footnote}{This exists by a compactness argument.}\end{footnote} non-zero $\epsilon_t$, Theorem \ref{th1} gives an open neighborhood of $0$ in which the maximum value of the original nonlinear program occurs on $E$. The conditions for the first and second $t$-derivatives at $0$ shows $0$ to be a local maximum for the nonlinear program
  $$\max_{x\in\mathbb{R}^n}f(x) \textrm{ subject to }  g_r(x) \ge 0.$$
 
 \begin{theorem}
-A nonlinear program satisfying \ref{assumpt} has an isolated local maximum at 0 with f(0) = 0. \qed
+A nonlinear program satisfying Conditions \ref{assumpt} has an isolated local maximum at 0 with f(0) = 0. \qed
 \end{theorem}
+
+
+
 
 
 
