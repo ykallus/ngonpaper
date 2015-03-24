@@ -309,23 +309,41 @@ obtain the following optimization problem:
 
 \begin{equation}\label{eq:opt-pent}
     \begin{aligned}
-	\text{maximize } & \alpha(\xi'_0(0),\xi'_1(0),\xi'_2(0))-\alpha(\xi'_0(0),\xi'_1(0)+\xi'_6(0) )\\
-	\text{subj.\ to } & \alpha(\xi'_0(\mathbf{k}_1),\xi'_0(\mathbf{k}_0),\xi'_2(\mathbf{k}_1))\ge0\\
-	                & \alpha(\xi'_2(\mathbf{k}_1),\xi'_2(\mathbf{k}_0),\xi'_0(\mathbf{k}_1))\ge0\\
-	                & \alpha(\xi'_0(\mathbf{k}_0),\xi'_0(\mathbf{k}_4),\xi'_6(\mathbf{k}_4))\ge0\\
-	                & \alpha(\xi'_6(\mathbf{k}_0),\xi'_6(\mathbf{k}_4),\xi'_0(\mathbf{k}_4))\ge0\\
-	                & \alpha(\xi'_1(\mathbf{k}_2),\xi'_1(\mathbf{k}_1),\xi'_2(\mathbf{k}_2))\ge0\\
-	                & \alpha(\xi'_2(\mathbf{k}_2),\xi'_2(\mathbf{k}_1),\xi'_1(\mathbf{k}_2))\ge0\\
-	                & \alpha(\xi'_1(\mathbf{k}_4),\xi'_1(\mathbf{k}_3),\xi'_6(\mathbf{k}_3))\ge0\\
-	                & \alpha(\xi'_6(\mathbf{k}_4),\xi'_6(\mathbf{k}_3),\xi'_1(\mathbf{k}_3))\ge0\\
-	                & \alpha(\xi'_1(\mathbf{k}_3),\xi'_1(\mathbf{k}_2),\xi'_0(\mathbf{k}_0))\ge0,
+	\text{minimize } & f(z)=\alpha(\xi'_0(0),\xi'_1(0),\xi'_2(0))-\alpha(\xi'_0(0),\xi'_1(0)+\xi'_6(0) )\\
+	\text{subj.\ to } & g_1(z)=\alpha(\xi'_0(\mathbf{k}_1),\xi'_0(\mathbf{k}_0),\xi'_2(\mathbf{k}_1))\ge0\\
+	                & g_2(z)=\alpha(\xi'_2(\mathbf{k}_1),\xi'_2(\mathbf{k}_0),\xi'_0(\mathbf{k}_1))\ge0\\
+	                & g_3(z)=\alpha(\xi'_0(\mathbf{k}_0),\xi'_0(\mathbf{k}_4),\xi'_6(\mathbf{k}_4))\ge0\\
+	                & g_4(z)=\alpha(\xi'_6(\mathbf{k}_0),\xi'_6(\mathbf{k}_4),\xi'_0(\mathbf{k}_4))\ge0\\
+	                & g_5(z)=\alpha(\xi'_1(\mathbf{k}_2),\xi'_1(\mathbf{k}_1),\xi'_2(\mathbf{k}_2))\ge0\\
+	                & g_6(z)=\alpha(\xi'_2(\mathbf{k}_2),\xi'_2(\mathbf{k}_1),\xi'_1(\mathbf{k}_2))\ge0\\
+	                & g_7(z)=\alpha(\xi'_1(\mathbf{k}_4),\xi'_1(\mathbf{k}_3),\xi'_6(\mathbf{k}_3))\ge0\\
+	                & g_8(z)=\alpha(\xi'_6(\mathbf{k}_4),\xi'_6(\mathbf{k}_3),\xi'_1(\mathbf{k}_3))\ge0\\
+	                & g_9(z)=\alpha(\xi'_1(\mathbf{k}_3),\xi'_1(\mathbf{k}_2),\xi'_0(\mathbf{k}_0))\ge0,
     \end{aligned}
 \end{equation}
 where $\xi'_i=T_{(x_i,y_i)}\xi_iR_\theta$ for $i=0,2,6$, and $\xi'_1=\xi_1$. We adopt
 a condensed notation for the free variables $X=(x_0,y_0,\theta_0,x_2,y_2,\theta_2,x_6,y_6,\theta_6)$.
 
-The linearized version of \ref{eq:opt-pent} is locally optimized \ldots.
-Since \ref{eq:opt-pent} satisfies conditions (*), we have:
+We consider the linearization of \ref{rq:opt-pent} around the point $z=0\in\mathbb{R}^9$. This gives a
+problem of the form
+\begin{equation}\label{eq:lin-pent}
+    \text{minimize } c\cdot z \text{ subject to } G z\ge 0\text,
+\end{equation}
+where $c\in \mathbb R^9$, $G\in\mathbb{R}^{9\times9}$ and we use the linear programming notation $\ge0$
+to denote a vector lying in the closed positive orthant.
+We can show by direct calculation a vector $\eta>0$ lying in the open positive orthant exists such that
+$c=\eta^T G$. By the fundamental theorem of linear algebra, this observation implies that $G z\ge 0$ and $c\cdot X\le0$
+if and only if $G z = 0$ and $c\cdot z=0$. We can show that $\mathrm{rank} G=8$, and so the program
+\ref{eq:lin-pent} is minimized exactly by the null space of $G$ and is suboptimal elsewhere in the
+cone $Gz\ge0$. The null space corresponds precisely to the rearrangement given by choosing a nearby
+half-length parallelogram in the double lattice construction to the minimum-area one. Let $z^{(0)}$
+generate the null space, then $t_0^{(0)}=t_2^{(0)}=t_6^{(0)}=0$. We can verify directly
+that $f(tz^{(0)})$ is a quadratic function of $t$ minimized at $t=0$, and that
+$g_r(tz^{(0)})=0$ identically for $r=1,\ldots,9$. Indeed, perturbing the half-length
+parallelogram away from the minimum-area one increases the area of the resulting cell
+and maintains all the contacts.
+
+Therefore, \ref{eq:opt-pent} satisfies all the conditions of \ref{}, and we have:
 
 \begin{theorem}
     The optimal double-lattice packing of regular pentagons, illustrated in Figure X, is strongly extreme.
@@ -333,12 +351,9 @@ Since \ref{eq:opt-pent} satisfies conditions (*), we have:
 
 \subsection{Heptagons}
 
-Outline of the method for heptagons.
-
-For heptagons, the cost function is non-trivial.  This is because there is a motion in the configuration space of four heptagons that increases the double Delauney density.  
-
-(include figure)
-
+The calculation for the regular heptagon starts out the same as the calculation presented above for regular pentagons.
+However, it turns out that the linear program equivalent to \ref{eq:lin-pent} is in this case not minimized
+at $z=0$, and so we will need to add auxiliary cost functions to the area as allowed for in \ref{thm:aux}.
 
 
 \subsubsection{ find the construction given by Theorem \ref{thmkk}.}
