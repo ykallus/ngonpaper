@@ -34,8 +34,6 @@
 %This paper shows that the dense double lattice construction of Kuperberg and Kuperberg is locally optimal for polygons in the full space of packings.
 
 
-
-
 \section{The construction of the densest double lattice packing}
 
 \subsection{Double lattices}
@@ -45,19 +43,14 @@
     A chord is an affine diameter if there is no longer chord parallel to it.
 \end{definition}
 
-
-
 \begin{definition}
     An inscribed parallelogram is a half-length parallelogram in the direction $\theta$ if
     one pair of edges is parallel with the line through the origin at an angle $\theta$ above
     the $x$-axis and their length is half the length of an affine diameter parallel to them.
 \end{definition}
 
-
-
 Note that any two half-length parallelograms in the direction $\theta$ have equal
 area, and we can define that area as a function $A(\theta)$ of the direction.
-
 
 \begin{definition}
     A cocompact discrete subgroup of the Euclidean group consisting of translations
@@ -74,11 +67,11 @@ by three point reflections.
     the vertices of a half-length parallelogram.
 \end{theorem}
 
-Note that Kuperberg and Kuperberg make use of the extensive parallelogram, parallelograms which edge length greater than half the affine diameter in their edge directions. Mount gives an explicit proof of the fact that it suffices to consider only half-length parallelograms associated with affine diameters  where the affine diameter is taken as a function of $\mathbb{R}\mathbb{P}^1.$
+Note that Kuperberg and Kuperberg make use of extensive parallelograms, inscribed parallelograms with edge length greater than half the affine diameter in their edge directions. Mount gives an explicit proof of the fact that it suffices to consider only the half-length parallelograms associated with affine diameters as a function of $\theta.$
 
-For our purposes, it is important to consider the algorithm used find the half parallelogram of minimal area. More specifically, the behavior of the affine diameter and the half parallelogram as the affine diameter rotates is described by an interspersing property.
+For our purposes, it is illustrative to consider the algorithm used find the half-length parallelogram of minimal area not only as a method of finding the best double lattice packing, but also as a way to explore the configuration space of double lattices. More specifically, the behavior of the affine diameter is fairly well behaved but non-trivial as $\theta$ increases while the behavior of the vertices of the half parallelogram are described by an {\it interspersing property}; they are non-decreasing functions $[0,2\pi)\rightarrow [0,2\pi).$  %they are a non-decreasing function, they never back track....
 
-The first property that we wish to describe is the search algorithm. We begin with a simple proposition :
+We begin with a simple proposition
 \begin{proposition}
 there is an affine diameter of a convex polygon K in every direction that meets a vertex.
 \end{proposition}
@@ -86,7 +79,7 @@ there is an affine diameter of a convex polygon K in every direction that meets 
 This is a consequence of the convexity K, for if a chord does not meet a vertex, it either lies within an edge or it meets two edges.  If it lies within an edge, it is not an affine diameter.  If it meets two edges, it is possible increase its length while parallel translating it in a non-decreasing direction of the cone defined by the two edges until it meets a vertex. 
 %picture
 
-From this, it is possible to determine a 
+From this, it is possible to determine an initial affine diameter.
 
 
 
