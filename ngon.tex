@@ -482,7 +482,7 @@ subject to
 $$G_r(t)\cdot y_t \ge 0, r \in I$$
 has a unique maximum at $y_t = 0$.\begin{footnote}{Here $y_t$ is a dummy variable and does not depend on $t$. It is labeled $y_t$ to ease later exposition.}\end{footnote}
 \end{lemma}
-\begin{proof} The program for $t\in (-\epsilon,\epsilon)$, for $y_t$ in $H$, for each fixed $t$ in $(-\epsilon,\epsilon)$, for some $\epsilon> 0$, can be written as a conical program on all of $\mathbb{R}^n$ with a cone $C_t$ in $\mathbb{R}^n$ of co-dimension $\ge 1$ by introducing further constraints $e_1\cdot y_t \ge 0$ and $-e_1\cdot y_t \ge 0.$  By \ref{lem1} and \ref{lem2}, $F(0)$ is in the polar cone of $C_0 = \{y_0: G_r(0)\cdot y_0 \ge 0, e_1\cdot y_0 \ge 0, -e_1\cdot y_0 \ge 0\}.$   As $f,g_r \in C^\omega$, the condition of  $F(t)$ being in the interior of the polar cone $C_t^p$ is open and the condition of the feasible set $C_t = \{y_t: G_r(t)\cdot y_t \ge 0, e_1\cdot y_t \ge 0, -e_1\cdot y_t \ge 0\}$ being conical is open.\begin{footnote}{The relationships between the constraint cone, the generators $v_i$ and the constraint gradients $G_k$ is subtle, but the openness of the condition follows from the continuity of the distance function.}\end{footnote}  Therefore, by \ref{lem2} the program has a unique maximum at $y_t = 0$ for each fixed $t$ in $(-\epsilon,\epsilon)$ for some $\epsilon> 0$.\end{proof}
+\begin{proof} The program for $t\in (-\epsilon,\epsilon)$, for $y_t$ in $H$, for each fixed $t$ in $(-\epsilon,\epsilon)$, for some $\epsilon> 0$, can be written as a conical program on all of $\mathbb{R}^n$ with a cone $C_t$ in $\mathbb{R}^n$ of co-dimension $\ge 1$ by introducing further constraints $e_1\cdot y_t \ge 0$ and $-e_1\cdot y_t \ge 0.$  By \ref{lem1} and \ref{lem2}, $F(0)$ is in the polar cone of $C_0 = \{y_0: G_r(0)\cdot y_0 \ge 0, e_1\cdot y_0 \ge 0, -e_1\cdot y_0 \ge 0\}.$   As $f,g_r \in C^\omega$, the condition of  $F(t)$ being in the interior of the polar cone $C_t^p$ is open and the condition of the feasible set $C_t = \{y_t: G_r(t)\cdot y_t \ge 0, e_1\cdot y_t \ge 0, -e_1\cdot y_t \ge 0\}$ being conical is open.\begin{footnote}{The relationships between the constraint cone, the generators $v_i$ and the constraint gradients $G_k$ is subtle, but the openness of the condition follows from the continuity of the distance function.}\end{footnote}  Therefore, by Lemma \ref{lem2} the program has a unique maximum at $y_t = 0$ for each fixed $t$ in $(-\epsilon,\epsilon)$ for some $\epsilon> 0$.\end{proof}
 
 \begin{lemma}\label{lem4}
 Given Conditions \ref{assumpt} and $\epsilon$ as in Lemma \ref{lem3}, for all $t \in (-\epsilon, \epsilon)$
@@ -490,11 +490,11 @@ there exists $\delta(t)>0$ and a cube $Q(t) \subset \mathbb{R}^n$ of side length
 $$\{(F(t) + Q(t)) \cap (\partial (C_t^p) + Q(t))\} = \emptyset.$$
 \end{lemma}
 \begin{proof}
-This follows from \ref{lem3}, which shows $F(t)$ is in the interior of the polar cone $C_t^p$.  Then $F(t)$ and the boundary of $C_t^p$ can be separated and the existence of $Q$ is trivial.
+This follows from Lemma \ref{lem3}, which shows $F(t)$ is in the interior of the polar cone $C_t^p$.  Then $F(t)$ and the boundary of $C_t^p$ can be separated and the existence of $Q$ is trivial.
 \end{proof}
 
 \begin{corollary}\label{cor1}
-Given Conditions\ref{assumpt} and $\epsilon$ as in Lemma \ref{lem3}, for all $t \in (-\epsilon, \epsilon),$ 
+Given Conditions \ref{assumpt} and $\epsilon$ as in Lemma \ref{lem3}, for all $t \in (-\epsilon, \epsilon),$ 
 
 $$(F(t)+\Delta) \cdot y_t \le 0$$
 whenever $y_t$ satisfies
@@ -504,7 +504,7 @@ e_1\cdot y_t \ge 0, -e_1\cdot y_t \ge 0$$
  where $\Delta$ and $\Delta_r$ are any points in the $2\delta(t)$-cube $Q(t)$ and $y_t$ is in $H$.
 \end{corollary}
 \begin{proof}
-By \ref{lem4}, $F(t)+\Delta$ is in the interior of the polar cone $C_{t,\Delta}^p$, where $C_{t,\Delta} = \{y_t: (G_r(t)+\Delta_r)\cdot y_t \ge 0, e_1\cdot y_t \ge 0, -e_1\cdot y_t \ge 0, r\in I\}$.  
+By Lemma \ref{lem4}, $F(t)+\Delta$ is in the interior of the polar cone $C_{t,\Delta}^p$, where $C_{t,\Delta} = \{y_t: (G_r(t)+\Delta_r)\cdot y_t \ge 0, e_1\cdot y_t \ge 0, -e_1\cdot y_t \ge 0, r\in I\}$.  
 \end{proof}
 
 \begin{lemma}\label{lem5}
@@ -521,12 +521,12 @@ This follows from the local expansions of the nonlinear program.  By this choice
 
 $$f(x)-f(te_1)  = F(t)\cdot (x-te_1) + O(t^2) = F(t)\cdot y_t + O(t^2) $$
 $$ \le  F(t)\cdot y_t + \delta(t) \|y_t\|_1 = (F(t)+\Delta(y_t))\cdot y_t $$
-and using assumption \ref{anbhd},
+and using condition \ref{anbhd},
 $$g_r(x) = g_r(x)-g_r(te_1) =  G_r(t)\cdot (x-te_1) + O(t^2) = G_r(t)\cdot y_t +O(t^2) $$
 $$ \le  G_r(t)\cdot y_t + \delta(t) \|y_t\|_1 = (G_r(t)+\Delta_r(y_t))\cdot y_t.$$
 \end{proof}
 
-By Lemma \ref{lem4} and Corollary \ref{cor1}, for $t$ in $(-\epsilon,\epsilon)$, the program  $$\max_{y_t \in H} (F(t) + \Delta)\cdot y_t\textrm{ subject to } (G_r + \Delta_r)\cdot y_t$$ is uniquely maximized at $y_t=0$ for any choice of $\Delta$, $\Delta_r$ in the $2\delta(t)$ cube $Q(t)$. Combined with \ref{lem5}, there is an $\epsilon_t$ neighborhood of $0$ where $f(y_t+te_1)$ is less than $f(te_1)$ on $\cup_{\Delta_r \in Q(t)}\{y_t: (G_r+\Delta_r) \cdot y_t \ge 0, r \in I, y_t \in H\}$, which contains the feasible set  $\{y_t: g_r(y_t+te_1) \ge 0, r\in I, y_t \in H\}$. Therefore the nonlinear programs $f(y_t+te_1)$ subject to $g_r(y_t+te_1)\ge 0$, $y_t \in H$, which are parameterized by $t$ in $(-\epsilon, \epsilon)$, have local maxima at $y_t=0$.  This gives the following:
+By Lemma \ref{lem4} and Corollary \ref{cor1}, for $t$ in $(-\epsilon,\epsilon)$, the program  $$\max_{y_t \in H} (F(t) + \Delta)\cdot y_t\textrm{ subject to } (G_r + \Delta_r)\cdot y_t$$ is uniquely maximized at $y_t=0$ for any choice of $\Delta$, $\Delta_r$ in the $2\delta(t)$ cube $Q(t)$. Combined with Lemma \ref{lem5}, there is an $\epsilon_t$ neighborhood of $0$ where $f(y_t+te_1)$ is less than $f(te_1)$ on $\cup_{\Delta_r \in Q(t)}\{y_t: (G_r+\Delta_r) \cdot y_t \ge 0, r \in I, y_t \in H\}$, which contains the feasible set  $\{y_t: g_r(y_t+te_1) \ge 0, r\in I, y_t \in H\}$. Therefore the nonlinear programs $f(y_t+te_1)$ subject to $g_r(y_t+te_1)\ge 0$, $y_t \in H$, which are parameterized by $t$ in $(-\epsilon, \epsilon)$, have local maxima at $y_t=0$.  This gives the following:
 
 \begin{theorem}\label{th1}
 Given Conditions \ref{assumpt}, a fixed $t$ in $(-\epsilon, \epsilon)$ and choosing $\Delta$ and $\Delta_r$ as in Lemma \ref{lem5}, for $x$ satisfying $g_r(x)\ge 0$ for all $r$ in $I$ and $y_t = x-te_1$ in $H$, 
