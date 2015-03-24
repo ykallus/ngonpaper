@@ -284,8 +284,8 @@ obtain the following optimization problem:
 
 \begin{equation}\label{eq:opt-pent}
     \begin{aligned}
-	\text{maximize} & \alpha(\xi'_0(0),\xi'_1(0),\xi'_2(0))-\alpha(\xi'_0(0),\xi'_1(0)+\xi'_6(0) )\\
-	\text{subj. to} & \alpha(\xi'_0(\mathbf{k}_1),\xi'_0(\mathbf{k}_0),\xi'_2(\mathbf{k}_1))\ge0\\
+	\text{maximize } & \alpha(\xi'_0(0),\xi'_1(0),\xi'_2(0))-\alpha(\xi'_0(0),\xi'_1(0)+\xi'_6(0) )\\
+	\text{subj. to } & \alpha(\xi'_0(\mathbf{k}_1),\xi'_0(\mathbf{k}_0),\xi'_2(\mathbf{k}_1))\ge0\\
 	                & \alpha(\xi'_2(\mathbf{k}_1),\xi'_2(\mathbf{k}_0),\xi'_0(\mathbf{k}_1))\ge0\\
 	                & \alpha(\xi'_0(\mathbf{k}_0),\xi'_0(\mathbf{k}_4),\xi'_6(\mathbf{k}_4))\ge0\\
 	                & \alpha(\xi'_6(\mathbf{k}_0),\xi'_6(\mathbf{k}_4),\xi'_0(\mathbf{k}_4))\ge0\\
@@ -381,7 +381,7 @@ four polygons with corrected area function and an SL(2,R) motion hessian?  The S
 
 
 \subsection{symbolic computation in an extension field}
-The Wolfram System supports symbolic computation over extension fields via it's pattern matching system.
+The Wolfram System supports symbolic computation over extension fields via its pattern matching system.
 
 
 %$Simplify[,Assumptions->]$ head and pattern matching
@@ -411,7 +411,7 @@ $$F(0)\cdot x = 0\textrm{ subject to }G_r(0)\cdot x \ge 0, r\in I$$
 is $$E := \{te_1 : t\in \mathbb{R}\}.$$
 \item \label{aortho} Let $H$ be the orthogonal complement of $E$ so that $\mathbb{R}^n = E \oplus H.$ 
 \item \label{anbhd} Assume there is an $\epsilon > 0$ so the functions $g_r(te_1) = 0$ for all $t\in (-\epsilon, \epsilon)$, for all $r$ in $I.$
-\item \label{ahess} Assume $\frac{\partial }{\partial t}f(0) = 0$, $\frac{\partial^2 }{\partial t^2}f(0) < 0.$
+\item \label{ahess} Assume $\frac{\partial f}{\partial t}(0) = 0$, $\frac{\partial^2 f}{\partial t^2}(0) < 0.$
 \end{enumerate}
 \end{conditions}
 
