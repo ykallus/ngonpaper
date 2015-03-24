@@ -55,7 +55,7 @@ Even in the plane, it is an open question to find the global pessimal convex bod
 
 The regular pentagon and heptagons are cases of special interest, and we initially sought out to investigate whether their optimal double-lattice packing can be shown
 to be also optimal among a broader class of packings. We were able to show that these packings are optimal at least in some neighborhood in the space of all packings.
-Furthermore, we discovered that our method can be generalized to all convex polygons. We demonstrate that, while double-lattices are in general not globally
+Furthermore, we discovered that our method can be generalized to all convex polygons. We demonstrate that, while double lattices are in general not globally
 optimal, they are always at least locally optimal.
 
 \begin{theorem}
@@ -107,7 +107,7 @@ a $(r(K),R(K))$-set.
 	    \delta_R(\Xi,\Xi') = \inf_\text{enum.} \sup \{&||\xi_i^{-1}\xi_j-\xi_i'^{-1}\xi_j'||:\\ & i,j \text{ such that } ||\xi_i(0)-\xi_j(0)||<2R \text{ or } ||\xi_i'(0)-\xi_j'(0)||<2R\}\text.
 	\end{aligned}
     \end{equation}
-    The infimum is over all enumerations $\mathbb{N}\to\Xi$ and $\mathbb{N}\to\Xi$.
+    The infimum is over all enumerations $\mathbb{N}\to\Xi$ and $\mathbb{N}\to\Xi'$.
 \end{definition}
 
 When $R>R'$, $\delta_R(\Xi,\Xi')=0$ if and only if $\xi_i = \phi \xi_i'$ for some $\phi\in E(n)$ and some
@@ -120,16 +120,35 @@ $(r,R)$-sets up to overall isometry, which includes the saturated sets as a subs
 
 Note that the above definition is independent of $R$.
 
-Our notion of strong extremality is meant to generalize weaker notions of local optimality
-for packing. Specifically, these notions apply to lattices and periodic packings.
+We note that there are packings that might be intuitively thought of as not locally optimal, but
+which are strongly extreme under our definition. One example is constructed by decorating a cylinder
+with a screw on its bottom base and a screw hole boring into its top base. Consider the packing
+where each cylinder is screwed into a cylinder below it, in such a way that the two cylinders
+are related to each other by a translation, and the screw is not completely screwed in. This
+creates a column of cylinders, and we arrange copies of this column in a triangular grid. Intuitively,
+since the screw is not completely screwed in, the density of the packing can be improved by
+screwing it in further. Since the interlayer spacing is related to the relative rotation between
+cylinders on the two layers, even an arbitrarily small consistent decrease in interlayer spacing
+will cause some layers to be rotated by at least some constant angle. Such a motion is not continuous
+in the topology we defined. Therefore, it is worth noting what local improvements to the 
+density our results of strong extremality rule out and which are not ruled out.
 
-\begin{remark}
+However, our notion of strong extremality is stronger than previously introduced
+notions of local optimality local optimality of packings. The notions of an \textit{extreme}
+lattice packing and a \textit{periodic-extreme} periodic packing apply only to special
+classes of packings. We show that strong extremality, which applies more generally,
+implies extremality and periodic-extremality in these special classes.
+
+\begin{theorem}
     If a lattice $\Lambda$ is strongly extreme for $K$, then $\Lambda$ is extreme for $K$ \cite{martinet2003perfect}.
-\end{remark}
-\begin{remark}
+\end{theorem}
+
+\begin{theorem}
     If a periodic set $\Xi = \{ T_\mathbf{l}\xi_i : \mathbf{l}\in\Lambda, i=1,\dots,N\}$ is strongly extreme,
     then it is periodic extreme for $K$ \cite{schurmann2013strict}.
-\end{remark}
+\end{theorem}
+
+We now derive a general method for proving strong extremality which we will use in the following sections.
 
 \begin{definition}
     Let $\Xi$ be a countable set of isometries and fix an enumeration $\Xi = \{\xi_i: i\in\mathbb{N}\}$. 
@@ -285,13 +304,13 @@ and $\xi_6=I_{\mathbf{p}_6}$.
 We are interested in showing that the assignment $\xi_i'=\xi_i$, $i=0,1,2,6$ locally
 minimizes the area of the quadrilateral $\xi_0(0)\xi_6(0)\xi_1(0)\xi_2(0)$, subject
 to the nonoverlap constraints. As explained in the previous section, we may
-fix $\xi_1'=\xi_1$ and replace the nonoverlap constraints by signed area constriants. We
+fix $\xi_1'=\xi_1$ and replace the nonoverlap constraints by signed area constraints. We
 obtain the following optimization problem:
 
 \begin{equation}\label{eq:opt-pent}
     \begin{aligned}
 	\text{maximize } & \alpha(\xi'_0(0),\xi'_1(0),\xi'_2(0))-\alpha(\xi'_0(0),\xi'_1(0)+\xi'_6(0) )\\
-	\text{subj. to } & \alpha(\xi'_0(\mathbf{k}_1),\xi'_0(\mathbf{k}_0),\xi'_2(\mathbf{k}_1))\ge0\\
+	\text{subj.\ to } & \alpha(\xi'_0(\mathbf{k}_1),\xi'_0(\mathbf{k}_0),\xi'_2(\mathbf{k}_1))\ge0\\
 	                & \alpha(\xi'_2(\mathbf{k}_1),\xi'_2(\mathbf{k}_0),\xi'_0(\mathbf{k}_1))\ge0\\
 	                & \alpha(\xi'_0(\mathbf{k}_0),\xi'_0(\mathbf{k}_4),\xi'_6(\mathbf{k}_4))\ge0\\
 	                & \alpha(\xi'_6(\mathbf{k}_0),\xi'_6(\mathbf{k}_4),\xi'_0(\mathbf{k}_4))\ge0\\
