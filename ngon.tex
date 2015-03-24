@@ -39,18 +39,24 @@
 %There is an algorithm of constructing the densest double lattice packing of an arbitrary convex body in the plane.  In this paper, we extend the optimality result to a neighborhood in the space of packings.
 %The story: Some of the motivation was curiosity... some existing results and explorations that could be meshed together...
 
-This paper began as an investigation of the optimality of the double lattice packing for pentagons and heptagons.  In \cite{kuperberg1990double}, G. and W. Kuperberg describe a double lattice packing of congruent planar convex bodies with maximal density that can be constructed algorithmically\footnote{For the case of polygons, this turns out to be linear in the number of vertices  \cite{Mount1991}.}. As an example, they construct the densest double lattice packing for regular pentagons and show that it has a density of $(5-\sqrt{5})/3 = 0.92131\dots$ which is the current record and possibly the best $general$ packing of the plane.
+This paper began as an investigation of the optimality of the double lattice packing for pentagons and heptagons.  In \cite{kuperberg1990double}, G.\ and W.\ Kuperberg describe a double lattice packing of congruent planar convex bodies with maximal density that can be constructed algorithmically\marginpar{YK: what do you mean here by ``algorithmically''? How is a nonpolygon represented computationally?}\footnote{For the case of polygons, this turns out to be linear in the number of vertices  \cite{Mount1991}.}. As an example, they construct the densest double lattice packing for regular pentagons and show that it has a density of $(5-\sqrt{5})/3 = 0.92131\dots$ which is the current record and possibly the best \textit{general} packing of the plane by regular pentagons.
 
 In the early part of the 2000s, there has been a significant push both theoretically and computationally to answer some of the most naive yet perplexing questions in packing \footnote{for a background on packing problems, see \cite{brass2005research} \cite{conway1999recent}\cite{groemer1963existenzsatze}.
 } Along with the proof and formal verification of the Kepler conjecture \cite{}, a number of other results have proved to be both illuminating and frustrating (Cohn-Elkies LP bounds, Lower bounds...).  For packings by congruent anisotropic bodies, sharp results are limited mostly to the plane, where the best packings of all 0-symmetric bodies are achieved by lattices \cite{fejes1950some}, and a series of space results in higher dimensions. 
 
- For non-centrally symmetric bodies, the problem of finding the best packing of regular pentagon serves as a toy model for problems like the best packing of regular tetrahedra. However, it is still not a tractable one.  The first explicit upper bounds for the packing of regular tetrahedra \cite{gravel2011upper} predate (?) the first explicit upper bounds for pentagons (as a test?) \cite{mario2013computing}, albeit by only a few years.  
- 
-Still, the upper bound on density of $0.98103$ for pentagons and $1-2.6...10^-25$ for regular tetrahedra are quite far from their best known packings:  0.856437... for tetrahedra and 0.92131... as previously mentioned for pentagons.
+For non-centrally symmetric bodies, the problem of finding the best packing of regular pentagons serves as a toy model for problems
+like the best packing of regular tetrahedra. However, it is still not a tractable one. Explicit upper bounds for the packing of regular
+tetrahedra and octahedra are better than the trivial unity upper bound by minuscule margins \cite{gravel2011upper}. A semidefinite
+programming approach has been suggested by Mario et al.\ \cite{mario2013computing}. Though the SDP method has not yet yielded a nontrivial
+upper bound for packing of tetrahedra, it has been used to obtain an upper bound of $0.98103$ on the density of regular pentagon
+packings. There remains a large gap between the highest density achieved for pentagon packings and this upper bound.
 
-Even in the plane, it is an open question to find the global pessimal convex body, that is the shape that has the lowest maximum packing density.  In the class of 0-symmetric bodies, it is Reinhardt who conjectured that a smoothed octagon is the minimizer.  In the class of general convex bodies, it is conjectured to be the regular heptagon.  However, even thought conjectured maximum packing density of the regular heptagon is the maximal density double lattice, it has also resisted proofs its global optimality.
+Even in the plane, it is an open question to find the global pessimal convex body, that is the shape that has the lowest maximum packing density.  In the class of 0-symmetric bodies, it is Reinhardt who conjectured that a smoothed octagon is the minimizer.  In the class of general convex bodies, it is conjectured to be the regular heptagon.  However, even though conjectured maximum packing density of the regular heptagon is the maximal density double lattice, it has also resisted proofs its global optimality.
 
-This motivates the following: we consider the densest double lattice packings and extend the optimality result for polygons to the a neighborhood in the space of packings.  This demonstrates that while the double lattices are perhaps not globally optimal, they are at the very least locally optimal.  
+The regular pentagon and heptagons are cases of special interest, and we initially sought out to investigate whether their optimal double-lattice packing can be shown
+to be also optimal among a broader class of packings. We were able to show that these packings are optimal at least in some neighborhood in the space of all packings.
+Furthermore, we discovered that our method can be generalized to all convex polygons. We demonstrate that, while double-lattices are in general not globally
+optimal, they are always at least locally optimal.
 
 \begin{theorem}
 Given a convex planar polygon, there is a double lattice packing that is locally optimal.  Modulo vertex condition... \end{theorem}
