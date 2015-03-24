@@ -38,23 +38,30 @@
 
 \section{The Vertex-Vertex Lemma}
 
-By the construction of 
+
+It is possible to construct polygons that have half-length parallelograms that share vertices with the bounding polygon.
 
 
-there do exist examples of convex bodies that have affine diameters ...
+
+The stability condition:  given a collection of points that determine an affine diameter and a half parallelogram, we give criteria on the slopes of the support lines and the movement of the vertices as the affine diameter changers. 
+
+At each vertex, there is a coupled family of directions which determine the motion for which the the area of the half-length parallelogram is preserved to first order.
+
+%%%%
+We describe the slopes as follows...
 
 
-\begin{proposition}
-The affine diameter of a convex polygon meets a vertex or is equivalent to one.
-\end{proposition}
-\begin{proof}
-parallel transport or transport in the increasing direction of the edge cone.
-\end{proof}
+%%picture?
 
+%%%%
+
+
+
+%picture
+\section{vertices of the affine diameter}
 
 \begin{proposition}
 Quadrilateral configuration
-
 
 The affine diameter meets only one vertex, unless 
 
@@ -62,27 +69,57 @@ The affine diameter meets only one vertex, unless
 
 \begin{proof}
 
-Consider the case where an affine diameter meets two vertices.  
-
-If the affine diameter is not uniquely determined then the vertex-vertex condition is also an edge-edge configuration.
-
-Otherwise, one of the vertices may be fixed and swept out as an affine diameter. 
-
+%Consider the case where an affine diameter meets two vertices.  
+%If the affine diameter is not uniquely determined then the vertex-vertex condition is also an edge-edge configuration.
+%Otherwise, one of the vertices may be fixed and swept out as an affine diameter. 
+%%%this proof fail
 \end{proof}
 
+\section{vertices of the half-length parallelogram}
+
+\subsection{Pyramids}
+
 \begin{proposition}
-The vertices of the half length parallelogram meet no vertices unless the stability condition is degenerate.
+A vertex of a half parallelogram is imperturbable if a rotation of the affine diameter does not cause that vertex to move.  By the stability condition, a vertex is imperturbable only when the opposite end of it's half diameter has a motion that is parallel to the motion of moving end of the affine diameter.
+
+This follows from a symbolic computation.  (modulo the correct parametrization of slopes...)
+\end{proposition}
 
 
 
+\begin{proposition}
+The vertices of the half length parallelogram meet no vertices unless it contains an imperturbable vertex.
 \end{proposition}
 
 \begin{proposition}
-
+The stability condition is given by a function of slopes and point positions that are required for the configuration to be stable with respect to the half parallelogram construction. This function is continuous and satisfies certain intermediate value properties.  (modulo the correct parametrization)
 \end{proposition}
 
 
-affine diameter
+%picture
+\begin{proposition}
+The stability condition is given by a function of slopes and point positions that are required for the configuration to be stable with respect to the half parallelogram construction. This function is continuous and satisfies certain intermediate value properties.  (modulo the correct parametrization)
+\end{proposition}
+
+%picture
+
+For a configuration of vertices of a half length quadrilateral to be stable, they must satisfy the condition that the area be minimized.  This determines a collection of slopes that stabilize the configuration of vertices two first order.  
+
+
+%illustration of a single point.
+
+
+
+
+
+
+If a polygon has an imperturbable vertex, we call it a $pyramid$. 
+
+special case...
+
+
+\begin{proposition}
+\end{proposition}
 
 perturbation of quadrangle vertices
 
@@ -91,6 +128,10 @@ depends on analysis of the the stability criterion of slopes
 sketch at a single vertex...
 
 intermediate value theorem
+
+
+%picture
+
 
 
 
