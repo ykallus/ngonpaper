@@ -3,47 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: ngon.aux
 The style file: plain.bst
 Database file #1: ngon.bib
-Warning--I didn't find a database entry for "Martinet2003"
-Warning--I didn't find a database entry for "Schurmann2013"
-You've used 9 entries,
+You've used 11 entries,
             2118 wiz_defined-function locations,
-            558 strings with 5335 characters,
-and the built_in function-call counts, 2722 in all, are:
-= -- 277
-> -- 108
-< -- 2
-+ -- 44
-- -- 34
-* -- 185
-:= -- 465
-add.period$ -- 27
-call.type$ -- 9
-change.case$ -- 42
+            567 strings with 5573 characters,
+and the built_in function-call counts, 3193 in all, are:
+= -- 321
+> -- 122
+< -- 3
++ -- 50
+- -- 38
+* -- 210
+:= -- 550
+add.period$ -- 33
+call.type$ -- 11
+change.case$ -- 49
 chr.to.int$ -- 0
-cite$ -- 9
-duplicate$ -- 104
-empty$ -- 217
-format.name$ -- 34
-if$ -- 558
+cite$ -- 11
+duplicate$ -- 127
+empty$ -- 261
+format.name$ -- 38
+if$ -- 656
 int.to.chr$ -- 0
-int.to.str$ -- 9
-missing$ -- 9
-newline$ -- 48
-num.names$ -- 18
-pop$ -- 37
+int.to.str$ -- 11
+missing$ -- 12
+newline$ -- 58
+num.names$ -- 22
+pop$ -- 46
 preamble$ -- 1
-purify$ -- 35
+purify$ -- 41
 quote$ -- 0
-skip$ -- 72
+skip$ -- 85
 stack$ -- 0
-substring$ -- 183
-swap$ -- 18
-text.length$ -- 2
+substring$ -- 202
+swap$ -- 21
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 34
+type$ -- 40
 warning$ -- 0
-while$ -- 31
-width$ -- 10
-write$ -- 100
-(There were 2 warnings)
+while$ -- 36
+width$ -- 13
+write$ -- 122

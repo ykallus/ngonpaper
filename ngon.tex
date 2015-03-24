@@ -35,41 +35,36 @@
 
 
 \section{Introduction}
-
 %How to view/present this.  Experimental, algorithmic or fully rigorous? Seems that full rigor is hard as it depends on certificates that are non-trivial to verify for various reasons.  
-
-references for packing
-\cite{brass2005research} %find better references for intro to packing
-\cite{conway1999recent}
-references for anisotropic packing problems
-The packing problem for centrally symmetric bodies in the plane is mostly understood.
-\cite{fejes1950some}
-\cite{kuperberg1990double}
-\cite{gravel2011upper}
-\cite{mario2013computing}
-references for mathematica
-\cite{mathematica10}
-\cite{keiper1995interval} %outdated
-references for linear programming
-
-
-We prove the Kuperberg and Kuperberg double lattice construction for polygons is an isolated local maximum for density in the full space of packings.  That is, the density of nearby packings are of strictly lower density.
-
-
-
 %There is an algorithm of constructing the densest double lattice packing of an arbitrary convex body in the plane.  In this paper, we extend the optimality result to a neighborhood in the space of packings.
+%The story: Some of the motivation was curiosity... some existing results and explorations that could be meshed together...
 
-The structure of the paper is as follows.  
+This paper began as an investigation of the optimality of the double lattice packing for pentagons and heptagons.  In \cite{kuperberg1990double}, G. and W. Kuperberg describe a double lattice packing of congruent planar convex bodies with maximal density that can be constructed algorithmically\footnote{For the case of polygons, this turns out to be linear in the number of vertices  \cite{Mount1991}.}. As an example, they construct the densest double lattice packing for regular pentagons and show that it has a density of $(5-\sqrt{5})/3 = 0.92131\dots$ which is the current record and possibly the best $general$ packing of the plane.
 
-We review the required results from [] lattices, packing...
+In the early part of the 2000s, there has been a significant push both theoretically and computationally to answer some of the most naive yet perplexing questions in packing \footnote{for a background on packing problems, see \cite{brass2005research} \cite{conway1999recent}\cite{groemer1963existenzsatze}.
+} Along with the proof and formal verification of the Kepler conjecture \cite{}, a number of other results have proved to be both illuminating and frustrating (Cohn-Elkies LP bounds, Lower bounds...).  For packings by congruent anisotropic bodies, sharp results are limited mostly to the plane, where the best packings of all 0-symmetric bodies are achieved by lattices \cite{fejes1950some}, and a series of space results in higher dimensions. 
 
-We review Kuperberg and Kuperberg
+ For non-centrally symmetric bodies, the problem of finding the best packing of regular pentagon serves as a toy model for problems like the best packing of regular tetrahedra. However, it is still not a tractable one.  The first explicit upper bounds for the packing of regular tetrahedra \cite{gravel2011upper} predate (?) the first explicit upper bounds for pentagons (as a test?) \cite{mario2013computing}, albeit by only a few years.  
+ 
+Still, the upper bound on density of $0.98103$ for pentagons and $1-2.6...10^-25$ for regular tetrahedra are quite far from their best known packings:  0.856437... for tetrahedra and 0.92131... as previously mentioned for pentagons.
+
+Even in the plane, it is an open question to find the global pessimal convex body, that is the shape that has the lowest maximum packing density.  In the class of 0-symmetric bodies, it is Reinhardt who conjectured that a smoothed octagon is the minimizer.  In the class of general convex bodies, it is conjectured to be the regular heptagon.  However, even thought conjectured maximum packing density of the regular heptagon is the maximal density double lattice, it has also resisted proofs its global optimality.
+
+This motivates the following: we consider the densest double lattice packings and extend the optimality result for polygons to the a neighborhood in the space of packings.  This demonstrates that while the double lattices are perhaps not globally optimal, they are at the very least locally optimal.  
+
+\begin{theorem}
+Given a convex planar polygon, there is a double lattice packing that is locally optimal.  Modulo vertex condition... \end{theorem}
+
+In that light, we must establish the correct notion of neighborhood.  This neighborhood should be broader than simply the Hausdorff distance between two packings.   To that end, we recall a topology on the space of sequences ambient isometries 
+ 
+We recast the relevant portions of \cite{kuperberg1990double}.
+
+We prove a stability result for non-linear programming problems.
+
+We characterize the pentagon.
 
  We give a local parametrization of the neighborhood of the double lattice in the space of packings and give a characterization of the a correction function and show that the optimality of the local configuration problem implies the global density result.
 
-We prove a stability result for non-linear programming problems of the type described.
-
-the density function can be replaced with a function of the correct type and which implies the density result.
 
 \section{Theoretical Considerations}
 \subsection{Local Stability}
@@ -123,11 +118,11 @@ Our notion of strong extremality is meant to generalize weaker notions of local 
 for packing. Specifically, these notions apply to lattices and periodic packings.
 
 \begin{remark}
-    If a lattice $\Lambda$ is strongly extreme for $K$, then $\Lambda$ is extreme for $K$ \cite{Martinet2003}.
+    If a lattice $\Lambda$ is strongly extreme for $K$, then $\Lambda$ is extreme for $K$ \cite{martinet2003perfect}.
 \end{remark}
 \begin{remark}
     If a periodic set $\Xi = \{ T_\mathbf{l}\xi_i : \mathbf{l}\in\Lambda, i=1,\dots,N\}$ is strongly extreme,
-    then it is periodic extreme for $K$ \cite{Schurmann2013}.
+    then it is periodic extreme for $K$ \cite{schurmann2013strict}.
 \end{remark}
 
 \begin{definition}
@@ -250,7 +245,7 @@ only occurs in special cases that can be treated separately.
 %    diameter with no more than one vertex shared with $K$.
 %\end{lemma}
 
-\subection{other theorems}
+\subsection{other theorems}
 
 We will show that optimization problems we obtain fall into a convenient
 form, where linear stability holds along all but one direction. Along
@@ -307,9 +302,9 @@ a condensed notation for the free variables $X=(x_0,y_0,\theta_0,x_2,y_2,\theta_
 The linearized version of \ref{eq:opt-pent} is locally optimized \ldots.
 Since \ref{eq:opt-pent} satisfies conditions (*), we have:
 
-\begin{thm}
+\begin{theorem}
     The optimal double-lattice packing of regular pentagons, illustrated in Figure X, is strongly extreme.
-\end{thm}
+\end{theorem}
 
 \subsection{Heptagons}
 
@@ -499,7 +494,7 @@ This follows from \ref{lem3}, which shows $F(t)$ is in the interior of the polar
 \end{proof}
 
 \begin{corollary}\label{cor1}
-Given \ref{assumpt} and $\epsilon$ as in Lemma \ref{lem3}, for all $t \in (-\epsilon, \epsilon),$ 
+Given Conditions\ref{assumpt} and $\epsilon$ as in Lemma \ref{lem3}, for all $t \in (-\epsilon, \epsilon),$ 
 
 $$(F(t)+\Delta) \cdot y_t \le 0$$
 whenever $y_t$ satisfies

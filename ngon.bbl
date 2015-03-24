@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{brass2005research}
 P~Brass, W~Moser, and J~Pach.
@@ -38,11 +38,22 @@ F~M{\'a}rio~de Oliveira~Filho and F~Vallentin.
   a convex body {I}.
 \newblock {\em arXiv preprint arXiv:1308.4893}, 2013.
 
+\bibitem{martinet2003perfect}
+Jacques Martinet.
+\newblock {\em Perfect lattices in Euclidean spaces}, volume 327.
+\newblock Springer Science \& Business Media, 2003.
+
 \bibitem{Mount1991}
 David~M Mount.
 \newblock The densest double-lattice packing of a convex polygon.
 \newblock {\em Discrete and Computational Geometry: Papers from the DIMACS
   Special Year}, 6:245--262, 1991.
+
+\bibitem{schurmann2013strict}
+Achill Sch{\"u}rmann.
+\newblock Strict periodic extreme lattices.
+\newblock {\em Diophantine Methods, Lattices, and Arithmetic Theory of
+  Quadratic Forms}, 587:185, 2013.
 
 \bibitem{mathematica10}
 {Wolfram Research}.
