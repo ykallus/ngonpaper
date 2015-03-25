@@ -352,7 +352,7 @@ obtain the following optimization problem:
 	                & g_6(z)=\alpha(\xi'_2(\mathbf{k}_2),\xi'_2(\mathbf{k}_1),\xi'_1(\mathbf{k}_2))\ge0\\
 	                & g_7(z)=\alpha(\xi'_1(\mathbf{k}_4),\xi'_1(\mathbf{k}_3),\xi'_6(\mathbf{k}_3))\ge0\\
 	                & g_8(z)=\alpha(\xi'_6(\mathbf{k}_4),\xi'_6(\mathbf{k}_3),\xi'_1(\mathbf{k}_3))\ge0\\
-	                & g_9(z)=\alpha(\xi'_1(\mathbf{k}_3),\xi'_1(\mathbf{k}_2),\xi'_0(\mathbf{k}_0))\ge0,
+	                & g_9(z)=\alpha(\xi'_1(\mathbf{k}_3),\xi'_1(\mathbf{k}_2),\xi'_0(\mathbf{k}_0))\ge0\text,
     \end{aligned}
 \end{equation}
 where $\xi'_i=T_{(x_i,y_i)}\xi_iR_\theta$ for $i=0,2,6$, and $\xi'_1=\xi_1$. We adopt
@@ -366,7 +366,7 @@ problem of the form
 where $c\in \mathbb R^9$, $G\in\mathbb{R}^{9\times9}$ and we use the linear programming notation $\ge0$
 to denote a vector lying in the closed positive orthant.
 We can show by direct calculation a vector $\eta>0$ lying in the open positive orthant exists such that
-$c=\eta^T G$. By the fundamental theorem of linear algebra, this observation implies that $G z\ge 0$ and $c\cdot X\le0$
+$c=\eta^T G$. By the fundamental theorem of linear algebra, this observation implies that $G z\ge 0$ and $c\cdot z\le0$
 if and only if $G z = 0$ and $c\cdot z=0$. We can show that $\mathrm{rank} G=8$, and so the program
 \ref{eq:lin-pent} is minimized exactly by the null space of $G$ and is suboptimal elsewhere in the
 cone $Gz\ge0$. The null space corresponds precisely to the rearrangement given by choosing a nearby
@@ -386,8 +386,91 @@ Therefore, \ref{eq:opt-pent} satisfies all the conditions of \ref{}, and we have
 \subsection{Heptagons}
 
 The calculation for the regular heptagon starts out the same as the calculation presented above for regular pentagons.
-However, it turns out that the linear program equivalent to \ref{eq:lin-pent} is in this case not minimized
+However, it will turn out that the linear program equivalent to \ref{eq:lin-pent} is in this case not minimized
 at $z=0$, and so we will need to add auxiliary cost functions to the area as allowed for in \ref{thm:aux}.
+
+We fix a regular heptagon $K=\mathrm{conv} \{\mathbf{k}_i:i=0,\ldots 6\}$, where $\mathbf{k}_i = R_{2\pi i/7} (1,0)$.
+In this case, our calculations are performed in the extension field $\mathbb{Q}(u,v)$, where $u=\cos \pi/7$ and $v=\sin \pi/7$.
+A minimum-area half-length parallelogram corresponds to the affine diameter $\mathbf{p}_1\mathbf{p}_4$, where
+$\mathbf{p}_1 = \mathbf{k}_0$ and $\mathbf{p}_4 = \tfrac12 (\mathbf{k}_3+\mathbf{k}_4)$.
+The vertices of the parallelogram are given by
+$\mathbf{p}_2=(1-a)\mathbf k_1+a\mathbf k_2$,
+$\mathbf{p}_3=(1-b)\mathbf k_2+b\mathbf k_3$,
+$\mathbf{p}_5=b\mathbf k_4+(1-b)\mathbf k_5$, and
+$\mathbf{p}_6=a\mathbf k_5+(1-a)\mathbf k_6$.
+
+The four heptagons that surround our primitive honeycomb cell are again
+$\xi_i(K)$, $i=0,1,2,6$, where $\xi_0=\mathrm{Id}$,
+$\xi_1=T_{\mathbf{p}_1-\mathbf{p}_4}$,
+$\xi_2=I_{\mathbf{p}_2}$,
+and $\xi_6=I_{\mathbf{p}_6}$.
+We will investigate whether the assignment $\xi_i'=\xi_i$, $i=0,1,2,6$ locally
+minimizes the area of the quadrilateral $\xi_0(0)\xi_6(0)\xi_1(0)\xi_2(0)$, subject
+to the nonoverlap constraints. Again, we
+fix $\xi_1'=\xi_1$ and replace the nonoverlap constraints by signed area constraints. We
+obtain the following optimization problem:
+
+\begin{equation}\label{eq:opt-hept}
+    \begin{aligned}
+	\text{minimize } & f(z)=\alpha(\xi'_0(0),\xi'_1(0),\xi'_2(0))-\alpha(\xi'_0(0),\xi'_1(0)+\xi'_6(0) )\\
+	\text{subj.\ to } & g_1(z)=\alpha(\xi'_0(\mathbf{k}_2),\xi'_0(\mathbf{k}_1),\xi'_2(\mathbf{k}_1))\ge0\\
+	                & g_2(z)=\alpha(\xi'_2(\mathbf{k}_2),\xi'_2(\mathbf{k}_1),\xi'_0(\mathbf{k}_1))\ge0\\
+	                & g_3(z)=\alpha(\xi'_0(\mathbf{k}_6),\xi'_0(\mathbf{k}_5),\xi'_6(\mathbf{k}_6))\ge0\\
+	                & g_4(z)=\alpha(\xi'_6(\mathbf{k}_6),\xi'_6(\mathbf{k}_5),\xi'_0(\mathbf{k}_6))\ge0\\
+	                & g_5(z)=\alpha(\xi'_1(\mathbf{k}_3),\xi'_1(\mathbf{k}_2),\xi'_2(\mathbf{k}_3))\ge0\\
+	                & g_6(z)=\alpha(\xi'_2(\mathbf{k}_3),\xi'_2(\mathbf{k}_2),\xi'_1(\mathbf{k}_3))\ge0\\
+	                & g_7(z)=\alpha(\xi'_1(\mathbf{k}_5),\xi'_1(\mathbf{k}_4),\xi'_6(\mathbf{k}_4))\ge0\\
+	                & g_8(z)=\alpha(\xi'_6(\mathbf{k}_5),\xi'_6(\mathbf{k}_4),\xi'_1(\mathbf{k}_4))\ge0\\
+	                & g_9(z)=\alpha(\xi'_1(\mathbf{k}_4),\xi'_1(\mathbf{k}_3),\xi'_0(\mathbf{k}_0))\ge0\text.
+    \end{aligned}
+\end{equation}
+The linearization of \ref{rq:opt-hept} around the point $z=0\in\mathbb{R}^9$ gives
+\begin{equation}\label{eq:lin-hept}
+    \text{minimize } c\cdot z \text{ subject to } G z\ge 0\text.
+\end{equation}
+Unfortunately, \ref{lin-hept} is unbounded. This can be shown by producing some
+$z_u$ such that $c\cdot z_u<0$ and $G z_u\ge0$. In the dual setting, this implies
+that there is no $\eta$ such that $c=\eta^T G$ and $\eta>0$.
+
+Due to \ref{thm:aux}, we are allowed to modify the cost function $f(z)$ by adding
+auxiliary functions. In order for the new problem to be locally minimized, we
+need the new gradient $c'$ to lie in the cone $\{\eta^T G:\eta>0\}$. We will take
+the following simple form for our modified problem
+\begin{equation}\label{eq:mod-hept}
+    \begin{aligned}
+	\text{minimize } & f'(z) = f(z) +\sum_{r=1}^9 \mu_r g_r(z)\\
+	\text{subj.\ to } & \text{same constraints as in \ref{eq:opt-hept}.}
+    \end{aligned}
+\end{equation}
+For a cell $\xi(P)$ other than the primitive cell $P$, the modified version is the same
+as \ref{eq:mod-hept}, except we replace $\xi'_i$ everywhere with $\xi'_i  = \xi\circ\xi'_i$.
+Since the problem is invariant under common isometry, this is equivalent for all the cells
+and it is enough to show that \ref{eq:mod-hept} is locally minimized.
+Note that $\xi_2\circ\xi_0=\xi_2$ and $\xi_2\circ\xi_2=\xi_0$, so $g_1^{P}(z) = g_2^{\xi_2(P)}(z)$
+and $g_2^{P}(z) = g_1^{\xi_2(P)}(z)$. Therefore, if $\mu_1=-\mu_2$, the auxiliary addition
+$g_{F_2}(z)=\mu_1 g_1(z)+\mu_2 g_2(z)$ is equal in magnitude and opposite in sign for the two cells $P$ and
+$\xi_2(P)$ sharing the face $F_2$,
+as required in \ref{thm:aux} for an auxiliary function attached to a cell face. By similar observation,
+we note that we should have $\mu_3=-\mu_4$, $\mu_5=-\mu_6$, and $\mu_7=\mu_8$. The term
+$\mu_9 g_9(z)$ does not cancel with any neighboring cells, so we set $\mu_9=0$.
+A choice for $\mu_r$ satisfying these condition and such that $c'$ lies in the cone
+$\{\eta^T G:\eta>0\}$ exists if and only if there is some $\eta$ such that
+$c=\eta^T G$ and $\eta_1+\eta_2>0$, $\eta_3+\eta_4>0$, $\eta_5+\eta_6>0$, $\eta_7+\eta_8>0$,
+and $\eta_9>0$. We can show directly that such $\eta$ exists.
+
+We now have that $G z\ge 0$ and $c'\cdot z\le0$
+if and only if $G z = 0$ and $c'\cdot z=0$. The rank of the constraint matrix is again $\mathrm{rank} G=8$,
+and so the program
+\ref{eq:mod-hept} is minimized exactly at the one-dimensional null space of $G$.
+Let $z^{(0)}$, then we can verify directly
+that $f(tz^{(0)})$ is a quadratic function of $t$ minimized at $t=0$, and that
+$g_r(tz^{(0)})=0$ identically for $r=1,\ldots,9$. 
+
+Therefore, \ref{eq:mod-hept} satisfies all the conditions of \ref{}, and we have:
+
+\begin{theorem}
+    The optimal double-lattice packing of regular heptagons, illustrated in Figure X, is strongly extreme.
+\end{theorem}
 
 
 \subsubsection{ find the construction given by Theorem \ref{thmkk}.}
