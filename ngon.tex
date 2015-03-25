@@ -39,10 +39,10 @@
 %There is an algorithm of constructing the densest double lattice packing of an arbitrary convex body in the plane.  In this paper, we extend the optimality result to a neighborhood in the space of packings.
 %The story: Some of the motivation was curiosity... some existing results and explorations that could be meshed together...
 
-This paper began as an investigation of the optimality of the double lattice packing for pentagons and heptagons.  In \cite{kuperberg1990double}, G.\ and W.\ Kuperberg describe a double lattice packing of congruent planar convex bodies with maximal density that can be constructed algorithmically\marginpar{YK: what do you mean here by ``algorithmically''? How is a nonpolygon represented computationally?}\footnote{For the case of polygons, this turns out to be linear in the number of vertices  \cite{Mount1991}.}. As an example, they construct the densest double lattice packing for regular pentagons and show that it has a density of $(5-\sqrt{5})/3 = 0.92131\dots$ which is the current record and possibly the best \textit{general} packing of the plane by regular pentagons.
+This paper began as an investigation of the optimality of the double lattice packing for pentagons and heptagons.  In \cite{kuperberg1990double}, G.\ and W.\ Kuperberg describe a double lattice packing of congruent planar convex bodies with maximal density that can be constructed algorithmically\marginpar{YK: what do you mean here by ``algorithmically''? How is a nonpolygon represented computationally? \\ WK: perhaps "procedurally" for "nice enough" bodies?  }\footnote{For the case of polygons, this turns out to be linear in the number of vertices  \cite{Mount1991}.}. As an example, they construct the densest double lattice packing for regular pentagons and show that it has a density of $(5-\sqrt{5})/3 = 0.92131\dots$ which is the current record and possibly the best \textit{general} packing of the plane by regular pentagons.
 
 In the early part of the 2000s, there has been a significant push both theoretically and computationally to answer some of the most naive yet perplexing questions in packing \footnote{for a background on packing problems, see \cite{brass2005research} \cite{conway1999recent}\cite{groemer1963existenzsatze}.
-} Along with the proof and formal verification of the Kepler conjecture \cite{}, a number of other results have proved to be both illuminating and frustrating (Cohn-Elkies LP bounds, Lower bounds...).  For packings by congruent anisotropic bodies, sharp results are limited mostly to the plane, where the best packings of all 0-symmetric bodies are achieved by lattices \cite{fejes1950some}, and a series of space results in higher dimensions. 
+} Along with the proof and formal verification of the Kepler conjecture \cite{hales2015formal}, a number of other results have proved to be both illuminating and frustrating (Cohn-Elkies LP bounds, Lower bounds...).  For packings by congruent anisotropic bodies, sharp results are limited mostly to the plane, where the best packings of all 0-symmetric bodies are achieved by lattices \cite{fejes1950some}, and a series of sparce results in higher dimensions. 
 
 For non-centrally symmetric bodies, the problem of finding the best packing of regular pentagons serves as a toy model for problems
 like the best packing of regular tetrahedra. However, it is still not a tractable one. Explicit upper bounds for the packing of regular
@@ -51,7 +51,7 @@ programming approach has been suggested by Mario et al.\ \cite{mario2013computin
 upper bound for packing of tetrahedra, it has been used to obtain an upper bound of $0.98103$ on the density of regular pentagon
 packings. There remains a large gap between the highest density achieved for pentagon packings and this upper bound.
 
-Even in the plane, it is an open question to find the global pessimal convex body, that is the shape that has the lowest maximum packing density.  In the class of 0-symmetric bodies, it is Reinhardt who conjectured that a smoothed octagon is the minimizer.  In the class of general convex bodies, it is conjectured to be the regular heptagon.  However, even though conjectured maximum packing density of the regular heptagon is the maximal density double lattice, it has also resisted proofs its global optimality.
+Even in the plane, it is an open question to find the global pessimal convex body, that is the shape that has the lowest maximum packing density.  In the class of 0-symmetric bodies, it is Reinhardt \cite{ reinhardt1933dichteste} who conjectured that a smoothed octagon is the minimizer.  In the class of general convex bodies, it is conjectured to be the regular heptagon.  However, even though the conjectured maximum packing density of the regular heptagon is the maximal density double lattice, it has also resisted proofs its global optimality.
 
 The regular pentagon and heptagons are cases of special interest, and we initially sought out to investigate whether their optimal double-lattice packing can be shown
 to be also optimal among a broader class of packings. We were able to show that these packings are optimal at least in some neighborhood in the space of all packings.
@@ -206,8 +206,42 @@ by three point reflections.
 %By a sequence of approximations, this gives that for convex bodies $K$ that are not strictly convex, there
 %exists a double lattice packing of maximal density that generated a minimum area extensive parallelogram in $K$.
 
-The densest double lattice packing of a convex polygon $K$ can be constructed in time proportional to the number of vertices
-by an algorithm of Mount \cite{Mount1991}. The goal of this paper is to show that this configuration is not only a local maximum
+Note that Kuperberg and Kuperberg make use of extensive parallelograms, inscribed parallelograms with edge length greater than half the affine diameter in their edge directions but make use of half-length parallelograms. Mount gives an explicit proof that it suffices to consider only the half-length parallelograms associated with affine diameters as a function of $\theta.$
+
+For our purposes, it is illustrative to consider the algorithm used find the half-length parallelogram of minimal area not only as a method of finding the best double lattice packing, but also as a way to explore the configuration space of double lattices. More specifically, the behavior of the affine diameter is fairly well behaved but non-trivial as $\theta$ increases while the behavior of the vertices of the half parallelogram are described by an {\it interspersing property}; they are non-decreasing functions $[0,2\pi)\rightarrow [0,2\pi).$  %they are a non-decreasing function, they never back track....
+
+We begin with a simple proposition:
+\begin{proposition}
+there is an affine diameter of a convex polygon K in every direction that meets a vertex.
+\end{proposition}
+
+This is a consequence of the convexity K, for if a chord does not meet a vertex, it either lies within an edge or it meets two edges.  If it lies within an edge, it is not an affine diameter.  If it meets two edges, it is possible increase its length while parallel translating it in a non-decreasing direction of the cone defined by the two edges until it meets a vertex. 
+%picture
+
+From this, it is possible to determine an initial affine diameter in a particular direction.  Furthermore, this is done by geometrically satisfying procedure of extending a set of parallel rays in a from all vertices into the interior of K and selecting the longest.  However, it does not give 
+
+
+
+
+%critical angles
+
+
+
+%\begin{remark}
+%Furthermore,  IMVT should say that ever point is met by an affine diameter as well, so every vertex is met by one.? Combining these satisfies the intuition that one may 
+%\end{remark}
+
+
+
+%continuous sweeping vs finding the minimum area intermediate configuration...
+%can introduce the notion of stability here
+
+%Having found the optimal configuration, it is clear that the condition of being a strict minimal configuration and the  
+
+
+
+
+The densest double lattice packing of a convex polygon $K$ can be constructed in time proportional to the number of vertices by an algorithm of Mount \cite{Mount1991}. The goal of this paper is to show that this configuration is not only a local maximum
 of density among double lattices, but is in fact a local maximum in a broader sense, strong extremality.
 
 \subsection{General setup}
@@ -522,7 +556,7 @@ subject to
 $$G_r(t)\cdot y_t \ge 0, r \in I$$
 has a unique maximum at $y_t = 0$.\begin{footnote}{Here $y_t$ is a dummy variable and does not depend on $t$. It is labeled $y_t$ to ease later exposition.}\end{footnote}
 \end{lemma}
-\begin{proof} The program for $t\in (-\epsilon,\epsilon)$, for $y_t$ in $H$, for each fixed $t$ in $(-\epsilon,\epsilon)$, for some $\epsilon> 0$, can be written as a conical program on all of $\mathbb{R}^n$ with a cone $C_t$ in $\mathbb{R}^n$ of co-dimension $\ge 1$ by introducing further constraints $e_1\cdot y_t \ge 0$ and $-e_1\cdot y_t \ge 0.$  By \ref{lem1} and \ref{lem2}, $F(0)$ is in the polar cone of $C_0 = \{y_0: G_r(0)\cdot y_0 \ge 0, e_1\cdot y_0 \ge 0, -e_1\cdot y_0 \ge 0\}.$   As $f,g_r \in C^\omega$, the condition of  $F(t)$ being in the interior of the polar cone $C_t^p$ is open and the condition of the feasible set $C_t = \{y_t: G_r(t)\cdot y_t \ge 0, e_1\cdot y_t \ge 0, -e_1\cdot y_t \ge 0\}$ being conical is open.\begin{footnote}{The relationships between the constraint cone, the generators $v_i$ and the constraint gradients $G_k$ is subtle, but the openness of the condition follows from the continuity of the distance function.}\end{footnote}  Therefore, by Lemma \ref{lem2} the program has a unique maximum at $y_t = 0$ for each fixed $t$ in $(-\epsilon,\epsilon)$ for some $\epsilon> 0$.\end{proof}
+\begin{proof} The program for $t\in (-\epsilon,\epsilon)$, for $y_t$ in $H$, for each fixed $t$ in $(-\epsilon,\epsilon)$, for some $\epsilon> 0$, can be written as a conical program on all of $\mathbb{R}^n$ with a cone $C_t$ in $\mathbb{R}^n$ of co-dimension $\ge 1$ by introducing further constraints $e_1\cdot y_t \ge 0$ and $-e_1\cdot y_t \ge 0.$  By Lemmas \ref{lem1} and \ref{lem2}, $F(0)$ is in the polar cone of $C_0 = \{y_0: G_r(0)\cdot y_0 \ge 0, e_1\cdot y_0 \ge 0, -e_1\cdot y_0 \ge 0\}.$   As $f,g_r \in C^\omega$, the condition of  $F(t)$ being in the interior of the polar cone $C_t^p$ is open and the condition of the feasible set $C_t = \{y_t: G_r(t)\cdot y_t \ge 0, e_1\cdot y_t \ge 0, -e_1\cdot y_t \ge 0\}$ being conical is open.\begin{footnote}{The relationships between the constraint cone, the generators $v_i$ and the constraint gradients $G_k$ are nontrivial as $t$ varies, but the openness of this condition follows from the continuity of the distance function.}\end{footnote}  Therefore, by Lemma \ref{lem2} the program has a unique maximum at $y_t = 0$ for each fixed $t$ in $(-\epsilon,\epsilon)$ for some $\epsilon> 0$.\end{proof}
 
 \begin{lemma}\label{lem4}
 Given Conditions \ref{assumpt} and $\epsilon$ as in Lemma \ref{lem3}, for all $t \in (-\epsilon, \epsilon)$

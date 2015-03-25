@@ -22,10 +22,17 @@ S~Gravel, V~Elser, and Y~Kallus.
   octahedra.
 \newblock {\em Discrete \& Computational Geometry}, 46(4):799--818, 2011.
 
-\bibitem{keiper1995interval}
-J~B Keiper.
-\newblock Interval arithmetic in mathematica.
-\newblock {\em Mathematica Journal}, 5(2):66--71, 1995.
+\bibitem{groemer1963existenzsatze}
+Helmut Groemer.
+\newblock Existenzs{\"a}tze f{\"u}r lagerungen im euklidishen raum.
+\newblock {\em Mathematische Zeitschrift}, 81(3):260--278, 1963.
+
+\bibitem{hales2015formal}
+Thomas Hales, Mark Adams, Gertrud Bauer, Dat~Tat Dang, John Harrison, Truong~Le
+  Hoang, Cezary Kaliszyk, Victor Magron, Sean McLaughlin, Thang~Tat Nguyen,
+  et~al.
+\newblock A formal proof of the kepler conjecture.
+\newblock {\em arXiv preprint arXiv:1501.02155}, 2015.
 
 \bibitem{kuperberg1990double}
 G~Kuperberg and W~Kuperberg.
@@ -54,10 +61,5 @@ Achill Sch{\"u}rmann.
 \newblock Strict periodic extreme lattices.
 \newblock {\em Diophantine Methods, Lattices, and Arithmetic Theory of
   Quadratic Forms}, 587:185, 2013.
-
-\bibitem{mathematica10}
-{Wolfram Research}.
-\newblock {\em Mathematica 10.0}.
-\newblock Wolfram Research, Inc., Champaign, Illinois, 2014.
 
 \end{thebibliography}
