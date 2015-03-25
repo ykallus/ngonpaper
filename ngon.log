@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  25 MAR 2015 12:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  25 MAR 2015 13:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -405,34 +405,34 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
  [4] [5]
-[6]
+[6] [7]
 
-LaTeX Warning: Reference `rq:opt-pent' on page 7 undefined on input line 361.
-
-
-LaTeX Warning: Reference `' on page 7 undefined on input line 380.
+LaTeX Warning: Reference `rq:opt-pent' on page 8 undefined on input line 433.
 
 
-LaTeX Warning: Reference `thm:aux' on page 7 undefined on input line 390.
-
-[7]
-
-LaTeX Warning: Reference `rq:opt-hept' on page 8 undefined on input line 427.
-
-
-LaTeX Warning: Reference `lin-hept' on page 8 undefined on input line 431.
-
-
-LaTeX Warning: Reference `thm:aux' on page 8 undefined on input line 435.
-
-
-LaTeX Warning: Reference `thm:aux' on page 8 undefined on input line 453.
+LaTeX Warning: Reference `' on page 8 undefined on input line 452.
 
 [8]
 
-LaTeX Warning: Reference `' on page 9 undefined on input line 469.
+LaTeX Warning: Reference `thm:aux' on page 9 undefined on input line 462.
 
-[9] [10] [11] [12] [13] (./ngon.bbl [14]) [15] (./ngon.aux)
+
+LaTeX Warning: Reference `rq:opt-hept' on page 9 undefined on input line 499.
+
+
+LaTeX Warning: Reference `lin-hept' on page 9 undefined on input line 503.
+
+
+LaTeX Warning: Reference `thm:aux' on page 9 undefined on input line 507.
+
+[9]
+
+LaTeX Warning: Reference `thm:aux' on page 10 undefined on input line 525.
+
+
+LaTeX Warning: Reference `' on page 10 undefined on input line 541.
+
+[10] [11] [12] [13] [14] [15] (./ngon.bbl [16]) [17] (./ngon.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -440,7 +440,7 @@ LaTeX Warning: There were undefined references.
 Here is how much of TeX's memory you used:
  3935 strings out of 493117
  53354 string characters out of 6135433
- 139740 words of memory out of 5000000
+ 137741 words of memory out of 5000000
  7331 multiletter control sequences out of 15000+600000
  14281 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -463,10 +463,10 @@ e/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2
 exmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2014/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2014/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on ngon.pdf (15 pages, 267271 bytes).
+Output written on ngon.pdf (17 pages, 272637 bytes).
 PDF statistics:
- 125 PDF objects out of 1000 (max. 8388607)
- 89 compressed objects within 1 object stream
+ 131 PDF objects out of 1000 (max. 8388607)
+ 93 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
