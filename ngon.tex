@@ -217,46 +217,24 @@ there is an affine diameter of a convex polygon $K$ in every direction that meet
 
 This is a consequence of the convexity $K$, for if a chord does not meet a vertex, it either lies within an edge or it meets two edges.  If it lies within an edge, it is not an affine diameter.  If it meets two edges, it is possible increase its length while parallel translating it in a non-decreasing direction of the cone defined by the two edges until it meets a vertex. 
 
-From this, it is possible to determine an initial affine diameter in a particular direction.  This is done by extending a set of parallel rays from all the vertices into the interior of $K$ and selecting the longest.  However, it does not give the initial configuration of the vertices of the half-length parallelogram or the area thereof.
+From this, it is possible to determine an initial affine diameter in a particular direction $\theta$.  This is done by extending a set of parallel rays in the direction $\theta$ from all the vertices into the interior of $K$ and selecting the longest.  However, it does not give the initial configuration of the vertices of the half-length parallelogram or the area thereof.
 
 \subsection{Tracking the affine diameter }
+In most situations, given an initial affine diameter in a particular direction, the affine diameter can be tracked by sweeping out the ray in a counter-clockwise direction from the initial vertex until it meets another vertex.  From there, it is possible that the affine diameter continues to extend from the original vertex or that it begins to sweep out counter-clockwise from the opposite vertex.
 
-In most situations, given an initial affine diameter in a particular direction, the affine diameter can be tracked by sweeping out the ray in a counter-clockwise direction from the initial vertex until it meets another vertex.  From there, it is possible that the affine diameter continues to extend from the original vertex or to begin to sweep out counter-clockwise from the new vertex.
-
-The conditions for staying at the same vertex or switching are given exactly by the direction of the convex cone of the edges which the affine diameter is entering.  The chosen vertex is that which is closer to the vertex of the cone.  In the special case where the affine diameter meets parallel edges, It is not uniquely determined, exactly because this cone is degenerate.  However, in such cases, the non-unique behavior is restricted to sliding the affine diameter along the parallel edges, and as the affine diameter continues to rotate, it  will meet a new cone, although it may also be degenerate. 
+The conditions for staying at the same vertex or switching to the opposite vertex are given exactly by the direction of the convex cone of the edges which the affine diameter will enter as it rotates.  The vertex from which it sweeps is that which is closer to the vertex of the cone.  In the special case where the affine diameter meets parallel edges, It is not uniquely determined, exactly because this cone is degenerate.  However, in such cases, the non-unique behavior is restricted to sliding the affine diameter along the parallel edges, and as the affine diameter continues to rotate, it  will meet a new cone, although the new cone may also be degenerate. Thus, aside from the degenerate sliding configurations, the affine diameter has a choice of a {\it moving end} and a {\it fixed end} with respect to an increase in the angle $\theta.$
 
 %figures
 
-In the packing, the affine diameter defines a column of $K.$
-
-Aside from the degenerate sliding configurations, the affine diameter has a choice of a {\it moving end} and a {\it fixed end} with respect to an increase in $\theta.$
+With regards to the double lattice packing, the affine diameter defines a column of convex bodies $K,$ and as the affine diameter is swept out from a vertex, that vertex remains the point of contact between the bodies in the column.
 
 \subsection{Tracking the half length parallelogram}
 
-tracking the half length parallelogram  
 
-\subsection{critical angles}
-In order to generate the densest double lattice packing, one must also find the minimal area half length parallelogram.  This is done by moving between critical angles of the affine diameter where a vertex of the half-length parallelogram or both vertices of the affine diameter meet vertices of $K$.  
-
-Tracking the motion via a parametrization of the slopes.
-
-Note that these also correspond to the degenerate situations for our stability condition.
+In order to generate the densest double lattice packing, one must also find the minimal area half-length parallelogram.  This is done by moving between critical angles of the affine diameter where a vertex of the half-length parallelogram or both vertices of the affine diameter meet vertices of $K$.  It is possible to tracking the motion via a parametrization of the slopes along which the vertices must travel between certain critical angles where the the area function becomes non-analytic.  This is exactly where the moving end of the affine diameter or a vertex of the half length parallelogram meet a vertex of $K.$ Note that these also correspond to the degenerate situations not treated in Lemmas \ref{lemma:edgedg} and \ref{lemma:edgver}.
 
 
-
-\subsection{the way the volume changes}
-graphs of $A(\theta)$
-
-
-\subsection{stability condition}
-%can be reworked...
-%At any particular configuration, as $\theta$ varies, there is a relationship between the linear motions of the points given by the system of equations defining the half-length parallelogram.  That is, the 
-
-%Consider the vertex of the half length parallelogram.  As $\theta$ varies, 
-
-
-We parametrize the motion of the vertices $\mathbf p_2$, $\mathbf p_3$,  $\mathbf p _5$, $\mathbf p_6$ relative to a motion of the moving end of the affine diameter $\mathbf p_4$. The moving end of the affine diameter moves linearly, as do the vertices of the half-length parallelogram, as it they are constrained to be on the edges of $K$. The length of the chords is also a linear in $t$.  Therefore, their motion is described by their initial position plus some constant velocity motion ${\mathbf v_i}$, provided that the vertices of the half-length parallelogram and the moving end of the affine diameter remain on their initial edges.
-
+We parametrize the motion of the vertices $\mathbf p_2$, $\mathbf p_3$,  $\mathbf p _5$, $\mathbf p_6$ relative to a motion of the moving end of the affine diameter $\mathbf p_4$. The moving end of the affine diameter moves linearly, as do the vertices of the half-length parallelogram, as it they are constrained to be on the edges of $K$. The length of the chords is also a linear in $t$.  Therefore, their motion is described by their initial position plus some constant velocity motion ${\mathbf v_i}$, provided that the vertices of the half-length parallelogram and the moving end of the affine diameter remain on their initial edges.  If the affine diameter or one of the vertices of the half-length parallelogram encounter a vertex, the parametrization changes to account for the new direction of motion.  In the case of the affine diameter, this may also require that the moving end become the fixed end and vice-versa.  Away from those critical angles, we have the following:
 
 \begin{equation}
     \begin{aligned}
@@ -287,32 +265,22 @@ Solving this system yields rate constants
 \end{equation}
 
 
-From this, it is clear that there are points which have rate constant $k_i=0$ only when on which 
-
-Also, are degenerate exactly when there are two vertices of the half-parallelogram sharing an edge.  This is exactly when there is a free sliding motion that preserves area.
+From this, it is clear that there are points which have rate constant $k_i=0$ only when there are vertices of the half-area parallelogram that are on edges parallel to the edge on which meets the moving end.  Also, the functions become singular exactly when there are two vertices of the half-parallelogram sharing an edge.  This is exactly when there is a free sliding motion that preserves area.
 
 
----comments on the conditions for when $k_i=0$
 
 
-%normalizing the hight
-
-%critical angles
-
-
+%behavior of the
+%graphs of $A(\theta)$
 
 %\begin{remark}
 %Furthermore,  IMVT should say that ever point is met by an affine diameter as well, so every vertex is met by one.? Combining these satisfies the intuition that one may 
 %\end{remark}
 
-
-
 %continuous sweeping vs finding the minimum area intermediate configuration...
 %can introduce the notion of stability here
 
 %Having found the optimal configuration, it is clear that the condition of being a strict minimal configuration and the  
-
-
 
 
 The densest double lattice packing of a convex polygon $K$ can be constructed in time proportional to the number of vertices by an algorithm of Mount \cite{Mount1991}. The goal of this paper is to show that this configuration is not only a local maximum
