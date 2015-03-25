@@ -185,8 +185,7 @@ We now derive a general method for proving strong extremality which we will use 
     the $x$-axis and their length is half the length of an affine diameter parallel to them.
 \end{definition}
 
-Note that any two half-length parallelograms in the direction $\theta$ have equal
-area, and we can define that area as a function $A(\theta)$ of the direction.
+Note that, while the half-length parallelogram is not unique if $K$ is not strictly convex, any non-unique half-length parallelograms associated to a particular direction have at least one half-length chord contained in an edge of $K$ and are equivalent by sliding motions along of the chord along an edge of $K.$ Thus, any two half-length parallelograms in the direction $\theta$ have equal area, and we can define that area as a function $A(\theta)$ of the direction.  
 
 \begin{definition}
     A cocompact discrete subgroup of the Euclidean group consisting of translations
@@ -203,34 +202,36 @@ by three point reflections.
     the vertices of a half-length parallelogram.
 \end{theorem}
 
+%While this is 
 %By a sequence of approximations, this gives that for convex bodies $K$ that are not strictly convex, there
 %exists a double lattice packing of maximal density that generated a minimum area extensive parallelogram in $K$.
 
-Note that Kuperberg and Kuperberg make use of extensive parallelograms, inscribed parallelograms with edge length greater than half the affine diameter in their edge directions but make use of half-length parallelograms. Mount gives an explicit proof that it suffices to consider only the half-length parallelograms associated with affine diameters as a function of $\theta.$
+Note that Kuperberg and Kuperberg make use of extensive parallelograms, inscribed parallelograms with edge length greater than half the affine diameter in their edge directions, but then restrict their analysis to the set of half-length parallelograms. Mount gives an explicit proof that it suffices to consider only the half-length parallelograms associated with affine diameters as a set valued function from $\theta.$
 
-For our purposes, it is illustrative to consider the algorithm used find the half-length parallelogram of minimal area not only as a method of finding the best double lattice packing, but also as a way to explore the configuration space of double lattices. More specifically, the behavior of the affine diameter is fairly well behaved but non-trivial as $\theta$ increases while the behavior of the vertices of the half parallelogram are described by an {\it interspersing property}; they are non-decreasing functions $[0,2\pi)\rightarrow [0,2\pi).$  %they are a non-decreasing function, they never back track....
+For our purposes, it is illustrative to consider the algorithm used find the half-length parallelogram of minimal area for convex polygons, not only as a method of finding the best double lattice packing thereof, but also as a way to explore some of the configuration space of double lattice packings. More specifically, the affine diameter of a convex polygon is well behaved but with some non-trivial considerations as $\theta$ increases. The behavior of the vertices of the half-length parallelogram are described by an {\it interspersing property}; they are non-decreasing functions $[0,2\pi)\rightarrow [0,2\pi).$  
 
 We begin with a simple proposition:
 \begin{proposition}
-there is an affine diameter of a convex polygon K in every direction that meets a vertex.
+there is an affine diameter of a convex polygon $K$ in every direction that meets a vertex.
 \end{proposition}
 
-This is a consequence of the convexity K, for if a chord does not meet a vertex, it either lies within an edge or it meets two edges.  If it lies within an edge, it is not an affine diameter.  If it meets two edges, it is possible increase its length while parallel translating it in a non-decreasing direction of the cone defined by the two edges until it meets a vertex. 
-%picture
+This is a consequence of the convexity $K$, for if a chord does not meet a vertex, it either lies within an edge or it meets two edges.  If it lies within an edge, it is not an affine diameter.  If it meets two edges, it is possible increase its length while parallel translating it in a non-decreasing direction of the cone defined by the two edges until it meets a vertex. 
 
-From this, it is possible to determine an initial affine diameter in a particular direction.  Furthermore, this is done by geometrically satisfying procedure of extending a set of parallel rays in a from all vertices into the interior of K and selecting the longest.  However, it does not give 
+From this, it is possible to determine an initial affine diameter in a particular direction.  This is done by extending a set of parallel rays from all the vertices into the interior of $K$ and selecting the longest.  However, it does not give the initial configuration of the vertices of the half-length parallelogram or the area thereof.
 
 \subsection{Tracking the affine diameter }
 
+In most situations, given an initial affine diameter in a particular direction, the affine diameter can be tracked by sweeping out the ray in a counter-clockwise direction from the initial vertex until it meets another vertex.  From there, it is possible that the affine diameter continues to extend from the original vertex or to begin to sweep out counter-clockwise from the new vertex.
 
-Walking around the vertices
+The conditions for staying at the same vertex or switching are given exactly by the direction of the convex cone of the edges which the affine diameter is entering.  The chosen vertex is that which is closer to the vertex of the cone.  In the special case where the affine diameter meets parallel edges, It is not uniquely determined, exactly because this cone is degenerate.  However, in such cases, the non-unique behavior is restricted to sliding the affine diameter along the parallel edges, and as the affine diameter continues to rotate, it  will meet a new cone, although it may also be degenerate. 
 
+%figures
+
+In the packing, the affine diameter defines a column of $K.$
 
 Aside from the degenerate sliding configurations, the affine diameter has a choice of a {\it moving end} and a {\it fixed end} with respect to an increase in $\theta.$
 
-Parallel edges and non-uniqueness give a sliding motion.
-
-\subsection{Tracking the affine diameter }
+\subsection{Tracking the half length parallelogram}
 
 tracking the half length parallelogram  
 
@@ -254,10 +255,7 @@ graphs of $A(\theta)$
 %Consider the vertex of the half length parallelogram.  As $\theta$ varies, 
 
 
-We parametrize the motion of the vertices $\mathbf p_2$, $\mathbf p_3$,  $\mathbf p _5$, $\mathbf p_6$ relative to a motion of the moving end of the affine diameter $\mathbf p_4$.
-
-The moving end of the affine diameter moves linearly, as do the vertices of the half-length parallelogram, as it they are constrained to be on the edges of $K$.  %The length of the chords is also a linear.   
-Therefore, their motion is described by their initial position plus some constant velocity motion ${\mathbf v_i}$, provided that the vertices of the half-length parallelogram and the moving end of the affine diameter remain on their initial edges.
+We parametrize the motion of the vertices $\mathbf p_2$, $\mathbf p_3$,  $\mathbf p _5$, $\mathbf p_6$ relative to a motion of the moving end of the affine diameter $\mathbf p_4$. The moving end of the affine diameter moves linearly, as do the vertices of the half-length parallelogram, as it they are constrained to be on the edges of $K$. The length of the chords is also a linear in $t$.  Therefore, their motion is described by their initial position plus some constant velocity motion ${\mathbf v_i}$, provided that the vertices of the half-length parallelogram and the moving end of the affine diameter remain on their initial edges.
 
 
 \begin{equation}
@@ -276,11 +274,11 @@ This system can be solved for the rate constants $k_i$ which give conditions on 
 Solving this system yields rate constants 
 \begin{equation}
     \begin{aligned}
-   & k_1 = 0\\
-&k_2 = \frac{1}{2} \sin \left(\phi _3-\phi _4\right) \csc \left(\phi _1-\phi _3\right)\\
-&k_3 = \frac{1}{2} \sin
-   \left(\phi _1-\phi _4\right) \csc \left(\phi _1-\phi _3\right)\\
-  &k_4=1\\
+   & \alpha_1 = 0\\
+&_2 = \frac{1}{2} \sin \left(\phi _3-\phi _4\right) \csc \left(\phi _2-\phi _3\right)\\
+&_3 = \frac{1}{2} \sin
+   \left(\phi _2-\phi _4\right) \csc \left(\phi _2-\phi _3\right)\\
+  &_4=1\\
 &k_5 =  \frac{1}{2} \sin \left(\phi _4-\phi _6\right) \csc
    \left(\phi _5-\phi _6\right)\\
 &k_6 = \frac{1}{2} \sin \left(\phi _4-\phi _5\right) \csc \left(\phi _5-\phi
@@ -289,12 +287,15 @@ Solving this system yields rate constants
 \end{equation}
 
 
+From this, it is clear that there are points which have rate constant $k_i=0$ only when on which 
+
+Also, are degenerate exactly when there are two vertices of the half-parallelogram sharing an edge.  This is exactly when there is a free sliding motion that preserves area.
+
 
 ---comments on the conditions for when $k_i=0$
 
 
-
-
+%normalizing the hight
 
 %critical angles
 
@@ -431,7 +432,7 @@ obtain the following optimization problem:
 where $\xi'_i=T_{(x_i,y_i)}\xi_iR_\theta$ for $i=0,2,6$, and $\xi'_1=\xi_1$. We adopt
 a condensed notation for the free variables $X=(x_0,y_0,\theta_0,x_2,y_2,\theta_2,x_6,y_6,\theta_6)$.
 
-We consider the linearization of \ref{rq:opt-pent} around the point $z=0\in\mathbb{R}^9$. This gives a
+We consider the linearization of \ref{eq:opt-pent} around the point $z=0\in\mathbb{R}^9$. This gives a
 problem of the form
 \begin{equation}\label{eq:lin-pent}
     \text{minimize } c\cdot z \text{ subject to } G z\ge 0\text,
@@ -497,7 +498,7 @@ obtain the following optimization problem:
 	                & g_9(z)=\alpha(\xi'_1(\mathbf{k}_4),\xi'_1(\mathbf{k}_3),\xi'_0(\mathbf{k}_0))\ge0\text.
     \end{aligned}
 \end{equation}
-The linearization of \ref{rq:opt-hept} around the point $z=0\in\mathbb{R}^9$ gives
+The linearization of \ref{eq:opt-hept} around the point $z=0\in\mathbb{R}^9$ gives
 \begin{equation}\label{eq:lin-hept}
     \text{minimize } c\cdot z \text{ subject to } G z\ge 0\text.
 \end{equation}
