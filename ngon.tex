@@ -231,7 +231,7 @@ With regards to the double lattice packing, the affine diameter defines a column
 \subsection{Tracking the half length parallelogram}
 
 
-In order to generate the densest double lattice packing, one must also find the minimal area half-length parallelogram.  This is done by moving between critical angles of the affine diameter where a vertex of the half-length parallelogram or both vertices of the affine diameter meet vertices of $K$.  It is possible to tracking the motion via a parametrization of the slopes along which the vertices must travel between certain critical angles where the the area function becomes non-analytic.  This is exactly where the moving end of the affine diameter or a vertex of the half length parallelogram meet a vertex of $K.$ Note that these also correspond to the degenerate situations not treated in Lemmas \ref{lemma:edgedg} and \ref{lemma:edgver}.
+In order to generate the densest double lattice packing, one must also find the minimal area half-length parallelogram.  This is done by moving between {\it critical angles} of the affine diameter: those angles where a vertex of the half-length parallelogram or both vertices of the affine diameter meet vertices of $K$.  It is possible to tracking the motion via a parametrization of the slopes along which the vertices must travel between certain critical angles where the the area function becomes non-analytic.  This is exactly where the moving end of the affine diameter or a vertex of the half length parallelogram meet a vertex of $K.$ Note that these also correspond to the degenerate situations not treated in Lemmas \ref{lemma:edgedg} and \ref{lemma:edgver}.
 
 
 We parametrize the motion of the vertices $\mathbf p_2$, $\mathbf p_3$,  $\mathbf p _5$, $\mathbf p_6$ relative to a motion of the moving end of the affine diameter $\mathbf p_4$. The moving end of the affine diameter moves linearly, as do the vertices of the half-length parallelogram, as it they are constrained to be on the edges of $K$. The length of the chords is also a linear in $t$.  Therefore, their motion is described by their initial position plus some constant velocity motion ${\mathbf v_i}$, provided that the vertices of the half-length parallelogram and the moving end of the affine diameter remain on their initial edges.  If the affine diameter or one of the vertices of the half-length parallelogram encounter a vertex, the parametrization changes to account for the new direction of motion.  In the case of the affine diameter, this may also require that the moving end become the fixed end and vice-versa.  Away from those critical angles, we have the following:
@@ -265,10 +265,12 @@ Solving this system yields rate constants
 \end{equation}
 
 
-From this, it is clear that there are points which have rate constant $k_i=0$ only when there are vertices of the half-area parallelogram that are on edges parallel to the edge on which meets the moving end.  Also, the functions become singular exactly when there are two vertices of the half-parallelogram sharing an edge.  This is exactly when there is a free sliding motion that preserves area.
+Since the critical angles where the parametrization changes can be determined, the the minimum value of $A(\theta)$ between critical angles can be solved as an optimization problem determined completely by the data at the critical angles. 
+
+%%
 
 
-
+It is clear that there are points which have rate constant $k_i=0$ only when there are vertices of the half-area parallelogram that are on edges parallel to the edge on which meets the moving end.  Also, the functions become singular exactly when there are two vertices of the half-parallelogram sharing an edge.  This is exactly when there is a free sliding motion that preserves area.
 
 %behavior of the
 %graphs of $A(\theta)$
