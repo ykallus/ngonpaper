@@ -545,63 +545,20 @@ Therefore, \ref{eq:mod-hept} satisfies all the conditions of \ref{}, and we have
     The optimal double-lattice packing of regular heptagons, illustrated in Figure X, is strongly extreme.
 \end{theorem}
 
+\subsection{General polygons}
 
-\subsubsection{ find the construction given by Theorem \ref{thmkk}.}
+The structure of the solution in the cases of pentagons and heptagons suggests
+that it might be possible to extend the result to general convex polygons.
+Assuming that the minimum-area half-length parallelogram belongs to the generic
+case, the only data about the polygon that enters into the calculation are the following:
+\begin{enumerate}
+    \item The coordinates of vertices of the minimum-area half-length parallelogram
+	and the vertices of the corresponding affine diameter.
+    \item The direction of the polygon edges on which the vertices above lie, except for
+	the end of the affine diameter that lies on a polygon vertex.
+    \item The distance and direction along the edge from those points to the nearest polygon vertex.
+\end{enumerate}
 
-\subsubsection{parametrize neighborhood of four heptagons in correct configuration}
-include figures
-
-\subsubsection{constrained optimization problem}
-
-
-
-
-\subsubsection{the cost functions }
-
-Construct a cost function that satisfies the condition of correction theorems and makes the program satisfy the conditions of the LP theorems.
-
-
-YOU GET THE COST FUNCTION FROM THE PROGRAM, AND IT SATISFIES THE PROPERTIES OF SECTION 1....
-
-This area could be confusing as the objective functions become fairly complicated.  Need to justify replacing objective functions with modifications.  i.e., 
-
-Sketch: Minimize the area of the Delaunay triangles.  If there is no nearby configuration that decreases area done. (can we increase area and still increase density? possibly locally, so need to trade between nearby double triangles.  But by symmetry, introduce a cost function between the "outer" heptagons, i.e. penalize rotation in opposite directions.)
-In general, average area of double triangles is minimized implies average density is maximized.
-
-The function optimized in this case is the (modified) area of the Delaunay triangles. 
-
-%$U$ is the area of the double Delaunay triangle
-%
-%$$Ux = U + (1/2 + u1^2) V[[3]] - (1/2 + u1^2) V[[4]] + (1/2 + u1^2) V[[
-%    8]] - (1/2 + u1^2) V[[9]]$$
-    
-          
-%1) modification given was constructed to satisfy XYZ to give the local optimality and satisfy certain properties
-%2) Justify modification via it's properties, not via what the actually modification is.
-
-
-% \begin{lemma}
-% an objective function satisfying properties XYZ has an isolated max at 0 and satisfying properties ABC also maximizes the density function.
-% \end{lemma} 
-% 
-% \begin{proof}
-% XYZ follows from theorem.
-%
-% ABC follows from ...  geometric sketch argument should be replaced by an analysis argument.
-%\qed \end{proof}
-%
-%
-%\begin{lemma}
-%the construction of 
-%\end{lemma}
-
-
-
-
-\subsection{general (2n+1)-gons}
-failure in the case of the enneagon, the construction of K+K is problematic.  This requires additional analysis as 
-
-four polygons with corrected area function and an SL(2,R) motion hessian?  The SL2 motion is required for the solution part, i.e. finding the initial configuration for regular polygons.  Check this makes sense.
 
 \section{Formal methods}%Need good documentation for mathematica packages and for the code to be supplied.
 %Computations are performed in Mathematica 10.0.1.0
