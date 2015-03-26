@@ -713,20 +713,20 @@ import cseblack;
 import olympiad;
 usepackage("amssymb");
 size(250);
-pair K0=(1,0);
-pair K1=rotate(360./5.)*K0;
-pair K2=rotate(360./5.)*K1;
-pair K3=rotate(360./5.)*K2;
-pair K4=rotate(360./5.)*K3;
+pair K0=D("\mathbf{k}_0,\mathbf{p}_1",(1,0),E);
+pair K1=D("\mathbf{k}_1",rotate(360./5.)*K0,NE);
+pair K2=D("\mathbf{k}_2",rotate(360./5.)*K1,NW);
+pair K3=D("\mathbf{k}_3",rotate(360./5.)*K2,SW);
+pair K4=D("\mathbf{k}_4",rotate(360./5.)*K3,SE);
 path KK = D(K0--K1--K2--K3--K4--cycle,linewidth(1));
 
 real u = cos(pi/5.);
 pair P1=K0;
-pair P2=(K0+3.*K1)/4.;
-pair P3=((3.-2.*u)*K1+(1.+2.*u)*K2)/4.;
-pair P4=(2.*K2+2.*K3)/4.;
-pair P5=((3.-2.*u)*K4+(1.+2.*u)*K3)/4.;
-pair P6=(K0+3.*K4)/4.;
+pair P2=D("\mathbf{p}_2",(K0+3.*K1)/4.,NE);
+pair P3=D("\mathbf{p}_3",((3.-2.*u)*K1+(1.+2.*u)*K2)/4.,NW);
+pair P4=D("\mathbf{p}_4",(2.*K2+2.*K3)/4.,SW);
+pair P5=D("\mathbf{p}_5",((3.-2.*u)*K4+(1.+2.*u)*K3)/4.,SW);
+pair P6=D("\mathbf{p}_6",(K0+3.*K4)/4.,SE);
 path PP = P2--P3--P5--P6--cycle;
 fill(PP,lightgray);
 D(PP);
@@ -760,6 +760,123 @@ MC ("y",D((P4-(0.1,0))--(P4+t*V4-(0.1,0)),Arrow),0.5,W);
 }
 \caption{\label{fig:pent}
 Half-length parallelograms in the regular pentagon.}
+\end{center}\end{figure}
+
+\begin{figure}\begin{center}
+\begin{asy}
+import cseblack;
+import olympiad;
+usepackage("amssymb");
+size(250);
+pair K0=D("\mathbf{k}_0,\mathbf{p}_1",(1,0),E);
+pair K1=D("\mathbf{k}_1",rotate(360./7.)*K0,NE);
+pair K2=D("\mathbf{k}_2",rotate(360./7.)*K1,N);
+pair K3=D("\mathbf{k}_3",rotate(360./7.)*K2,NW);
+pair K4=D("\mathbf{k}_4",rotate(360./7.)*K3,SW);
+pair K5=D("\mathbf{k}_5",rotate(360./7.)*K4,S);
+pair K6=D("\mathbf{k}_6",rotate(360./7.)*K5,SE);
+path KK = D(K0--K1--K2--K3--K4--K5--K6--cycle,linewidth(1));
+
+pair P1=(1., 0.);
+pair P2=D("\mathbf{p}_2",(0.516460816041133, 0.806260150051493),N);
+pair P3=D("\mathbf{p}_3",(-0.4340236179100764, 0.8062601500514931),NW);
+pair P4=D("\mathbf{p}_4",(-0.9009688679024191, 0.),SW);
+pair P5=D("\mathbf{p}_5",(-0.4340236179100764, -0.8062601500514931),SW);
+pair P6=D("\mathbf{p}_6",(0.516460816041133, -0.806260150051493),S);
+path PP = P2--P3--P5--P6--cycle;
+fill(PP,lightgray);
+D(PP);
+D(P1--P4);
+pair P4x = P4;
+
+pair P1=(1., 0.);
+pair P2=(0.36670303301673796, -0.8404413867659472);
+pair P3=(-0.5837814009344715, -0.686832303311513);
+pair P4=(-0.9009688679024191, 0.3072181669088686);
+pair P5=(-0.31174490092936674, 0.9037741728702919);
+pair P6=(0.6387395330218427, 0.7501650894158576);
+path PP = P2--P3--P5--P6--cycle;
+D(PP,dashed);
+D(P1--P4,dashed);
+
+MC ("y",D((P4x-(0.1,0))--(P4-(0.1,0)),Arrow),0.5,W);
+\end{asy}
+\scalebox{.8}{
+    \tikzsetnextfilename{pentplot}
+    \begin{tikzpicture}
+	\begin{axis}[
+		xlabel={$y$}, ylabel={$A$},
+		xmin=-1., xmax=1.,
+		ymin=1.52, ymax=1.58,
+	    ]
+	    \addplot[domain=-0.506040792565066:0.506040792565066] {1.5326754446782211 + 0.09176757534725741*x^2};
+	    \addplot[domain=0.506040792565066:1] {1.5848482175212668 - 0.08816765628922468*x + 0.06225952189759027*x^2};
+	    \addplot[domain=-1:-0.506040792565066] {1.5848482175212668 + 0.08816765628922468*x + 0.06225952189759027*x^2};
+	\end{axis}
+    \end{tikzpicture}
+}
+\caption{\label{fig:hept}
+Half-length parallelograms in the regular heptagon. The dashed configuration is the local minimum at $y>0$.}
+\end{center}\end{figure}
+
+\begin{figure}\begin{center}
+\begin{asy}
+import cseblack;
+import olympiad;
+usepackage("amssymb");
+size(250);
+pair K0=D("\mathbf{k}_0,\mathbf{p}_1",(1,0),E);
+pair K1=D("\mathbf{k}_1",rotate(360./9.)*K0,NE);
+pair K2=D("\mathbf{k}_2",rotate(360./9.)*K1,N);
+pair K3=D("\mathbf{k}_3",rotate(360./9.)*K2,NW);
+pair K4=D("\mathbf{k}_4",rotate(360./9.)*K3,W);
+pair K5=D("\mathbf{k}_5",rotate(360./9.)*K4,W);
+pair K6=D("\mathbf{k}_6",rotate(360./9.)*K5,SW);
+pair K7=D("\mathbf{k}_7",rotate(360./9.)*K6,S);
+pair K8=D("\mathbf{k}_8",rotate(360./9.)*K7,SE);
+path KK = D(K0--K1--K2--K3--K4--K5--K6--K7--K8--cycle,linewidth(1));
+
+pair P1=(1., 0.);
+pair P2=D("\mathbf{p}_6",(0.3706844903100875, -0.87104878486755),SE);
+pair P3=D("\mathbf{p}_5",(-0.5991618200828668, -0.7478489484525013),SW);
+pair P4=D("\mathbf{p}_4",(-0.9396926207859084, 0.24639967283009717),NE);
+pair P5=D("\mathbf{p}_3",(-0.4058322193092865, 0.882629724233649),N);
+pair P6=D("\mathbf{p}_2",(0.5640140910836678, 0.7594298878186004),NE);
+path PP = P2--P3--P5--P6--cycle;
+fill(PP,lightgray);
+D(PP);
+D(P1--P4);
+pair P4x = P4;
+
+pair P1=(1., 0.);
+pair P2=(0.4403241757329789, 0.8308422937423627);
+pair P3=(-0.5295221346599754, 0.8308422937423627);
+pair P4=(-0.9396926207859084, 0.);
+pair P5=(-0.5295221346599754, -0.8308422937423627);
+pair P6=(0.4403241757329789, -0.8308422937423627);
+path PP = P2--P3--P5--P6--cycle;
+D(PP,dashed);
+D(P1--P4,dashed);
+
+MC ("y",D((P4-(0.1,0))--(P4x-(0.1,0)),Arrow),0.5,W);
+\end{asy}
+\scalebox{.8}{
+    \tikzsetnextfilename{pentplot}
+    \begin{tikzpicture}
+	\begin{axis}[
+		xlabel={$y$}, ylabel={$A$},
+		xmin=-1., xmax=1.,
+		ymin=1.60, ymax=1.62,
+		ytick={1.60,1.61,1.62}
+	    ]
+	    \addplot[domain=-0.30540728933227923:0.30540728933227923] {1.6115786662088993+ 0.033061308882837155*x^2};
+	    \addplot[domain=0.30540728933227923:1] {1.633850356689106 - 0.0797264910024892*x + 0.05533299936304392*x^2};
+	    \addplot[domain=-1:-0.30540728933227923] {1.633850356689106 + 0.0797264910024892*x + 0.05533299936304392*x^2};
+	\end{axis}
+    \end{tikzpicture}
+}
+\caption{\label{fig:hept}
+Half-length parallelograms in the regular 9-gon. The minimum at $y=0$ is not the global minimum.}
 \end{center}\end{figure}
 
 \end{document}  
