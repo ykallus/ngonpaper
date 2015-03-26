@@ -3,44 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: ngon.aux
 The style file: plain.bst
 Database file #1: ngon.bib
-You've used 12 entries,
+You've used 13 entries,
             2118 wiz_defined-function locations,
-            573 strings with 5946 characters,
-and the built_in function-call counts, 3952 in all, are:
-= -- 388
-> -- 180
+            579 strings with 6038 characters,
+and the built_in function-call counts, 4155 in all, are:
+= -- 409
+> -- 187
 < -- 5
-+ -- 74
-- -- 60
-* -- 274
-:= -- 670
-add.period$ -- 36
-call.type$ -- 12
-change.case$ -- 63
++ -- 77
+- -- 62
+* -- 283
+:= -- 707
+add.period$ -- 39
+call.type$ -- 13
+change.case$ -- 66
 chr.to.int$ -- 0
-cite$ -- 12
-duplicate$ -- 151
-empty$ -- 303
-format.name$ -- 60
-if$ -- 812
+cite$ -- 13
+duplicate$ -- 160
+empty$ -- 321
+format.name$ -- 62
+if$ -- 854
 int.to.chr$ -- 0
-int.to.str$ -- 12
+int.to.str$ -- 13
 missing$ -- 14
-newline$ -- 63
-num.names$ -- 24
-pop$ -- 61
+newline$ -- 68
+num.names$ -- 26
+pop$ -- 65
 preamble$ -- 1
-purify$ -- 53
+purify$ -- 56
 quote$ -- 0
-skip$ -- 109
+skip$ -- 114
 stack$ -- 0
-substring$ -- 246
-swap$ -- 32
+substring$ -- 251
+swap$ -- 34
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 44
+type$ -- 48
 warning$ -- 0
-while$ -- 41
-width$ -- 14
-write$ -- 133
+while$ -- 43
+width$ -- 15
+write$ -- 144
