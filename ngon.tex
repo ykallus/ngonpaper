@@ -225,7 +225,7 @@ This is a consequence of the convexity $K$, for if a chord does not meet a verte
 From this, it is possible to determine an initial affine diameter in a particular direction $\theta$.  This is done by extending a set of parallel rays in the direction $\theta$ (or $-\theta$) from all the vertices of $K$ into the interior of $K$ and selecting the longest.  However, it does not give the initial configuration of the vertices of the half-length parallelogram or the area thereof.
 
 \subsection{Tracking the affine diameter }
-In most situations, given an initial affine diameter in a particular direction, the affine diameter can be tracked by sweeping out the ray in a counter-clockwise direction from the initial vertex until it meets another vertex.  From there, it is possible that the affine diameter continues to extend from the original vertex or that it begins to sweep out counter-clockwise from the opposite vertex.
+In most situations, given an initial affine diameter in a particular direction, the affine diameter can be tracked by sweeping out the ray in a clockwise direction from the initial vertex until it meets another vertex.  From there, it is possible that the affine diameter continues to extend from the original vertex or that it begins to sweep out clockwise from the opposite vertex.
 
 The conditions for staying at the same vertex or switching to the opposite vertex are given exactly by the direction of the convex cone of the edges which the affine diameter will enter as it rotates.  The vertex from which it sweeps is that which is closer to the vertex of the cone.  In the special case where the affine diameter meets parallel edges, It is not uniquely determined, exactly because this cone is degenerate.  However, in such cases, the non-unique behavior is restricted to sliding the affine diameter along the parallel edges, and as the affine diameter continues to rotate, it will meet a new cone, although the new cone may also be degenerate. Thus, aside from the degenerate sliding configurations, the affine diameter has a choice of a {\it moving end} and a {\it fixed end} with respect to an increase in the angle $\theta.$
 
@@ -331,7 +331,7 @@ the constraints with ones that are equivalent in the neighborhood.
     Let $K$ and $K'$ be two polygons that intersect at a point and not at a segment.
     The intersection point $\mathbf y$ is a vertex of one polygon, which we let be $K'$,
     and sits in the relative interior of an edge $\mathbf{x}'\mathbf{x}$ of $K$,
-    oriented counter clockwise from the point of view of the interior of $K$.
+    oriented counterclockwise from the point of view of the interior of $K$.
     There is some $\epsilon>0$ such that whenever $||\xi||,||\xi'||<\epsilon$,
     then $\xi(K)$ and $\xi'(K')$ have disjoint interiors if and only if
     $\alpha(\xi(\mathbf{x})\xi(\mathbf{x}')\xi'(\mathbf{y}))\ge0$.
