@@ -1,7 +1,6 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  26 MAR 2015 18:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  26 MAR 2015 21:02
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
 **ngon.tex
 (./ngon.tex
@@ -662,11 +661,7 @@ Package csquotes Info: ... none found.
 Package csquotes Warning: No multilingual support.
 (csquotes)                Cannot enable multilingual quotes on input line 36.
 
-(./ngon.aux
-
-LaTeX Warning: Label `fig:hept' multiply defined.
-
-)
+(./ngon.aux)
 \openout1 = `ngon.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
@@ -761,6 +756,10 @@ your preamble.
  on input line 36.
 
 
+LaTeX Warning: Citation `kuperberg1990double' on page 1 undefined on input line
+ 48.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 48--48
 []\OT1/cmr/m/n/10.95 YK: what
  []
@@ -843,63 +842,236 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 48.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
 
-{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
- [4] [5]
-[6] [7] [8]
+LaTeX Warning: Citation `Mount1991' on page 1 undefined on input line 48.
+
+
+LaTeX Warning: Citation `brass2005research' on page 1 undefined on input line 5
+1.
+
+
+LaTeX Warning: Citation `conway1999recent' on page 1 undefined on input line 51
+.
+
+
+LaTeX Warning: Citation `groemer1963existenzsatze' on page 1 undefined on input
+ line 51.
+
+
+LaTeX Warning: Citation `hales2015formal' on page 1 undefined on input line 51.
+
+
+
+LaTeX Warning: Citation `fejes1950some' on page 1 undefined on input line 51.
+
+
+LaTeX Warning: Citation `gravel2011upper' on page 1 undefined on input line 54.
+
+
+
+LaTeX Warning: Citation `mario2013computing' on page 1 undefined on input line 
+54.
+
+
+LaTeX Warning: Citation `reinhardt1933dichteste' on page 1 undefined on input l
+ine 56.
+
+[1
+
+{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+
+LaTeX Warning: Citation `kuperberg1990double' on page 2 undefined on input line
+ 68.
+
+[2]
+
+LaTeX Warning: Citation `martinet2003perfect' on page 3 undefined on input line
+ 146.
+
+
+LaTeX Warning: Citation `schurmann2013strict' on page 3 undefined on input line
+ 151.
+
+[3] [4]
+
+LaTeX Warning: Reference `lemma:edgedg' on page 5 undefined on input line 239.
+
+
+LaTeX Warning: Reference `lemma:edgver' on page 5 undefined on input line 239.
+
+[5] [6]
+
+LaTeX Warning: Citation `Mount1991' on page 7 undefined on input line 293.
+
+[7] [8]
+
+LaTeX Warning: Reference `eq:opt-pent' on page 9 undefined on input line 410.
+
+
+LaTeX Warning: Reference `eq:lin-pent' on page 9 undefined on input line 420.
+
+
+LaTeX Warning: Reference `eq:opt-pent' on page 9 undefined on input line 429.
+
 
 LaTeX Warning: Reference `' on page 9 undefined on input line 429.
+
+
+LaTeX Warning: Reference `eq:lin-pent' on page 9 undefined on input line 438.
 
 
 LaTeX Warning: Reference `thm:aux' on page 9 undefined on input line 439.
 
 [9]
 
+LaTeX Warning: Reference `eq:opt-hept' on page 10 undefined on input line 476.
+
+
+LaTeX Warning: Reference `eq:lin-hept' on page 10 undefined on input line 480.
+
+
 LaTeX Warning: Reference `thm:aux' on page 10 undefined on input line 484.
+
+
+LaTeX Warning: Reference `eq:opt-hept' on page 10 undefined on input line 491.
+
+
+LaTeX Warning: Reference `eq:mod-hept' on page 10 undefined on input line 495.
+
+
+LaTeX Warning: Reference `eq:mod-hept' on page 10 undefined on input line 497.
 
 
 LaTeX Warning: Reference `thm:aux' on page 10 undefined on input line 502.
 
 [10]
 
+LaTeX Warning: Reference `eq:mod-hept' on page 11 undefined on input line 513.
+
+
+LaTeX Warning: Reference `eq:mod-hept' on page 11 undefined on input line 518.
+
+
 LaTeX Warning: Reference `' on page 11 undefined on input line 518.
 
-[11] [12] [13] [14] [15] (./ngon.bbl [16])
+[11]
+
+LaTeX Warning: Citation `mathematica10' on page 12 undefined on input line 544.
+
+
+[12]
+
+LaTeX Warning: Reference `assumpt' on page 13 undefined on input line 607.
+
+
+LaTeX Warning: Reference `abounded' on page 13 undefined on input line 612.
+
+
+LaTeX Warning: Reference `asolutionset' on page 13 undefined on input line 612.
+
+
+[13]
+
+LaTeX Warning: Reference `assumpt' on page 14 undefined on input line 640.
+
+
+LaTeX Warning: Reference `lem1' on page 14 undefined on input line 646.
+
+
+LaTeX Warning: Reference `lem2' on page 14 undefined on input line 646.
+
+
+LaTeX Warning: Reference `lem2' on page 14 undefined on input line 646.
+
+
+LaTeX Warning: Reference `assumpt' on page 14 undefined on input line 649.
+
+
+LaTeX Warning: Reference `lem3' on page 14 undefined on input line 649.
+
+
+LaTeX Warning: Reference `lem3' on page 14 undefined on input line 654.
+
+[14]
+
+LaTeX Warning: Reference `assumpt' on page 15 undefined on input line 658.
+
+
+LaTeX Warning: Reference `lem3' on page 15 undefined on input line 658.
+
+
+LaTeX Warning: Reference `lem4' on page 15 undefined on input line 668.
+
+
+LaTeX Warning: Reference `assumpt' on page 15 undefined on input line 672.
+
+
+LaTeX Warning: Reference `lem3' on page 15 undefined on input line 672.
+
+
+LaTeX Warning: Reference `anbhd' on page 15 undefined on input line 685.
+
+
+LaTeX Warning: Reference `lem4' on page 15 undefined on input line 690.
+
+
+LaTeX Warning: Reference `cor1' on page 15 undefined on input line 690.
+
+
+LaTeX Warning: Reference `lem5' on page 15 undefined on input line 690.
+
+[15]
+
+LaTeX Warning: Reference `assumpt' on page 16 undefined on input line 693.
+
+
+LaTeX Warning: Reference `lem5' on page 16 undefined on input line 693.
+
+
+LaTeX Warning: Reference `lem5' on page 16 undefined on input line 694.
+
+
+LaTeX Warning: Reference `th1' on page 16 undefined on input line 699.
+
+
+LaTeX Warning: Reference `assumpt' on page 16 undefined on input line 703.
+
+(./ngon.bbl [16])
 \openout3 = `ngon-1.asy'.
 
-
-<"ngon-1".pdf, id=74, 250.9375pt x 231.7719pt>
+ <"ngon-1".pdf, id=75, 250.9375pt x 233.71315pt>
 File: "ngon-1".pdf Graphic file (type pdf)
- <use "ngon-1".pdf>
-Package pdftex.def Info: "ngon-1".pdf used on input line 746.
-(pdftex.def)             Requested size: 250.93687pt x 231.77132pt.
 
-Overfull \hbox (24.71391pt too wide) in paragraph at lines 746--763
+<use "ngon-1".pdf>
+Package pdftex.def Info: "ngon-1".pdf used on input line 746.
+(pdftex.def)             Requested size: 250.93687pt x 233.71257pt.
+
+Overfull \hbox (25.00592pt too wide) in paragraph at lines 746--764
  [][] 
  []
 
 \openout3 = `ngon-2.asy'.
 
-<"ngon-2".pdf, id=75, 250.9375pt x 229.18423pt>
+<"ngon-2".pdf, id=76, 250.9375pt x 229.18423pt>
 File: "ngon-2".pdf Graphic file (type pdf)
  <use "ngon-2".pdf>
-Package pdftex.def Info: "ngon-2".pdf used on input line 804.
+Package pdftex.def Info: "ngon-2".pdf used on input line 805.
 (pdftex.def)             Requested size: 250.93687pt x 229.18365pt.
 
-Overfull \hbox (24.71391pt too wide) in paragraph at lines 804--820
+Overfull \hbox (25.00592pt too wide) in paragraph at lines 805--822
  [][] 
  []
 
 \openout3 = `ngon-3.asy'.
 
-<"ngon-3".pdf, id=76, 250.9375pt x 227.36343pt>
+<"ngon-3".pdf, id=77, 250.9375pt x 227.36343pt>
 File: "ngon-3".pdf Graphic file (type pdf)
  <use "ngon-3".pdf>
-Package pdftex.def Info: "ngon-3".pdf used on input line 863.
+Package pdftex.def Info: "ngon-3".pdf used on input line 865.
 (pdftex.def)             Requested size: 250.93687pt x 227.36285pt.
 
-Overfull \hbox (24.71391pt too wide) in paragraph at lines 863--880
+Overfull \hbox (25.00592pt too wide) in paragraph at lines 865--883
  [][] 
  []
 
@@ -908,40 +1080,41 @@ Overfull \hbox (24.71391pt too wide) in paragraph at lines 863--880
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
  23269 strings out of 493117
  575311 string characters out of 6135433
- 838686 words of memory out of 5000000
+ 838627 words of memory out of 5000000
  26301 multiletter control sequences out of 15000+600000
  14281 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,13n,76p,1198b,1879s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,13n,76p,1198b,1887s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></
-usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
-sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
-r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr
-/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/l
-ocal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/loc
-al/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local
-/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/t
-exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texl
-ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
-/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/20
-14/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/201
-4/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2014/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2014/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2014/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2014/texmf
--dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on ngon.pdf (20 pages, 302838 bytes).
+usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></us
+r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr
+/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/
+local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/l
+ocal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/loc
+al/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local
+/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/t
+exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/tex
+live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texliv
+e/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2
+014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2014
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2014/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2014/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2014/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2014/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2014/texmf-d
+ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on ngon.pdf (20 pages, 309969 bytes).
 PDF statistics:
- 205 PDF objects out of 1000 (max. 8388607)
- 156 compressed objects within 2 object streams
+ 209 PDF objects out of 1000 (max. 8388607)
+ 159 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  28 words of extra memory for PDF output out of 10000 (max. 10000000)
 

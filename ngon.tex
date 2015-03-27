@@ -564,7 +564,7 @@ in a neighborhood of $0.$ An appropriate choice of parametrization allows the fu
 \item \label{afderiv} Let  $F(t) = \nabla f (te_1)$.
 \item \label{agderiv} Let $G_r(t) = \nabla g_r(te_1)$.
 \item \label{abounded} Assume the linear program
-$$\max_{x\in \mathbb{R}^n}F(0)\cdot x \textrm{ subject to }G_r(0)\cdot x \ge 0, r\in I$$
+$$\text{maximize }_{x\in \mathbb{R}^n}F(0)\cdot x \textrm{ subject to }G_r(0)\cdot x \ge 0, r\in I$$
 has a bounded solution and that the maximum is attained at 0.
 \item \label{asolutionset} Assume that the set of solutions in $\mathbb{R}^n$ to 
 $$F(0)\cdot x = 0\textrm{ subject to }G_r(0)\cdot x \ge 0, r\in I$$
@@ -593,7 +593,7 @@ is $$E := \{te_1 : t\in \mathbb{R}\}.$$
 %\item Let $G_r(\mathbf{t}) = \Sigma G_{i,r}(t).$
 %
 %\item Assume the linear program
-%$$\max_{x\in \mathbb{R}^n}F(0)\cdot x \textrm{ subject to }G_r(0)\cdot x \ge 0, r\in I$$
+%$$\text{maximize }_{x\in \mathbb{R}^n}F(0)\cdot x \textrm{ subject to }G_r(0)\cdot x \ge 0, r\in I$$
 %has a bounded solution and that the maximum is attained at 0.
 %\item Assume that the set of solutions in $\mathbb{R}^n$ to 
 %$$F(0)\cdot x = 0\textrm{ subject to }G_r(0)\cdot x \ge 0, r\in I$$
@@ -605,14 +605,14 @@ is $$E := \{te_1 : t\in \mathbb{R}\}.$$
 %\end{assumptions}
 
 \begin{lemma}\label{lem1} Given Conditions \ref{assumpt}, the linear program 
-$$\max_{x\in H }F(0)\cdot x\textrm{ subject to }G_r(0)\cdot x \ge 0, r\in I$$
+$$\text{maximize }_{x\in H }F(0)\cdot x\textrm{ subject to }G_r(0)\cdot x \ge 0, r\in I$$
 has a unique maximum at $x = 0$
 \end{lemma}
 \begin{proof}
 By conditions \ref{abounded} and \ref{asolutionset}, the linear program
 $$\text{maximize }{x\in \mathbb{R}^n}F(0)\cdot x\textrm{ subject to }G_r(0)\cdot x \ge 0, r\in I$$
 is maximized exactly on $E$. The feasible set $\{x : G_r(0)\cdot x \ge 0, r\in I \textrm{ and } x \in H\}$ is a subset of the feasible set $\{x:G_r(0)\cdot x \ge 0, r\in I\}$. Thus, the program 
-$$\max_{x\in H}F(0)\cdot x\textrm{ subject to }G_r(0)\cdot x \ge 0, r\in I$$
+$$\text{maximize }_{x\in H}F(0)\cdot x\textrm{ subject to }G_r(0)\cdot x \ge 0, r\in I$$
  is maximized exactly on the non-empty intersection $$E\cap \{x :G_r(0)\cdot x\ge 0, r\in I\} \cap H = 0.$$
 \end{proof}
 
@@ -631,14 +631,14 @@ For a cone $C$, the set $C^p := \{x \in \mathbb{R}^n: v\cdot x \le 0 \textrm{ fo
 
 \begin{lemma}\label{lem2}
 A conical linear program with $F\ne 0$ given by
-$$\max_{x\in \mathbb{R}^n} F\cdot x\textrm{ subject to }G_r\cdot x \ge 0, r\in I $$ 
+$$\text{maximize }_{x\in \mathbb{R}^n} F\cdot x\textrm{ subject to }G_r\cdot x \ge 0, r\in I $$ 
 (a) has a unique\begin{footnote}{The maximum satisfies a stronger uniqueness condition. It is stable under perturbations of $F$ and $G_k$.}\end{footnote} maximum at $x= 0$ iff $F$ is in the interior of the polar cone $C^p$ of $C= \{x : G_r\cdot x \ge 0, r\in I\}$ (b) has a bounded solution iff $F$ is in the polar cone $C^p$ of  $C =\{x : G_r\cdot x \ge 0, r\in I\}$ and attains its maximum exactly on the span of the generators $v_i$ such that $F\cdot v_i =0.$
 \end{lemma}
 \begin{proof}
 If $F$ is in the interior of the polar cone $C^p$, then $F\cdot v_i < 0$ for all generators $v_i$.  Therefore $F\cdot x$ is uniquely maximized in $C$ at the vertex. If $F$ is on the boundary of the polar cone, then $F\cdot x$ is maximized in $C$ exactly on the span of the generators $v_i$ for which $F\cdot v_i = 0$ as $F\cdot v_j < 0$ otherwise. If $F$ is outside the polar cone, then $F\cdot v_i >0$ for some generator $v_i$. Then $F\cdot x$ is unbounded in $C$.\end{proof}
 
 \begin{lemma}\label{lem3} Given Conditions \ref{assumpt}, there exists $\epsilon > 0$ such that for all $t$ in  $(-\epsilon,\epsilon)$, the linear program 
-$$\max_{y_t \in H}F(t)\cdot y_t$$
+$$\text{maximize }_{y_t \in H}F(t)\cdot y_t$$
 subject to 
 $$G_r(t)\cdot y_t \ge 0, r \in I$$
 has a unique maximum at $y_t = 0$.\begin{footnote}{Here $y_t$ is a dummy variable and does not depend on $t$. It is labeled $y_t$ to ease later exposition.}\end{footnote}
@@ -687,17 +687,17 @@ $$g_r(x) = g_r(x)-g_r(te_1) =  G_r(t)\cdot (x-te_1) + O(t^2) = G_r(t)\cdot y_t +
 $$ \le  G_r(t)\cdot y_t + \delta(t) \|y_t\|_1 = (G_r(t)+\Delta_r(y_t))\cdot y_t.$$
 \end{proof}
 
-By Lemma \ref{lem4} and Corollary \ref{cor1}, for $t$ in $(-\epsilon,\epsilon)$, the program  $$\max_{y_t \in H} (F(t) + \Delta)\cdot y_t\textrm{ subject to } (G_r + \Delta_r)\cdot y_t$$ is uniquely maximized at $y_t=0$ for any choice of $\Delta$, $\Delta_r$ in the $2\delta(t)$ cube $Q(t)$. Combined with Lemma \ref{lem5}, there is an $\epsilon_t$ neighborhood of $0$ where $f(y_t+te_1)$ is less than $f(te_1)$ on $\cup_{\Delta_r \in Q(t)}\{y_t: (G_r+\Delta_r) \cdot y_t \ge 0, r \in I, y_t \in H\}$, which contains the feasible set  $\{y_t: g_r(y_t+te_1) \ge 0, r\in I, y_t \in H\}$. Therefore the nonlinear programs $f(y_t+te_1)$ subject to $g_r(y_t+te_1)\ge 0$, $y_t \in H$, which are parameterized by $t$ in $(-\epsilon, \epsilon)$, have local maxima at $y_t=0$.  This gives the following:
+By Lemma \ref{lem4} and Corollary \ref{cor1}, for $t$ in $(-\epsilon,\epsilon)$, the program  $$\text{maximize }_{y_t \in H} (F(t) + \Delta)\cdot y_t\textrm{ subject to } (G_r + \Delta_r)\cdot y_t$$ is uniquely maximized at $y_t=0$ for any choice of $\Delta$, $\Delta_r$ in the $2\delta(t)$ cube $Q(t)$. Combined with Lemma \ref{lem5}, there is an $\epsilon_t$ neighborhood of $0$ where $f(y_t+te_1)$ is less than $f(te_1)$ on $\cup_{\Delta_r \in Q(t)}\{y_t: (G_r+\Delta_r) \cdot y_t \ge 0, r \in I, y_t \in H\}$, which contains the feasible set  $\{y_t: g_r(y_t+te_1) \ge 0, r\in I, y_t \in H\}$. Therefore the nonlinear programs $f(y_t+te_1)$ subject to $g_r(y_t+te_1)\ge 0$, $y_t \in H$, which are parameterized by $t$ in $(-\epsilon, \epsilon)$, have local maxima at $y_t=0$.  This gives the following:
 
 \begin{theorem}\label{th1}
 Given Conditions \ref{assumpt}, a fixed $t$ in $(-\epsilon, \epsilon)$ and choosing $\Delta$ and $\Delta_r$ as in Lemma \ref{lem5}, for $x$ satisfying $g_r(x)\ge 0$ for all $r$ in $I$ and $y_t = x-te_1$ in $H$, 
-there exist linear programs\begin{footnote}{These programs may depend on a choice of $y_t \in H$, but $f(x)$ is always less then $f(te_1)$ by Lemma \ref{lem5}.}\end{footnote} $$\max_{y_t \in H}(F(t)+\Delta(y_t))\cdot y_t \textrm{ subject to }  (G_r(t)+\Delta_r(y_t))\cdot y_t \ge 0$$
-that give solutions to the nonlinear programs $$\max_{x \in H+te_1} f(x)  \textrm{ subject to }   g_r(x)\ge 0$$
+there exist linear programs\begin{footnote}{These programs may depend on a choice of $y_t \in H$, but $f(x)$ is always less then $f(te_1)$ by Lemma \ref{lem5}.}\end{footnote} $$\text{maximize }_{y_t \in H}(F(t)+\Delta(y_t))\cdot y_t \textrm{ subject to }  (G_r(t)+\Delta_r(y_t))\cdot y_t \ge 0$$
+that give solutions to the nonlinear programs $$\text{maximize }_{x \in H+te_1} f(x)  \textrm{ subject to }   g_r(x)\ge 0$$
 in an $\epsilon_t$ neighborhood of $te_1$ in $H+te_1.$ \qed
 \end{theorem}
 
 By choice of a sufficiently small $\epsilon$ and a minimal\begin{footnote}{This exists by a compactness argument.}\end{footnote} non-zero $\epsilon_t$, Theorem \ref{th1} gives an open neighborhood of $0$ in which the maximum value of the original nonlinear program occurs on $E$. The conditions for the first and second $t$-derivatives at $0$ shows $0$ to be a local maximum for the nonlinear program
- $$\max_{x\in\mathbb{R}^n}f(x) \textrm{ subject to }  g_r(x) \ge 0.$$
+ $$\text{maximize }_{x\in\mathbb{R}^n}f(x) \textrm{ subject to }  g_r(x) \ge 0.$$
 %can remove the condition on derivatives?  
 \begin{theorem}
 A nonlinear program satisfying Conditions \ref{assumpt} has an isolated local maximum at 0 with f(0) = 0. \qed
@@ -714,20 +714,20 @@ import cseblack;
 import olympiad;
 usepackage("amssymb");
 size(250);
-pair K0=D("\mathbf{k}_0,\mathbf{p}_1",(1,0),E);
-pair K1=D("\mathbf{k}_1",rotate(360./5.)*K0,NE);
-pair K2=D("\mathbf{k}_2",rotate(360./5.)*K1,NW);
-pair K3=D("\mathbf{k}_3",rotate(360./5.)*K2,SW);
-pair K4=D("\mathbf{k}_4",rotate(360./5.)*K3,SE);
+pair K0=D("\mathbf{k}_0,\mathbf{p}_1",(-1,0),-E);
+pair K1=D("\mathbf{k}_1",rotate(-360./5.)*K0,N-E);
+pair K2=D("\mathbf{k}_2",rotate(-360./5.)*K1,N-W);
+pair K3=D("\mathbf{k}_3",rotate(-360./5.)*K2,S-W);
+pair K4=D("\mathbf{k}_4",rotate(-360./5.)*K3,S-E);
 path KK = D(K0--K1--K2--K3--K4--cycle,linewidth(1));
 
 real u = cos(pi/5.);
 pair P1=K0;
-pair P2=D("\mathbf{p}_2",(K0+3.*K1)/4.,NE);
-pair P3=D("\mathbf{p}_3",((3.-2.*u)*K1+(1.+2.*u)*K2)/4.,NW);
-pair P4=D("\mathbf{p}_4",(2.*K2+2.*K3)/4.,SW);
-pair P5=D("\mathbf{p}_5",((3.-2.*u)*K4+(1.+2.*u)*K3)/4.,SW);
-pair P6=D("\mathbf{p}_6",(K0+3.*K4)/4.,SE);
+pair P2=D("\mathbf{p}_2",(K0+3.*K1)/4.,N-E);
+pair P3=D("\mathbf{p}_3",((3.-2.*u)*K1+(1.+2.*u)*K2)/4.,N-W);
+pair P4=D("\mathbf{p}_4",(2.*K2+2.*K3)/4.,S-W);
+pair P5=D("\mathbf{p}_5",((3.-2.*u)*K4+(1.+2.*u)*K3)/4.,S-W);
+pair P6=D("\mathbf{p}_6",(K0+3.*K4)/4.,S-E);
 path PP = P2--P3--P5--P6--cycle;
 fill(PP,lightgray);
 D(PP);
@@ -742,12 +742,13 @@ real t = -0.6;
 path PP = D((P2+t*V2)--(P3+t*V3)--(P5+t*V5)--(P6+t*V6)--cycle,dashed);
 D( P1--(P4+t*V4),dashed);
 
-MC ("y",D((P4-(0.1,0))--(P4+t*V4-(0.1,0)),Arrow),0.5,W);
+MC ("y",D((P4+(0.1,0))--(P4+t*V4+(0.1,0)),Arrow),0.5,-W);
 \end{asy}
 \scalebox{.8}{
     \tikzsetnextfilename{pentplot}
     \begin{tikzpicture}
 	\begin{axis}[
+	ylabel style={rotate=-90},
 		xlabel={$y$}, ylabel={$A$},
 		xmin=-1., xmax=1.,
 		ymin=1.25, ymax=1.4,
@@ -769,43 +770,44 @@ import cseblack;
 import olympiad;
 usepackage("amssymb");
 size(250);
-pair K0=D("\mathbf{k}_0,\mathbf{p}_1",(1,0),E);
-pair K1=D("\mathbf{k}_1",rotate(360./7.)*K0,NE);
-pair K2=D("\mathbf{k}_2",rotate(360./7.)*K1,N);
-pair K3=D("\mathbf{k}_3",rotate(360./7.)*K2,NW);
-pair K4=D("\mathbf{k}_4",rotate(360./7.)*K3,SW);
-pair K5=D("\mathbf{k}_5",rotate(360./7.)*K4,S);
-pair K6=D("\mathbf{k}_6",rotate(360./7.)*K5,SE);
+pair K0=D("\mathbf{k}_0,\mathbf{p}_1",(-1,0),-E);
+pair K1=D("\mathbf{k}_1",rotate(-360./7.)*K0,N-E);
+pair K2=D("\mathbf{k}_2",rotate(-360./7.)*K1,N);
+pair K3=D("\mathbf{k}_3",rotate(-360./7.)*K2,N-W);
+pair K4=D("\mathbf{k}_4",rotate(-360./7.)*K3,S-W);
+pair K5=D("\mathbf{k}_5",rotate(-360./7.)*K4,S);
+pair K6=D("\mathbf{k}_6",rotate(-360./7.)*K5,S-E);
 path KK = D(K0--K1--K2--K3--K4--K5--K6--cycle,linewidth(1));
 
-pair P1=(1., 0.);
-pair P2=D("\mathbf{p}_2",(0.516460816041133, 0.806260150051493),N);
-pair P3=D("\mathbf{p}_3",(-0.4340236179100764, 0.8062601500514931),NW);
-pair P4=D("\mathbf{p}_4",(-0.9009688679024191, 0.),SW);
-pair P5=D("\mathbf{p}_5",(-0.4340236179100764, -0.8062601500514931),SW);
-pair P6=D("\mathbf{p}_6",(0.516460816041133, -0.806260150051493),S);
+pair P1=(-1., 0.);
+pair P2=D("\mathbf{p}_2",(-0.516460816041133, 0.806260150051493),N);
+pair P3=D("\mathbf{p}_3",(0.4340236179100764, 0.8062601500514931),N-W);
+pair P4=D("\mathbf{p}_4",(0.9009688679024191, 0.),S-W);
+pair P5=D("\mathbf{p}_5",(0.4340236179100764, -0.8062601500514931),S-W);
+pair P6=D("\mathbf{p}_6",(-0.516460816041133, -0.806260150051493),S);
 path PP = P2--P3--P5--P6--cycle;
 fill(PP,lightgray);
 D(PP);
 D(P1--P4);
 pair P4x = P4;
 
-pair P1=(1., 0.);
-pair P2=(0.36670303301673796, -0.8404413867659472);
-pair P3=(-0.5837814009344715, -0.686832303311513);
-pair P4=(-0.9009688679024191, 0.3072181669088686);
-pair P5=(-0.31174490092936674, 0.9037741728702919);
-pair P6=(0.6387395330218427, 0.7501650894158576);
+pair P1=(-1., 0.);
+pair P2=(-0.36670303301673796, -0.8404413867659472);
+pair P3=(0.5837814009344715, -0.686832303311513);
+pair P4=(0.9009688679024191, 0.3072181669088686);
+pair P5=(0.31174490092936674, 0.9037741728702919);
+pair P6=(-0.6387395330218427, 0.7501650894158576);
 path PP = P2--P3--P5--P6--cycle;
 D(PP,dashed);
 D(P1--P4,dashed);
 
-MC ("y",D((P4x-(0.1,0))--(P4-(0.1,0)),Arrow),0.5,W);
+MC ("y",D((P4x+(0.1,0))--(P4+(0.1,0)),Arrow),0.5,-W);
 \end{asy}
 \scalebox{.8}{
     \tikzsetnextfilename{pentplot}
     \begin{tikzpicture}
 	\begin{axis}[
+	ylabel style={rotate=-90},
 		xlabel={$y$}, ylabel={$A$},
 		xmin=-1., xmax=1.,
 		ymin=1.52, ymax=1.58,
@@ -826,45 +828,46 @@ import cseblack;
 import olympiad;
 usepackage("amssymb");
 size(250);
-pair K0=D("\mathbf{k}_0,\mathbf{p}_1",(1,0),E);
-pair K1=D("\mathbf{k}_1",rotate(360./9.)*K0,NE);
-pair K2=D("\mathbf{k}_2",rotate(360./9.)*K1,N);
-pair K3=D("\mathbf{k}_3",rotate(360./9.)*K2,NW);
-pair K4=D("\mathbf{k}_4",rotate(360./9.)*K3,W);
-pair K5=D("\mathbf{k}_5",rotate(360./9.)*K4,W);
-pair K6=D("\mathbf{k}_6",rotate(360./9.)*K5,SW);
-pair K7=D("\mathbf{k}_7",rotate(360./9.)*K6,S);
-pair K8=D("\mathbf{k}_8",rotate(360./9.)*K7,SE);
+pair K0=D("\mathbf{k}_0,\mathbf{p}_1",(-1,0),-E);
+pair K1=D("\mathbf{k}_1",rotate(-360./9.)*K0,N-E);
+pair K2=D("\mathbf{k}_2",rotate(-360./9.)*K1,N);
+pair K3=D("\mathbf{k}_3",rotate(-360./9.)*K2,N-W);
+pair K4=D("\mathbf{k}_4",rotate(-360./9.)*K3,-W);
+pair K5=D("\mathbf{k}_5",rotate(-360./9.)*K4,-W);
+pair K6=D("\mathbf{k}_6",rotate(-360./9.)*K5,S-W);
+pair K7=D("\mathbf{k}_7",rotate(-360./9.)*K6,S);
+pair K8=D("\mathbf{k}_8",rotate(-360./9.)*K7,S-E);
 path KK = D(K0--K1--K2--K3--K4--K5--K6--K7--K8--cycle,linewidth(1));
 
-pair P1=(1., 0.);
-pair P2=D("\mathbf{p}_6",(0.3706844903100875, -0.87104878486755),SE);
-pair P3=D("\mathbf{p}_5",(-0.5991618200828668, -0.7478489484525013),SW);
-pair P4=D("\mathbf{p}_4",(-0.9396926207859084, 0.24639967283009717),NE);
-pair P5=D("\mathbf{p}_3",(-0.4058322193092865, 0.882629724233649),N);
-pair P6=D("\mathbf{p}_2",(0.5640140910836678, 0.7594298878186004),NE);
+pair P1=(-1., 0.);
+pair P2=D("\mathbf{p}_6",(-0.3706844903100875, -0.87104878486755),S-E);
+pair P3=D("\mathbf{p}_5",(0.5991618200828668, -0.7478489484525013),S-W);
+pair P4=D("\mathbf{p}_4",(0.9396926207859084, 0.24639967283009717),N-E);
+pair P5=D("\mathbf{p}_3",(0.4058322193092865, 0.882629724233649),N);
+pair P6=D("\mathbf{p}_2",(-0.5640140910836678, 0.7594298878186004),N-E);
 path PP = P2--P3--P5--P6--cycle;
 fill(PP,lightgray);
 D(PP);
 D(P1--P4);
 pair P4x = P4;
 
-pair P1=(1., 0.);
-pair P2=(0.4403241757329789, 0.8308422937423627);
-pair P3=(-0.5295221346599754, 0.8308422937423627);
-pair P4=(-0.9396926207859084, 0.);
-pair P5=(-0.5295221346599754, -0.8308422937423627);
-pair P6=(0.4403241757329789, -0.8308422937423627);
+pair P1=(-1., 0.);
+pair P2=(-0.4403241757329789, 0.8308422937423627);
+pair P3=(0.5295221346599754, 0.8308422937423627);
+pair P4=(0.9396926207859084, 0.);
+pair P5=(0.5295221346599754, -0.8308422937423627);
+pair P6=(-0.4403241757329789, -0.8308422937423627);
 path PP = P2--P3--P5--P6--cycle;
 D(PP,dashed);
 D(P1--P4,dashed);
 
-MC ("y",D((P4-(0.1,0))--(P4x-(0.1,0)),Arrow),0.5,W);
+MC ("y",D((P4+(0.1,0))--(P4x+(0.1,0)),Arrow),0.5,-W);
 \end{asy}
 \scalebox{.8}{
     \tikzsetnextfilename{pentplot}
     \begin{tikzpicture}
 	\begin{axis}[
+	ylabel style={rotate=-90},
 		xlabel={$y$}, ylabel={$A$},
 		xmin=-1., xmax=1.,
 		ymin=1.60, ymax=1.62,
