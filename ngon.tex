@@ -315,7 +315,8 @@ interested in certifying that the initial configuration is a local minimum, we c
 the constraints with ones that are equivalent in the neighborhood.
 
 \begin{lemma}\label{lemma:edgedg}
-    Let $K$ and $K'$ be two polygons that intersect at a segment. The endpoints of the segments
+    Let $K$ and $K'$ be two polygons that intersect at a segment, which is not
+    identical with a full edge of $K$ or of $K'$. The endpoints of the segments
     are $\mathbf{x}$ a vertex of $K$ and $\mathbf{y}$ a vertex of $K'$. Let $\mathbf{y}\mathbf{y}'$
     and $\mathbf{x}\mathbf{x}'$ be the edges of $K$ and $K'$ containing the intersection.
     Let $\mathbf{x}'\mathbf{y}\mathbf{x}\mathbf{y}'$ be oriented counterclockwise
@@ -337,18 +338,13 @@ the constraints with ones that are equivalent in the neighborhood.
     $\alpha(\xi(\mathbf{x})\xi(\mathbf{x}')\xi'(\mathbf{y}))\ge0$.
 \end{lemma}
 
-Note that the case of an intersection at a point that is a vertex of both polygons
-is not treated. In the first two cases we treat, the regular pentagon
+Note that two cases are not treated: the case of an intersection at a point that is a vertex of both polygons
+and the case of an intersection at a full edge of one or both polygons.
+In the optimal double-lattice packings of the first two bodies we treat, the regular pentagon
 and the regular heptagon, there are no such intersections. When we generalize
-the calculation to all convex polygons, we will show that such an intersection
-only occurs in special cases that can be treated separately.
-
-%\begin{lemma}
-%    Let $K$ be a convex polygon and let $\theta$ be such that $A(\theta)$
-%    is minimal, then there is a half-length parallelogram in the
-%    direction $\theta$ that shares no vertex with $K$ and an affine
-%    diameter with no more than one vertex shared with $K$.
-%\end{lemma}
+the calculation to all convex polygons, we will show that the first intersection case does not
+occur when the half-length parallelogram is an isolated minimum of area, and the second
+case can be treated equivalently to the case of \ref{lem:edgedg}.
 
 \subsection{other theorems}
 
@@ -583,6 +579,10 @@ demonstrates that the signed triangle area constraints associated with the two
 directions are equivalent in their first order cones. Since we only use the
 first derivatives of the constraints $g_r(z)$ in the calculation above,
 it follows that it will be the same for different direction assignments.
+Moreover, if the point $\mathbf{p}_i$, $i=2,3,5,$ or $6$, is a midpoint
+of an edge, then the nonoverlap constraint is locally equivalent to the
+union of the two constraints obtained by treating either endpoint of the
+edge as the nearer one. Again, the first order cone is identical.
 
 \begin{lemma}
     Let $\mathbf{a}$ and $\mathbf{b}$ be two distinct points, and let
