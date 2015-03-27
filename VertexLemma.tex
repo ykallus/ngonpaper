@@ -35,14 +35,31 @@
 %prove stated theorems and lemmas
 %2.4 uniform bound on uniform neighborhood  bound on the diameter of the cells for the surface area
 
+\begin{definition}
+ We will refer to a collection of inclinations $\{\phi_i\}$ for which $dA/dt = 0$ as a set of supports.
+\end{definition}
 
+
+\begin{definition}
+To any vertex of $K$ we may associate an entering angle and a leaving angle, the direction from which the sweeping affine diameter and the moving vertices of the half-length parallelogram enter and leave the vertex. 
+\end{definition}
+
+%\begin{definition}
+%For a polygon $K$ and a locally minimal area half-length parallelogram, a virtual polygon will be a linear approximation of the polygon given by the supports.  
+%\end{definition}
+
+\begin{definition}
+\end{definition}
 
 \begin{lemma}\label{lemma:vertvert}
 Given an isolated minimum for the area $A(\theta)$ of the half-length parallelogram at $\theta_0$, then $\mathbf{p_1}$ is the only vertex of the affine diameter to meet a vertex of $K$, and no vertices of the half-length parallelogram meet a vertex of $K$.
 \end{lemma}
 
+
+
+
 \begin{proof}
-To any vertex of $K$ we may associate an entering angle and a leaving angle, the direction from which the sweeping affine diameter and the moving vertices of the half-length parallelogram enter and leave the vertex.  %the past and the future!
+ %the past and the future!
 
 We work with a parameter $t$ which is proportional to $\theta$ as in the analysis of the rate constants in section \ref{}, but may change across critical angles. Consider some configuration where some subset $\mathcal{P}$ of the vertices $\mathbf{p_2}$, $\mathbf{p_3}$, $\mathbf{p_4}$, $\mathbf{p_5}$, $\mathbf{p_6}$ meet vertices of $K$.
 
@@ -66,11 +83,15 @@ We may assume vertices of the half-length parallelogram do not coincide with the
        \end{aligned}
 \end{equation}
 
- We will refer to a collection of inclinations $\{\phi_i\}$ for which $dA/dt = 0$ as a set of supports.
- 
+
 Provided the coincidences of the supports $\phi_2 = \phi_3 \text{ mod } \pi$ or $\phi_5 = \phi_6 \text{ mod }\pi$ can be excluded, the derivative is a continuous function with of those angles.  But these occur only when points $\mathbf{p}_i$ meet adjacent vertices of $K$, so the half-length parallelogram shares a full edge with $K$.  By Lemma \ref{}....
 
 %%%%%
+
+
+%Note, prob need to deal with the affine diameter case first so we can backtrack through the vertex of K with the parallelogram and get a contradiction...
+
+The affine diameter meets two vertices.  By the   Then the left derivative is negative and right derivative is positive.  If one of these is strict, choose the support of the affine diameter that   
 
 %If $the left derivative is 0... just continue... by definition of vertex...$
 %if the right derivative is 0, backtrack... but if the ends  of the affine diameter are both on vertices, need to back track to it and show that it has a support.  Then this is the edge to perturb along, since it forces the degrees 
@@ -78,21 +99,21 @@ Provided the coincidences of the supports $\phi_2 = \phi_3 \text{ mod } \pi$ or 
 If the left derivative is negative, so $dA/dt <= 0$ when evaluated at the entering, and similarly the right derivative is strictly positive, so the $dA/dt >0$ then by the intermediate value principle, we can take the convex combination of the vector of entering angles and the vector of leaving angles and find a set of support angles that lie between them. By definition the area of the half-length parallelogram is preserved to first order as $dA/d\theta = 0$ if the vertices move along such an edge, so any increase in volume must be quadratic in $t$.  However, the area lost by the discrepancy between the supports and the leaving angles is linear in $t$.   
 
 %%special cases...
+%what if the derivative is zero in both directions...
 %%rate constant zero, derivatives are zero...
 
-There are cones defined by the 
 
 In the case where the affine diameter does not meet a vertex, this is clear...
 
-based on the signs of the we know there exists a set of slopes consistent with the property that  increasing $\theta$ gives only a quadratic increase in area (the gain from the $d\theta=0$ motion), but a linear decrease (the discrepancy in the the $d\theta$ slope and the slopes of the polygon.).    See this by noticing that the 
-
-In the case where the affine diameter meets a vertex and $\mathbf{p_1}$ is fixed, a similar argument holds.  This follows from the conditions where the moving end s
-
-In the case where the affine diameter meets a vertex and the moving end switches, and $\mathbf{p_1}$ switches, a similar argument holds, where there is a symmetry of the body....
-
-
-
-The places where this argument breaks down are exactly when there are vertices of the half-length parallelogram or the moving vertex of the affine diameter that have parallel support.  This corresponds to a ...
+%based on the signs of the we know there exists a set of slopes consistent with the property that  increasing $\theta$ gives only a quadratic increase in area (the gain from the $d\theta=0$ motion), but a linear decrease (the discrepancy in the the $d\theta$ slope and the slopes of the polygon.).    See this by noticing that the 
+%
+%In the case where the affine diameter meets a vertex and $\mathbf{p_1}$ is fixed, a similar argument holds.  This follows from the conditions where the moving end s
+%
+%In the case where the affine diameter meets a vertex and the moving end switches, and $\mathbf{p_1}$ switches, a similar argument holds, where there is a symmetry of the body....
+%
+%
+%
+%The places where this argument breaks down are exactly when there are vertices of the half-length parallelogram or the moving vertex of the affine diameter that have parallel support.  This corresponds to a ...
 \end{proof}
 
 %picture
