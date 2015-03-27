@@ -29,91 +29,73 @@
 
 \begin{document}
 \bibliographystyle{plain}
-%\maketitle
-%\abstract
-%This paper shows that the dense double lattice construction of Kuperberg and Kuperberg is locally optimal for polygons in the full space of packings.
-
-
 
 \section{The Vertex-Vertex Lemma}
 
-
-It is possible to construct polygons that have half-length parallelograms that share vertices with the bounding polygon.
-
-
-The stability condition:  given a collection of points that determine an affine diameter and a half parallelogram, we give criteria on the slopes of the support lines and the movement of the vertices as the affine diameter changers. 
-
-At each vertex, there is a coupled family of directions which determine the motion for which the the area of the half-length parallelogram is preserved to first order.
-
-%%%%
-We describe the slopes as follows...
-
-
-%%picture?
-
-%%%%
+%prove stated theorems and lemmas
+%2.4 uniform bound on uniform neighborhood  bound on the diameter of the cells for the surface area
 
 
 
-%picture
-\section{vertices of the affine diameter}
-
-\begin{proposition}
-The affine diameter meets only one vertex, unless certain properties hold...
-\end{proposition}
+\begin{lemma}\label{lemma:vertvert}
+Given an isolated minimum for the area $A(\theta)$ of the half-length parallelogram at $\theta_0$, then $\mathbf{p_1}$ is the only vertex of the affine diameter to meet a vertex of $K$, and no vertices of the half-length parallelogram meet a vertex of $K$.
+\end{lemma}
 
 \begin{proof}
+To any vertex of $K$ we may associate an entering angle and a leaving angle, the direction from which the sweeping affine diameter and the moving vertices of the half-length parallelogram enter and leave the vertex.  %the past and the future!
 
-%Consider the case where an affine diameter meets two vertices.  
-%If the affine diameter is not uniquely determined then the vertex-vertex condition is also an edge-edge configuration.
-%Otherwise, one of the vertices may be fixed and swept out as an affine diameter. 
-%%%this proof fail
+We work with a parameter $t$ which is proportional to $\theta$ as in the analysis of the rate constants in section \ref{}, but may change across critical angles. Consider some configuration where some subset $\mathcal{P}$ of the vertices $\mathbf{p_2}$, $\mathbf{p_3}$, $\mathbf{p_4}$, $\mathbf{p_5}$, $\mathbf{p_6}$ meet vertices of $K$.
+
+We may assume vertices of the half-length parallelogram do not coincide with the vertices of $K$ for any sufficiently small neighborhood of in the domain of $\theta_0$.  Otherwise, we are in the situation described in Lemma \ref{} and there is a family of minima. 
+
+ Since this configuration is an isolated local minimum of $A(t)$ or equivalently of $A(t)$, the left derivative of $A(t)$ is negative and the right derivative is positive.  Then the stability condition \ref{} determines a family of motions which define a family of virtual polygons with the same affine diameter and the same half-length parallelogram but for which the area of the half length quadrilateral is constant.  We will show that there is a virtual polygon that contains the vertices $\mathcal{P}$ in the interior of its edges.
+ 
+ We compute $dA/dt$ to be
+  \begin{equation}
+    \begin{aligned}
+ -&\frac{1}{2} p_{21} \sin \left(\phi _3\right) \sin \left(\phi_2-\phi _4\right) \csc \left(\phi_2-\phi _3\right)+
+ \frac{1}{2} p_{21} \sin \left(\phi_2\right) \sin \left(\phi _3-\phi _4\right) \csc \left(\phi_2-\phi _3\right)+\\
+ &\frac{1}{2} p_{22}\sin \left(\phi_2-\phi _4\right) \cos \left(\phi _3\right) \csc \left(\phi_2-\phi _3\right)-
+  \frac{1}{2} p_{22} \sin \left(\phi _3-\phi _4\right) \cos \left(\phi_2\right) \csc \left(\phi_2-\phi _3\right)-\\
+  & \frac{1}{2} p_{61} \sin \left(\phi_5\right) \sin \left(\phi _4-\phi _6\right) \csc \left(\phi _5-\phi _6\right)+
+   \frac{1}{2} p_{61} \sin \left(\phi _4-\phi_5\right) \sin \left(\phi _6\right) \csc \left(\phi _5-\phi _6\right)-\\
+  & \frac{1}{2} p_{62} \sin \left(\phi _4-\phi _5\right)\cos \left(\phi _6\right) \csc \left(\phi _5-\phi _6\right)+
+   \frac{1}{2} p_{62} \sin \left(\phi _4-\phi _6\right) \cos \left(\phi _5\right) \csc \left(\phi _5-\phi _6\right)+\\
+  & \frac{1}{4} \sin \left(\phi_2\right) \sin \left(\phi _3-\phi _4\right)\csc \left(\phi_2-\phi _3\right)+
+   \frac{1}{4} \sin \left(\phi _4-\phi _5\right) \sin \left(\phi _6\right) \csc \left(\phi_5-\phi _6\right)
+       \end{aligned}
+\end{equation}
+
+ We will refer to a collection of inclinations $\{\phi_i\}$ for which $dA/dt = 0$ as a set of supports.
+ 
+Provided the coincidences of the supports $\phi_2 = \phi_3 \text{ mod } \pi$ or $\phi_5 = \phi_6 \text{ mod }\pi$ can be excluded, the derivative is a continuous function with of those angles.  But these occur only when points $\mathbf{p}_i$ meet adjacent vertices of $K$, so the half-length parallelogram shares a full edge with $K$.  By Lemma \ref{}....
+
+%%%%%
+
+%If $the left derivative is 0... just continue... by definition of vertex...$
+%if the right derivative is 0, backtrack... but if the ends  of the affine diameter are both on vertices, need to back track to it and show that it has a support.  Then this is the edge to perturb along, since it forces the degrees 
+
+If the left derivative is negative, so $dA/dt <= 0$ when evaluated at the entering, and similarly the right derivative is strictly positive, so the $dA/dt >0$ then by the intermediate value principle, we can take the convex combination of the vector of entering angles and the vector of leaving angles and find a set of support angles that lie between them. By definition the area of the half-length parallelogram is preserved to first order as $dA/d\theta = 0$ if the vertices move along such an edge, so any increase in volume must be quadratic in $t$.  However, the area lost by the discrepancy between the supports and the leaving angles is linear in $t$.   
+
+%%special cases...
+%%rate constant zero, derivatives are zero...
+
+There are cones defined by the 
+
+In the case where the affine diameter does not meet a vertex, this is clear...
+
+based on the signs of the we know there exists a set of slopes consistent with the property that  increasing $\theta$ gives only a quadratic increase in area (the gain from the $d\theta=0$ motion), but a linear decrease (the discrepancy in the the $d\theta$ slope and the slopes of the polygon.).    See this by noticing that the 
+
+In the case where the affine diameter meets a vertex and $\mathbf{p_1}$ is fixed, a similar argument holds.  This follows from the conditions where the moving end s
+
+In the case where the affine diameter meets a vertex and the moving end switches, and $\mathbf{p_1}$ switches, a similar argument holds, where there is a symmetry of the body....
+
+
+
+The places where this argument breaks down are exactly when there are vertices of the half-length parallelogram or the moving vertex of the affine diameter that have parallel support.  This corresponds to a ...
 \end{proof}
 
-\section{vertices of the half-length parallelogram}
-
-
-
-\begin{proposition}
-A vertex of a half-parallelogram is imperturbable if a rotation of the affine diameter does not cause that vertex to move.  By the stability condition, a vertex is imperturbable only when the opposite end of it's half diameter has a motion that is parallel to the motion of moving end of the affine diameter.
-This follows from a symbolic computation.  (modulo the correct parametrization of slopes...)
-\end{proposition}
-
-\begin{proposition}
-The vertices of the half length parallelogram meet no vertices unless there is an imperturbable vertex.
-\end{proposition}
-
-\begin{proposition}
-The stability condition is given by a function of slopes and point positions that are required for the configuration to be stable with respect to the half parallelogram construction. This function is continuous and satisfies certain intermediate value properties.  (modulo the correct parametrization)
-\end{proposition}
-
 %picture
-
-%For a configuration of vertices of a half length quadrilateral to be stable, they must satisfy the condition that the area be minimized.  This determines a collection of slopes that stabilize the configuration of vertices two first order.  
-
-%illustration of a single point.
-\subsection{Pyramids}
-
-\begin{definition}
-If a polygon has an imperturbable vertex, we call it a $pyramid$. 
-\end{definition}
-
-
-The pyramid is a stable configuration by considering it as a union of two over constrained regions of configuration space.
-
-
-perturbation of quadrangle vertices
-
-depends on analysis of the the stability criterion of slopes
-
-sketch at a single vertex...
-
-intermediate value theorem
-
-
-%picture
-
-
 
 
 
