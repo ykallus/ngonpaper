@@ -45,10 +45,10 @@
 %There is an algorithm of constructing the densest double lattice packing of an arbitrary convex body in the plane.  In this paper, we extend the optimality result to a neighborhood in the space of packings.
 %The story: Some of the motivation was curiosity... some existing results and explorations that could be meshed together...
 
-This paper began as an investigation of the optimality of the double lattice packing for pentagons and heptagons.  In \cite{kuperberg1990double}, G.\ and W.\ Kuperberg describe a double lattice packing of congruent planar convex bodies with maximal density that can be constructed algorithmically\marginpar{YK: what do you mean here by ``algorithmically''? How is a nonpolygon represented computationally? \\ WK: perhaps "procedurally" for "nice enough" bodies?  }\footnote{For the case of polygons, this turns out to be linear in the number of vertices  \cite{Mount1991}.}. As an example, they construct both the densest double lattice packing for regular pentagons and the densest double lattice packing for heptagons and show that these packings have densities of $(5-\sqrt{5})/3 = 0.92131\dots$ and $0.8926\dots$ respectively. These are the current records and possibly the best \textit{general} packings of the plane by regular pentagons and by regular heptagons.
+This paper began as an investigation of the optimality of the double lattice packing for pentagons and heptagons.  In \cite{kuperberg1990double}, G.\ and W.\ Kuperberg describe a double lattice packing of congruent planar convex bodies with maximal density among double lattices and characterize it as a solution to an optimization problem over inscribed parallelograms.  \marginpar{YK: what do you mean here by ``algorithmically''? How is a nonpolygon represented computationally? \\ WK: perhaps "procedurally" for "nice enough" bodies?  } As an example, they construct both the densest double lattice packing for regular pentagons and the densest double lattice packing for heptagons and show that these packings have densities of $(5-\sqrt{5})/3 = 0.92131\dots$ and $0.8926\dots$ respectively. These are the current records and possibly the best \textit{general} packings of the plane by regular pentagons and by regular heptagons.
 
-In the early part of the 2000s, there has been a significant push both theoretically and computationally to answer some of the most naive yet perplexing questions in packing \footnote{for a background on packing problems, see \cite{brass2005research} \cite{conway1999recent}\cite{groemer1963existenzsatze}.
-} Along with the proof and formal verification of the Kepler conjecture \cite{hales2015formal}, a number of other results have proved to be both illuminating and frustrating (Cohn-Elkies LP bounds, Lower bounds...).  For packings by congruent anisotropic bodies, sharp results are limited mostly to the plane, where the best packings of all centrally-symmetric bodies are achieved by lattices \cite{fejes1950some}, and a series of sparce results in higher dimensions. 
+In the early part of the 2000s, there has been a significant push both theoretically and computationally to answer some of the most naive yet perplexing questions in packing \footnote{for background on packing problems, see \cite{brass2005research}, \cite{conway1999recent}, \cite{groemer1963existenzsatze}.
+} Along with the proof and formal verification of the Kepler conjecture \cite{hales2015formal}, a number of other results have proved to be both illuminating and frustrating (Cohn-Elkies LP bounds, Lower bounds...).  For packings by congruent anisotropic bodies, sharp results are limited mostly to the plane, where the best packings of all centrally-symmetric bodies are achieved by lattices \cite{fejes1950some}, and a series of sparse results in higher dimensions. 
 
 For general convex bodies, the problem of finding the best packing of regular pentagons serves as a toy model for harder problems
 like finding the best packing of regular tetrahedra. However, the pentagon problem is still not a tractable one. Explicit upper bounds for the packing of regular tetrahedra and octahedra are better than the trivial unity upper bound by minuscule margins \cite{gravel2011upper}. A semidefinite programming approach has been suggested by Oliveira and Vallentin \cite{mario2013computing}. Though the SDP method has not yet yielded a nontrivial upper bound for packing of tetrahedra, it has been used to obtain an upper bound of $0.98103$ on the density of regular pentagon packings. There remains a large gap between the highest density achieved for pentagon packings and this upper bound.
@@ -61,9 +61,11 @@ Furthermore, we discovered that our method can be generalized to all convex poly
 optimal, they are always at least locally optimal.
 
 \begin{theorem}
-Given a convex planar polygon, there is a double lattice packing that is locally optimal.  Modulo vertex condition... \end{theorem}
+If the double lattice packing is an isolated local maximum for density among double lattices, then it is an isolated local maximum for density among all packings. \end{theorem}
 
-In that light, we must establish the correct notion of neighborhood.  This neighborhood should be broader than simply the Hausdorff distance between two packings.   To that end, we recall a topology on the space of sequences ambient isometries 
+In that light, we must establish the correct topology on all packings.  %This topology should be broader than simply the induced topology from the Hausdorff distance between two packings and it should restrict to the notions of neighborhood that exist for subspaces of all packings.  %(finitely determined?  or something like that...)
+
+To that end, we recall a topology on the space of sequences ambient isometries.  %()
  
 We recast the relevant portions of \cite{kuperberg1990double}.
 
@@ -127,7 +129,7 @@ Note that the above definition is independent of $R$.
 
 We note that there are packings that might be intuitively thought of as not locally optimal, but
 which are strongly extreme under our definition. One example is constructed by decorating a cylinder
-with a screw on its bottom base and a corrosponding screw hole boring into its top base. Consider the packing
+with a screw on its bottom base and a corresponding screw hole boring into its top base. Consider the packing
 where each cylinder is screwed into a cylinder below it, in such a way that the two cylinders
 are related to each other by a translation, and the screw is not completely screwed in. This
 creates a column of cylinders, copies of which we arrange in a triangular grid. Since the screw is not completely screwed in, the density of the packing can be improved by screwing it in further. Since the interlayer spacing is related to the relative rotation between
