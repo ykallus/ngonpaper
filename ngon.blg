@@ -1,46 +1,49 @@
-This is BibTeX, Version 0.99d (TeX Live 2014)
+This is BibTeX, Version 0.99d (TeX Live 2014/Arch Linux)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: ngon.aux
-The style file: plain.bst
+The style file: alpha.bst
 Database file #1: ngon.bib
-You've used 13 entries,
-            2118 wiz_defined-function locations,
-            579 strings with 6038 characters,
-and the built_in function-call counts, 4155 in all, are:
-= -- 409
-> -- 187
-< -- 5
-+ -- 77
-- -- 62
-* -- 283
-:= -- 707
-add.period$ -- 39
-call.type$ -- 13
-change.case$ -- 66
-chr.to.int$ -- 0
-cite$ -- 13
-duplicate$ -- 160
-empty$ -- 321
-format.name$ -- 62
-if$ -- 854
-int.to.chr$ -- 0
-int.to.str$ -- 13
-missing$ -- 14
-newline$ -- 68
-num.names$ -- 26
-pop$ -- 65
+Warning--I didn't find a database entry for "Mount1991"
+Warning--empty journal in hales2015formal
+You've used 14 entries,
+            2543 wiz_defined-function locations,
+            646 strings with 6768 characters,
+and the built_in function-call counts, 5708 in all, are:
+= -- 554
+> -- 297
+< -- 12
++ -- 104
+- -- 102
+* -- 441
+:= -- 962
+add.period$ -- 42
+call.type$ -- 14
+change.case$ -- 96
+chr.to.int$ -- 14
+cite$ -- 15
+duplicate$ -- 214
+empty$ -- 385
+format.name$ -- 122
+if$ -- 1123
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 15
+newline$ -- 74
+num.names$ -- 42
+pop$ -- 86
 preamble$ -- 1
-purify$ -- 56
+purify$ -- 113
 quote$ -- 0
-skip$ -- 114
+skip$ -- 173
 stack$ -- 0
-substring$ -- 251
-swap$ -- 34
-text.length$ -- 5
-text.prefix$ -- 0
+substring$ -- 304
+swap$ -- 27
+text.length$ -- 12
+text.prefix$ -- 7
 top$ -- 0
-type$ -- 48
-warning$ -- 0
-while$ -- 43
-width$ -- 15
-write$ -- 144
+type$ -- 104
+warning$ -- 1
+while$ -- 52
+width$ -- 16
+write$ -- 183
+(There were 2 warnings)

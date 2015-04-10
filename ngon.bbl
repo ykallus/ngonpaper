@@ -1,75 +1,83 @@
-\begin{thebibliography}{10}
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{HAB{\etalchar{+}}15}
 
-\bibitem{brass2005research}
+\bibitem[BMP05]{brass2005research}
 P~Brass, W~Moser, and J~Pach.
 \newblock {\em Research Problems in Discrete Geometry}, volume~1.
 \newblock Springer, 2005.
 
-\bibitem{conway1999recent}
+\bibitem[CGSS99]{conway1999recent}
 J~H Conway, C~Goodman-Strauss, and N~Sloane.
 \newblock Recent progress in sphere packing.
-\newblock {\em Current Developments in Mathematics}, pages 37--76, 1999.
+\newblock {\em Current Developments in Mathematics}, 1999:37--76, 1999.
 
-\bibitem{fejes1950some}
-L~Fejes~T{\'o}th.
+\bibitem[dOFV13]{mario2013computing}
+Fernando~{M\'ario} de~Oliveira~Filho and Frank Vallentin.
+\newblock Computing upper bounds for the packing density of congruent copies of
+  a convex body {I}.
+\newblock {\em arXiv preprint arXiv:1308.4893}, August 2013.
+
+\bibitem[FT50]{fejes1950some}
+L~Fejes~{T\'oth}.
 \newblock Some packing and covering theorems.
 \newblock {\em Acta Sci. Math. Szeged}, 12(Leopoldo Fejer et Frederico Riesz
   LXX annos natis dedicatus, Pars A):62--67, 1950.
 
-\bibitem{gravel2011upper}
+\bibitem[GEK11]{gravel2011upper}
 S~Gravel, V~Elser, and Y~Kallus.
 \newblock Upper bound on the packing density of regular tetrahedra and
   octahedra.
 \newblock {\em Discrete \& Computational Geometry}, 46(4):799--818, 2011.
 
-\bibitem{groemer1963existenzsatze}
+\bibitem[Gro63]{groemer1963existenzsatze}
 Helmut Groemer.
-\newblock Existenzs{\"a}tze f{\"u}r lagerungen im euklidishen raum.
+\newblock {Existenzs\"atze} {f\"ur} {Lagerungen} im {Euklidischen} {Raum}.
 \newblock {\em Mathematische Zeitschrift}, 81(3):260--278, 1963.
 
-\bibitem{hales2015formal}
+\bibitem[HAB{\etalchar{+}}15]{hales2015formal}
 Thomas Hales, Mark Adams, Gertrud Bauer, Dat~Tat Dang, John Harrison, Truong~Le
   Hoang, Cezary Kaliszyk, Victor Magron, Sean McLaughlin, Thang~Tat Nguyen,
-  et~al.
+  Truong~Quang Nguyen, Tobias Nipkow, Steven Obua, Joseph Pleso, Jason Rute,
+  Alexey Solovyev, An~Hoai~Thi Ta, Trung~Nam Tran, Diep~Thi Trieu, Josef Urban,
+  Ky~Khac Vu, and Roland Zumkeller.
 \newblock A formal proof of the kepler conjecture.
-\newblock {\em arXiv preprint arXiv:1501.02155}, 2015.
+\newblock January 2015.
 
-\bibitem{kuperberg1990double}
+\bibitem[Kal15]{kallus2015pessimal}
+Yoav Kallus.
+\newblock Pessimal packing shapes.
+\newblock {\em Geometry \& Topology}, 19(1):343--363, 2015.
+
+\bibitem[KK90]{kuperberg1990double}
 G~Kuperberg and W~Kuperberg.
 \newblock Double-lattice packings of convex bodies in the plane.
 \newblock {\em Discrete \& Computational Geometry}, 5(1):389--397, 1990.
 
-\bibitem{mario2013computing}
-F~M{\'a}rio~de Oliveira~Filho and F~Vallentin.
-\newblock Computing upper bounds for the packing density of congruent copies of
-  a convex body {I}.
-\newblock {\em arXiv preprint arXiv:1308.4893}, 2013.
-
-\bibitem{martinet2003perfect}
+\bibitem[Mar03]{martinet2003perfect}
 Jacques Martinet.
 \newblock {\em Perfect lattices in Euclidean spaces}, volume 327.
 \newblock Springer Science \& Business Media, 2003.
 
-\bibitem{Mount1991}
+\bibitem[Mou91]{mount1991densest}
 David~M Mount.
 \newblock The densest double-lattice packing of a convex polygon.
 \newblock {\em Discrete and Computational Geometry: Papers from the DIMACS
   Special Year}, 6:245--262, 1991.
 
-\bibitem{reinhardt1933dichteste}
+\bibitem[Rei33]{reinhardt1933dichteste}
 K~t Reinhardt.
 \newblock {\"U}ber die dichteste gitterf{\"o}rmige lagerung congruenter
   bereiche, und eine besondere art convexer curven.
 \newblock In {\em Abh. aus dem Math. Seminar der Hamburgische Univ}, volume~9,
   pages 216--230, 1933.
 
-\bibitem{schurmann2013strict}
+\bibitem[Sch13]{schurmann2013strict}
 Achill Sch{\"u}rmann.
 \newblock Strict periodic extreme lattices.
 \newblock {\em Diophantine Methods, Lattices, and Arithmetic Theory of
   Quadratic Forms}, 587:185, 2013.
 
-\bibitem{mathematica10}
+\bibitem[{Wol}14]{mathematica10}
 {Wolfram Research}.
 \newblock {\em Mathematica 10.0}.
 \newblock Wolfram Research, Inc., Champaign, Illinois, 2014.
