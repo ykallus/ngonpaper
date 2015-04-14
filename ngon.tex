@@ -62,7 +62,7 @@
 This paper began as an investigation of the optimality of the double lattice packing for pentagons and heptagons.  In \cite{kuperberg1990double}, G.\ and W.\ Kuperberg describe a recipe for finding the double lattice packing of congruent planar convex bodies with maximal density by solving an optimization problem over inscribed parallelograms. This optimization problem is usually tractable, and in the case of convex polygons can be solved by an algorithm with running time linear in the number of vertices \cite{mount1991densest}. As examples, G.\ and W.\ Kuperberg construct both the densest double lattice packing for regular pentagons and the densest double lattice packing for heptagons and show that these packings have densities of $(5-\sqrt{5})/3 = 0.92131\dots$ and $0.8926\dots$ respectively. These are the current records and possibly the best \textit{general} packings of the plane by regular pentagons and by regular heptagons.
 
 In the early part of the 2000s, a significant push, both theoretical and computational, arose to answer some of the most naive yet perplexing questions in packing\footnote{for background on packing problems, see \cite{brass2005research}, \cite{conway1999recent}, \cite{groemer1963existenzsatze}.}.
-Along with the proof and formal verification of the Kepler conjecture \cite{hales2015formal}, a number of other results have proved to be both illuminating and frustrating (Cohn-Elkies LP bounds, Lower bounds...).  For packings by congruent anisotropic bodies, sharp results are limited mostly to the plane, where the best packings of all centrally-symmetric bodies are achieved by lattices \cite{fejes1950some}, and a series of sparse results in higher dimensions\marginpar{YK: what sharp results are you thinking about?}. 
+Along with the proof and formal verification of the Kepler conjecture \cite{hales2015formal}, a number of other results have proved to be both illuminating and frustrating (Cohn-Elkies LP bounds, Lower bounds...).  For packings by congruent anisotropic bodies, sharp results are limited mostly to the plane, where the best packings of all centrally-symmetric bodies are achieved by lattices \cite{fejes1950some}, and a series of sparse results in higher dimensions\marginpar{YK: what sharp results are you thinking about?  WK : trimmed Voronoi cells (supposedly in Int. Geom. 1994, A. Bezdek), Kepler, perhaps the sharp lattice results -> various geometry of numbers results, cylinders}. 
 
 Among general convex bodies, the problem of finding the best packing of regular pentagons serves as a toy model for harder problems,
 like finding the best packing of regular tetrahedra. However, the pentagon problem is still not a tractable one. Explicit upper bounds for the packing of regular tetrahedra and octahedra are better than the trivial unity upper bound by minuscule margins \cite{gravel2011upper}. A semidefinite programming (SDP) approach has been suggested by Oliveira and Vallentin to calculate improved upper bounds \cite{mario2013computing}. Though the SDP method has not yet yielded a nontrivial upper bound for packing of tetrahedra, it has been used to obtain an upper bound of $0.98103$ on the density of regular pentagon packings. There remains a sizable gap between the highest density achieved for pentagon packings and this upper bound.
@@ -82,9 +82,11 @@ optimal, they are always at least locally optimal.
 \begin{theorem}
 If the double lattice packing is an isolated local maximum for density among double lattices, then it is an isolated local maximum for density among all packings. \end{theorem}
 
-In that light, we must establish the correct topology on all packings.  %This topology should be broader than simply the induced topology from the Hausdorff distance between two packings and it should restrict to the notions of neighborhood that exist for subspaces of all packings.  %(finitely determined?  or something like that...)
+%In that light, we must establish the correct topology on all packings.  We wish to say that two packings are nearby if there is are labelings of the two packings such that near by objects in one packing remain nearby objects in the other.  One might consider this as the objects of the packing being linked together in a network, where two objects are linked (in configuration space) only if they are sufficiently close (there exists some minimal length that will create a single connected component for a saturated packing of some finite ball...).  
+%To that end, we recall a topology on the space of sequences ambient isometries. 
 
-To that end, we recall a topology on the space of sequences ambient isometries.  %()
+ %This topology should be broader than simply the induced topology from the Hausdorff distance between two packings and it should restrict to the notions of neighborhood that exist for subspaces of all packings.  %(finitely determined?  or something like that...)
+
  
 We recast the relevant portions of \cite{kuperberg1990double}.
 
@@ -196,7 +198,7 @@ We now derive a general method for proving strong extremality which we will use 
 
 
 \subsection{Double lattices}
-%Intro!  In this section, we sketch the characterization of the double lattice packings as they relate to their affine diameters and half-length parallelograms.   The work of Kuperburg and Kuperberg, the work of Mount, the stability and area criterion...
+%Intro!  In this section, we sketch the characterization of the double lattice packings as they relate to their affine diameters and half-length parallelograms.   The work of Kuperberg and Kuperberg, the work of Mount, the stability and area criterion...
 
 
 \begin{definition}
@@ -661,7 +663,7 @@ therefore the optimization problem is:
     \end{aligned}
 \end{equation}
 
-We linearize the problem to obtain a problem of the form \ref{eq:lin-hept}.
+We linearize the problem to obtain a problem of the form \ref{eq:lin-hept}.\marginpar{YK: Why true for $\eta_9$?  WK: I think this is true if I read the angles correctly: -$\pi<\phi_4 <0$, so sin is negative, and the other angles similarly must form "roofs" over the half length lines, so $phi_2-\pi<phi_3 <0, \pi/2>phi_2 >0$ and the $\phi_2,\phi_3$ term is positive $(+ -/-)$. Similar i think for $\phi5,\phi6$}
 The constraint matrix $G$ is singular, and we can obtain right and left null
 space vectors $z_0$ and $\eta_0$, whose values are given in \ref{tab:genz0e0}.
 In fact, the null spaces are one-dimensional, as can be seen by noting that
@@ -681,7 +683,7 @@ following values:
 	\eta_9 &= -\frac{l_4}{\sin\phi_4}\left(1+2s_0 + \frac{\sin\phi_2\sin\phi_3}{\sin(\phi_3-\phi_2)} - \frac{\sin\phi_5\sin\phi_6}{\sin(\phi_6-\phi_5)}\right)\text.
     \end{aligned}
 \end{equation}
-Since all the above are positive\marginpar{YK: Why true for $\eta_9$?}, we can proceed as in the case of heptagons to include auxiliary functions
+Since all the above are positive, we can proceed as in the case of heptagons to include auxiliary functions
 that would make all the $\eta_i$'s individually positive and respect the conditions of \ref{thm:aux}.
 Therefore, we have shown that the packing is strongly extreme.
 
