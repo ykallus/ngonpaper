@@ -1,0 +1,202 @@
+\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage [autostyle, english = american]{csquotes}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{conjecture}{Conjecture}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{conj}{Conjecture}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{conditions}{Conditions}[section]
+
+%\newcommand{\defv}[1]{\textbf{\textit{#1}}}
+
+
+\title{The local optimality of the double lattice packing}
+\author{Yoav Kallus and W\"oden Kusner}
+%\date{}							% Activate to display a given date or no date
+
+\begin{document}
+\bibliographystyle{plain}
+
+\subsection{Local Stability}
+
+%We replace density maximization with the equivalent problem of mean volume minimization.  This allows us to discard the potentially problematic density objective function, which when localized tends to depend on a large number of quantities, i.e. the areas of various pieces of elements of our packing, and replace it with localized area functions.
+
+\begin{definition}
+    Let $\Xi$ be a set of isometries. Its \textit{mean volume} is the limit
+    \begin{equation}
+	d(\Xi)=\lim_{s\to\infty} \frac{\mathrm{vol} B(0,s)}{|\{\xi\in\Xi : \xi(0)\in B(0,s)\}|}\text.
+    \end{equation}
+    The upper and lower mean volumes are the corresponding limits superior and inferior.
+    We say $\Xi$ is a $(r,R)$-set if the point set $\{\xi(0):\xi\in\Xi\}$ has a packing
+    radius at least $r$ and a covering radius at most $R$.
+\end{definition}
+
+%An $(r,R)$-set is then quantifiably well spaced
+
+%should the definition include discrete set of isometries, similar to discrete spectra, that is it has no limit points?
+
+We will look at packings of congruent copies of a convex body $K$. That is, every
+element of the packing is given by $\xi(K)$, where $\xi$ is an isometry of Euclidean
+space. It will be convenient to assume that the reference body $K$ is situated so that
+its interior contains the origin.
+
+\begin{definition}
+    Let $K$ be a compact set with interior. We say that $\Xi$ is \textit{admissible} for $K$ if
+    the interiors of $\xi(K)$ and $\xi'(K)$ are disjoint for any two distinct isometries $\xi,\xi'\in\Xi$.
+    We say furthermore that $\Xi$ is \textit{saturated} if there is no $\xi \not\in \Xi$ such that $\Xi\cup\{\xi\}$
+    is again admissible.
+\end{definition}
+
+There are radii $r(K)$ and $R(K)$ such that when $\Xi$ is admissible and saturated, then $\Xi$ is
+a $(r(K),R(K))$-set. As a consequence, such sets are countable.
+
+\begin{definition}
+    Given two $(r',R')$-sets $\Xi$ and $\Xi'$ of isometries, we define the premetric 
+    \begin{equation}
+	\begin{aligned}
+	    \delta_R(\Xi,\Xi') = \inf_\text{enum.} \sup \{&||\xi_i^{-1}\xi_j-\xi_i'^{-1}\xi_j'||:\\ & i,j \text{ such that } ||\xi_i(0)-\xi_j(0)||<2R \text{ or } ||\xi_i'(0)-\xi_j'(0)||<2R\}\text.
+	\end{aligned}
+    \end{equation}
+    The infimum is over all enumerations $\mathbb{N}\to\Xi$ and $\mathbb{N}\to\Xi'$.
+\end{definition}
+
+%picture like kenyons "chained polytopes"
+
+When $R>R'$, $\delta_R(\Xi,\Xi')=0$ if and only if $\xi_i = \hat\xi \xi_i'$ for some $\hat\xi\in E(n)$ and some
+enumerations. Consider a body $K$. When $R>R(K)$, $\delta_R(\Xi,\Xi')$ is a metric on the space of admissible
+$(r,R)$-sets up to overall isometry, which includes the saturated sets as a subset.
+
+\begin{definition}
+    We say an admissible and saturated set $\Xi$ is \textit{strongly extreme} for $K$ if it minimizes the mean volume among admissible elements in a neighborhood of $\Xi$
+    in the metric space given by $\delta_R$ for some $R>R(K)$.
+\end{definition}
+
+%We note that there are packings that might be intuitively thought of as not locally optimal, but
+%which are strongly extreme under our definition. One example is constructed by decorating a cylinder
+%with a screw on its bottom base and a corresponding screw hole boring into its top base. Consider the packing
+%where each cylinder is screwed into a cylinder below it, in such a way that the two cylinders
+%are related to each other by a translation, and the screw is not completely screwed in. This
+%creates a column of cylinders, copies of which we arrange in a triangular grid. Since the screw is not completely screwed in, the density of the packing can be improved by screwing it in further. Since the interlayer spacing is related to the relative rotation between
+%cylinders on the two layers, even an arbitrarily small consistent decrease in interlayer spacing
+%will cause some layers to be rotated by at least some constant angle. Such a motion is not continuous
+%in the topology we defined. Therefore, it is worth noting what local improvements to the 
+%density our results of strong extremality rule out and which are not ruled out.
+%
+%However, our notion of strong extremality is both stronger and more widely applicable than previously introduced
+%notions of local optimality of packings. The notions of an \textit{extreme}
+%lattice packing and a \textit{periodic-extreme} periodic packing apply only to special
+%classes of packings. We show that strong extremality, which applies more generally,
+%implies extremality and periodic-extremality in these special classes.
+
+\begin{theorem}
+    If a lattice $\Lambda$ is strongly extreme for $K$, then $\Lambda$ is extreme for $K$ \cite{martinet2003perfect}.
+\end{theorem}
+
+%page number
+
+\begin{theorem}
+    If a periodic set $\Xi = \{ T_\mathbf{l}\xi_i : \mathbf{l}\in\Lambda, i=1,\dots,N\}$ is strongly extreme,
+    then it is periodic extreme for $K$ \cite{schurmann2013strict}.
+\end{theorem}
+
+%page number
+
+We now derive a general method for proving strong extremality which we will use in the following sections.
+
+\begin{definition}
+    Let $\Xi$ be a countable set of isometries and fix an enumeration $\Xi = \{\xi_i: i\in\mathbb{N}\}$. 
+    Let $\mathcal P$ be a polyhedral complex whose underlying space is $\mathbb{R}^n$.
+    For every face $F$ of $\mathcal P$, let $I_F = \{i : \xi_i(0)\in F\}$. We say $\mathcal P$ is a \textit{honeycomb} of $\Xi$ if
+    each $n$-face (cell) $P$ is the convex hull of $\{\xi_i(0):i\in I_P\}$.
+\end{definition}
+
+%honeycomb already refers to a tessellation in the literature
+
+%$I_f$ is the index of a face
+%also needs to "span"
+
+\begin{theorem}
+    \label{thm:noaux}
+    Let $\Xi$ be admissible for $K$ and let $\mathcal P$ be a honeycomb of $\Xi$. For every cell $P$,
+    consider the optimization problem of minimizing $f_P(\Xi_P)=\mathrm{vol}\,\mathrm{conv}_{i\in I_P}\xi'_i(0)$ over  the assignment of isometries $\xi'_i$, $i\in I_P$, such that this finite set is admissible.
+    If $\xi'_i=\xi_i$, $i\in I_P$, is a local minimum for each cell $P$ on a uniform neighborhood for each isometry in $\Xi$, then $\Xi$ is strongly extreme.
+\end{theorem}
+%may need uniform volume bound. need saturation condition
+%do we need a refinement condition?
+
+%Assume not strongly extreme.  Then it does not minimize mean volume in any neighborhood in $\Xi$ which means that there is a collection of isometries that is "nearby" and has a lower mean volume. This implies that there are cells in the nearby collection that have a lower mean volume than in the original. But every cell is minimized uniformly by assumption. contradiction.
+
+%top dimensional
+%Need to better define uniform condition on the neighborhoods of the minima at each P.
+
+%need to include the description of R  that is that $R = R(K)$ is refined by $R > R(K)$
+
+%convexity problem... need non degenerate honeycomb.
+
+%1)$(\mathcal{P}, \Xi) \rightarrow (\mathcal{P'}, \Xi')$ when $\delta(\Xi, \Xi')$ is small...  
+%there needs to be a refinement procedure...
+
+
+%No interior points assumption, or an interior points define all relations assumption......  This should be a complete honeycomb, malleable? perturbable?...
+%\begin{lemma}
+% given a collection of isometries and a honeycomb $(\Xi,\mathcal{P})$ then for $\delta(\Xi, \Xi')< \epsilon$, the re-enumeration pushforward of the relationships that define $\mathcal{P}$ define a honeycomb of $\Xi'$.
+%\end{lemma}
+
+By assumption, all cells $P$ of the honeycomb $\mathcal{P}$ of $\Xi$ are local minima for $f$ in a neighborhood of $P$ given by a uniform $\epsilon$ perturbation of any $\xi_i, i\in I_P$. From the definition of $\delta$, it follows that $f(P_\Xi) \le f(P_{\Xi'})$ for any $\Xi'$ satisfying $\delta(\Xi, \Xi') \le \epsilon.$ 
+
+$$f^+(\Xi) = \limsup_{r\rightarrow \infty} \sum_{P \subset B(0,r)} \frac{\textrm{vol}(P)}{|P|}   \le \limsup_{r\rightarrow \infty}  \sum_{P' \subset B(0,r)} \frac{\textrm{vol}(P')}{|P'|} =  f^+(\Xi')$$
+
+Then (use asympt. definition mean volume) $ f(\Xi) \le f(\Xi')$ and $\Xi$ is strongly extreme.
+
+
+\begin{theorem}
+    \label{thm:aux}
+    Let $g_F(\Xi_F)$ be a real-valued function over $\Xi_F=(\xi'_i)_{i\in I_F}$ for each oriented $(n-1)$-faces (ridge) of $\mathcal P$, such
+    that $g_F(\Xi_F)=-g_{-F}(\Xi_F)$, where $-F$ is the orientation-reversed version of $F$. Provided that $g$ is uniformly bounded in a uniform neighborhood, we may replace $f_P(\Xi_P)$ in the previous theorem with $f_P'(\Xi_P) = f_P(\Xi_P) + \sum_{F\in\partial P} g_F(\Xi_F)$, then again, if $\xi'_i=\xi_i$, $i\in I_P$, is a local minimum for each
+    cell $P$, then $\Xi$ is strongly extreme.
+\end{theorem}
+
+Following a similar argument to the previous theorem, all cells $P$ of the honeycomb $\mathcal{P}$ of $\Xi$ are minima for $f'$ in neighborhood of $P$ given by a uniform $\epsilon$ perturbation of any $\xi_i, i\in I_P$. From the definition of $\delta$, it follows that $f'(P_\Xi) \le f'(P_{\Xi'})$ for any $\Xi'$ satisfying $\delta(\Xi, \Xi') \le \epsilon.$ 
+
+ but with more boundary terms.  there is an explicit separation between $P$ and $P'$ so the there is a large enough r so that
+
+$$f^+(\Xi) = \limsup_{r\rightarrow \infty} (\sum_{P \subset B(0,r)} \frac{\textrm{vol}(P)}{|P|} + g|\partial B)  \le \limsup_{r\rightarrow \infty}  (\sum_{P' \subset B(0,r)} \frac{\textrm{vol}(P')}{|P'|}+ g|\partial B)  =  f^+(\Xi')$$
+
+%sketch
+%
+%Assume not strongly extreme..  Then it does not minimize mean volume....  That is, there is a nearby set of isometries with a lower mean volume.
+%
+%and therefore it does not minimize f' up to the boundary term.  
+%
+%
+%then there must be cells that have 
+%
+%no cell can trade too much volume (bound on the number of faces... and bound on g)
+%
+%
+%any error going to infinity boundary is then lower order....
+%
+%then the minimum of f' is a minimum for f
+%
+%
+%minimize on average, g goes to 0
+%
+%
+%Comment:  for our purposes, the optimal cells are identical...
+
+
+\bibliography{ngon}
+\end{document}  
